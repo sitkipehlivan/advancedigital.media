@@ -14,6 +14,7 @@
   {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
   <link rel="canonical" href="{{ canonical }}">
   <meta name="theme-color" content="#0A0A0B">
+  {% if site.gscVerification %}<meta name="google-site-verification" content="{{ site.gscVerification }}">{% endif %}
   <meta property="og:type" content="{{ ogType or 'website' }}">
   <meta property="og:site_name" content="Advance Digital">
   <meta property="og:locale" content="tr_TR">

@@ -13,6 +13,10 @@ eleventyExcludeFromCollections: true
 <meta property="og:title" content="{{ sunum.title }}">
 <meta property="og:image" content="{{ site.url }}/assets/sunum/s01.webp">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+{% if site.ga4 %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ site.ga4 }}');</script>
+{% endif %}
 <style>
   *{box-sizing:border-box}
   html,body{margin:0;background:#0A0A0B;color:#fff;font:500 14px/1.2 "League Spartan",system-ui,sans-serif}

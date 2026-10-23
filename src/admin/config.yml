@@ -103,4 +103,5 @@ collections:
           - { label: "Instagram", name: instagram, widget: string, required: false }
           - { label: "YouTube", name: youtube, widget: string, required: false }
           - { label: "GA4 ölçüm kimliği (G-XXXX)", name: ga4, widget: string, required: false, hint: "Doldurulduğunda Google Analytics tüm sayfalara eklenir. KVKK metnini güncellemeyi unutmayın." }
+          - { label: "Google Search Console doğrulama kodu", name: gscVerification, widget: string, required: false, hint: "Sadece content=\"...\" içindeki kod" }
           - { label: "Varsayılan paylaşım görseli", name: ogImage, widget: image }
