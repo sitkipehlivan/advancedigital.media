@@ -1,3 +1,9 @@
+# İkinci alan adı: advancedigital.com.tr -> advancedigital.media (sayfa yolu korunur, 301)
+https://advancedigital.com.tr/*      https://advancedigital.media/:splat   301!
+http://advancedigital.com.tr/*       https://advancedigital.media/:splat   301!
+https://www.advancedigital.com.tr/*  https://advancedigital.media/:splat   301!
+http://www.advancedigital.com.tr/*   https://advancedigital.media/:splat   301!
+
 # Eski site URL'leri -> yeni sayfalar (SEO değerini korumak için 301)
 /2025te-ctv-gorunurlugu-etkiye-cevirmenin-yeni-yolu/*                          /cozumler/connected-tv/            301
 /2025te-ctv-gorunurlugu-etkiye-cevirmenin-yeni-yolu                            /cozumler/connected-tv/            301
