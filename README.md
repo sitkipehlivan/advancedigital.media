@@ -16,14 +16,14 @@ src/
 
 ## 1. GitHub'a yükleme
 
-1. GitHub'da yeni bir repo açın: `advance-website` (private olabilir).
+1. GitHub'da yeni bir repo açın: `advancedigital.media` (private olabilir).
 2. Bu klasörde:
    ```bash
    git init -b main && git add -A && git commit -m "İlk sürüm"
-   git remote add origin https://github.com/KULLANICI/advance-website.git
+   git remote add origin https://github.com/sitkipehlivan/advancedigital.media.git
    git push -u origin main
    ```
-3. `src/admin/config.yml` içindeki `repo:` satırını kendi `KULLANICI/advance-website` adınızla güncelleyin.
+3. `src/admin/config.yml` içindeki `repo:` satırını kendi `sitkipehlivan/advancedigital.media` adınızla güncelleyin.
 
 ## 2. Netlify'a bağlama
 

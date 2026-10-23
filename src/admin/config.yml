@@ -5,7 +5,7 @@
 # Kurulum adımları README.md içinde. "repo" satırını kendi GitHub deponuzla değiştirin.
 backend:
   name: github
-  repo: sitkipehlivan/advance-website
+  repo: sitkipehlivan/advancedigital.media
   branch: main
   commit_messages:
     create: "Blog: {{slug}} eklendi"

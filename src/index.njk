@@ -1,0 +1,226 @@
+---
+layout: layouts/base.njk
+isHome: true
+permalink: /
+clients: ["Apple Türkiye","Lacoste","NIVEA","Pegasus","Yapı Kredi","TEB","Mondelez","Eti","Hotels.com","Under Armour","Şişecam","Anadolu Hayat Emeklilik","Jollytur","Versuni","Elidor","Domino's","Numil","Altınbaş"]
+reel:
+  - { src: "cgi-masthead", label: "3D CGI Masthead", cat: "Yeni Formatlar", slug: "3d-cgi-masthead", wide: true, browser: true }
+  - { src: "interactive-skyscraper", label: "Interactive Skyscraper", cat: "Yeni Formatlar", slug: "interactive-skyscraper", site: "sky" }
+  - { src: "atv-l-banner", label: "Addressable TV · L-Banner", cat: "Addressable TV", slug: "addressable-tv", wide: true, tv: true }
+  - { src: "cgi-skyscraper", label: "3D CGI Skyscraper", cat: "Yeni Formatlar", slug: "3d-cgi-skyscraper", site: "sky" }
+  - { src: "cnv-2", label: "Creator Native Video · Preroll", cat: "Online Video", slug: "creator-native-video", wide: true, site: "player" }
+---
+{%- from "partials/icons.njk" import arrow, arrowUp, seal -%}
+{%- from "partials/media.njk" import card, fsite -%}
+
+<section class="hero dark">
+  <div class="glow glow--tl"></div>
+  <div class="glow glow--br"></div>
+  <div class="hero-arcs" aria-hidden="true">{% include "partials/mark.njk" %}</div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <a class="hero-tag reveal" href="/cozumler/zaproll/"><b>Yeni</b> Zaproll: Kanal değiştirme anında reklam →</a>
+        <h1 class="display-xl reveal" data-d="1">Görünür<span class="dot">.</span><br>Akılda kalıcı<span class="dot">.</span></h1>
+        <p class="lead reveal" data-d="2">Addressable TV'den 3D CGI formatlara, creator videolarından yapay zeka destekli Brand Lift'e; markanızı doğru ekranda, doğru anda, ölçülebilir şekilde öne çıkaran yeni nesil reklam teknolojileri.</p>
+        <div class="hero-ctas reveal" data-d="3">
+          <a class="btn" href="/cozumler/">Çözümleri keşfet {{ arrow() | safe }}</a>
+          <a class="btn btn--ghost" href="/iletisim/">Teklif iste</a>
+        </div>
+      </div>
+      <div class="reveal" data-d="2">
+        <div class="reel" data-reel>
+          <div class="reel-bars">{% for r in reel %}<i></i>{% endfor %}</div>
+          {% for r in reel %}
+          <div class="reel-slide {% if r.wide %}wide{% endif %} {% if loop.first %}is-active{% endif %}" data-label="{{ r.label }}" data-cat="{{ r.cat }}" data-href="/cozumler/{{ r.slug }}/">
+            {% set v %}<video muted playsinline preload="{{ 'auto' if loop.first else 'none' }}" poster="/assets/media/{{ r.src }}.webp" aria-label="{{ r.label }} örneği"><source src="/assets/media/{{ r.src }}.mp4" type="video/mp4"></video>{% endset %}
+            {% if r.site %}{{ fsite(r.site, r.src, r.label + " örneği", false, "auto" if loop.first else "none") | safe }}{% elif r.tv %}<div class="f-tv reel-tv"><div class="tv-screen">{{ v | safe }}</div><div class="tv-stand"></div><div class="tv-base"></div></div>{% elif r.browser %}<div class="f-browser reel-browser"><div class="bar"><i></i><i></i><i></i><span></span></div><div class="page">{{ v | safe }}<div class="skel"><i></i><i></i><i></i></div><div class="skel-lines"><i></i><i></i><i></i></div><div class="skel"><i></i><i></i><i></i></div></div></div>{% else %}{{ v | safe }}{% endif %}
+          </div>
+          {% endfor %}
+          <div class="reel-cap">
+            <div><small data-reel-cat>{{ reel[0].cat }}</small><strong data-reel-label>{{ reel[0].label }}</strong></div>
+            <a href="/cozumler/{{ reel[0].slug }}/" data-reel-link aria-label="Formatı incele">{{ arrowUp() | safe }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats reveal">
+      <div><strong>6,4M</strong><span>Addressable TV ile ulaşılan akıllı hane</span></div>
+      <div><strong>20+</strong><span>premium yayıncıdan oluşan Advance Network</span></div>
+      <div><strong>%90+</strong><span>Preroll+ ile viewability &amp; VCR</span></div>
+      <div><strong>23</strong><span>reklam formatı, tek ekip, tek rapor</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" aria-label="Markalar">
+  <div class="marquee">
+    <p class="marquee-label">Bizimle dijitalde güçlenenler</p>
+    <div class="marquee-track">
+      {% for c in clients %}<span>{{ c }}</span>{% endfor %}{% for c in clients %}<span aria-hidden="true">{{ c }}</span>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section deck">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Yeni nesil yaklaşım</span>
+        <h2 class="display-l reveal">Reklam teknolojisi, performans<br>ve fikir; aynı masada.</h2>
+      </div>
+      <a class="link-arrow" href="/hakkimizda/">Bizi tanıyın {{ arrow() | safe }}</a>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <svg class="ico" viewBox="0 0 56 56" fill="none" stroke="url(#gradPV)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="24" width="40" height="24" rx="3"/><path d="M8 32h40M28 24v24M28 24c-6 0-12-4-9-9 3-4 9 1 9 9zM28 24c6 0 12-4 9-9-3-4-9 1-9 9z"/><path d="M28 4l2.6 5.3 5.8.8-4.2 4.1 1 5.8L28 17.3 22.8 20l1-5.8-4.2-4.1 5.8-.8z"/></svg>
+        <h3>Reklam Teknolojileri</h3>
+        <p>Markaların dijital varlığını güçlendiren yenilikçi teknolojik çözümler: Addressable TV, 3D CGI, AR ve etkileşimli rich media.</p>
+      </div>
+      <div class="pillar reveal" data-d="1">
+        <svg class="ico" viewBox="0 0 56 56" fill="none" stroke="url(#gradPV)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="26" cy="30" r="20"/><circle cx="26" cy="30" r="13"/><circle cx="26" cy="30" r="6"/><path d="M26 30L46 10M40 8l6 2 2 6"/></svg>
+        <h3>Performans Pazarlama</h3>
+        <p>KPI garantili, yenilikçi ve ölçülebilir sonuçlar üreten stratejiler: CPCV, CPC, CPA ve CPI modelleri.</p>
+      </div>
+      <div class="pillar reveal" data-d="2">
+        <svg class="ico" viewBox="0 0 56 56" fill="none" stroke="url(#gradPV)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="12" width="44" height="30" rx="3"/><path d="M2 46h52M28 18c4 3 5 8 4 13h-8c-1-5 0-10 4-13z"/><circle cx="28" cy="25" r="1.6"/><path d="M24 31l-3 4h4M32 31l3 4h-4"/></svg>
+        <h3>Projeler</h3>
+        <p>Hedef kitlenin dikkatini çeken media-first projeler: creator iş birlikleri, advergame'ler ve içerik ortaklıkları.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark zap" id="zaproll">
+  <div class="glow glow--br" style="opacity:.8"></div>
+  <div class="wrap">
+    <div class="zap-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:22px">{{ seal("Yeni") | safe }}<span class="eyebrow eyebrow--pink" style="margin:0">Zaproll by Admongrel</span></div>
+        <h2 class="display-l reveal">Yayın akışı bozulmadan,<span class="pink">tam zapping anında.</span></h2>
+        <p class="lead reveal">Reklam kuşağında kanal değiştiren izleyici, yeni kanalı tanımak için ilk saniyelerde ekrana tam odaklanır. Zaproll bu anı markanız için 6–15 saniyelik, hedeflenmiş bir temasa dönüştürür.</p>
+        <ul class="zap-points reveal">
+          <li><strong>Akıllı tetikleme</strong><span>Kumandadan kanal değiştirme komutu geldiği anda devreye girer.</span></li>
+          <li><strong>Sıfır bölünme</strong><span>Yayın arka planda kesintisiz sürer; izleme alışkanlığı bozulmaz.</span></li>
+          <li><strong>Addressable gücü</strong><span>Hane, lokasyon ve izleme alışkanlığına göre hedefleme.</span></li>
+          <li><strong>Ölçülebilir</strong><span>Gösterim, tamamlanma, erişim ve frekans raporu.</span></li>
+        </ul>
+        <div class="hero-ctas">
+          <a class="btn" href="/cozumler/zaproll/">Zaproll'u keşfet {{ arrow() | safe }}</a>
+          <a class="btn btn--ghost" href="/iletisim/?urun=zaproll">Teklif iste</a>
+        </div>
+      </div>
+      <div class="reveal" data-d="1">{% include "partials/zaproll-tv.njk" %}</div>
+    </div>
+  </div>
+</section>
+
+<section class="section deck" id="cozumler">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Reklam çözümleri</span>
+        <h2 class="display-l reveal">Her ekran için<br>doğru format.</h2>
+      </div>
+      <p class="lead">Display ve online videodan Addressable TV'ye, DOOH'tan performans modellerine; brief'inize göre kurgulanan 23 format.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Çözüm kategorileri" data-tabs>
+      {% for cat in categories %}
+      <button class="tab" role="tab" type="button" aria-selected="{{ 'true' if loop.first else 'false' }}" data-tab="{{ cat.slug }}">{{ cat.name }} <span class="n">{{ (solutions | byCategory(cat.slug)).length }}</span></button>
+      {% endfor %}
+    </div>
+    <div class="cards" data-tab-panel>
+      {% for s in solutions %}
+      {{ card(s, categories) | safe }}
+      {% endfor %}
+    </div>
+    <div style="margin-top:40px;display:flex;justify-content:center"><a class="btn btn--ink" href="/cozumler/">Tüm çözümleri görün {{ arrow() | safe }}</a></div>
+  </div>
+</section>
+
+<section class="section dark-2" id="addressable">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow eyebrow--pink">Admongrel · Data-driven Addressable TV</span>
+        <h2 class="display-l reveal">TV'den dijitale<br>tek bir funnel.</h2>
+      </div>
+      <p class="lead">Addressable TV'de doğru kitleye ulaşıyor, oluşan veriyi dijital ekosistemde değerlendiriyor, kampanya etkisini yapay zekayla ölçüyoruz.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><strong>6,4<em>M</em></strong><span>akıllı hane</span></div>
+      <div class="stat"><strong>22,1<em>M</em></strong><span>izleyici</span></div>
+      <div class="stat"><strong>5,18<em>M</em></strong><span>hane: en büyük segment, Prime Time izleyicileri</span></div>
+      <div class="stat"><strong>3</strong><span>format ailesi: Interactive Display, Video, EPG</span></div>
+    </div>
+    <div class="funnel">
+      <div class="funnel-step reveal">
+        <div class="num">01</div>
+        <h3>TV'de ulaşım</h3>
+        <p>Addressable TV ile finans, ekonomi ve haber içeriklerini takip eden doğru kitleye premium yayın ortamında ulaşılır.</p>
+        <ul><li>Hedeflenebilir reklam</li><li>First-party data</li><li>Premium yayın</li></ul>
+      </div>
+      <div class="funnel-step reveal" data-d="1">
+        <div class="num">02</div>
+        <h3>Dijitalde yeniden hedefleme</h3>
+        <p>TV reklamına maruz kalan kullanıcılar, anonimleştirilmiş first-party audience ile Advance ekosisteminde yeniden hedeflenir.</p>
+        <ul><li>Premium Video</li><li>Display</li><li>Rich Media</li><li>Creator Native Video</li><li>DOOH</li><li>Push</li></ul>
+      </div>
+      <div class="funnel-step reveal" data-d="2">
+        <div class="num">03</div>
+        <h3>Ölçüm &amp; optimizasyon</h3>
+        <p>Yapay zeka destekli Brand Lift Study ile kampanya etkisi ölçülür, kampanya sürerken optimize edilir.</p>
+        <ul><li>Reklam hatırlanırlığı</li><li>Marka algısı</li><li>Kampanya etkisi</li></ul>
+      </div>
+    </div>
+    <div class="funnel-foot">
+      <span class="flow">Ulaşım <i>→</i> Etkileşim <i>→</i> Ölçüm <i>→</i> Sadakat</span>
+      <a class="link-arrow" href="/cozumler/addressable-tv/" style="margin-left:auto">Addressable TV'yi incele {{ arrow() | safe }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section deck">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Çözüm ortakları</span>
+        <h2 class="display-l reveal">Premium envanter,<br>güçlü veri.</h2>
+      </div>
+      <a class="link-arrow" href="/hakkimizda/#ortaklar">Tüm ortaklar {{ arrow() | safe }}</a>
+    </div>
+    <div class="partners">
+      <div class="partner-card reveal">
+        <h3>Advance Premium Network</h3>
+        <p>Star, Kanal D, atv, Show TV, TV8, NOW, TRT 1, Hürriyet, tabii, puhutv, DMAX ve daha fazlası: brand-safe, premium yayıncı envanteri.</p>
+        <img src="/assets/img/premium-network.webp" alt="Advance Premium Network yayıncı logoları" loading="lazy">
+      </div>
+      <div class="partner-card reveal" data-d="1">
+        <h3>Advance Data Partnerleri</h3>
+        <p>Genel veri, mobil &amp; gaming ve Connected TV veri sağlayıcılarıyla kitlenizi her ekranda doğru tanıyoruz.</p>
+        <img src="/assets/img/data-partners.webp" alt="Advance veri partnerleri logoları" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if collections.posts.length %}
+<section class="section white">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Blog</span>
+        <h2 class="display-l reveal">Dijital etki<br>hikâyeleri.</h2>
+      </div>
+      <a class="link-arrow" href="/blog/">Tüm yazılar {{ arrow() | safe }}</a>
+    </div>
+    <div class="posts">
+      {% for p in collections.posts | limit(3) %}
+      {% include "partials/post-card.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/cta.njk" %}

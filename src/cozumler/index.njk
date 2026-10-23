@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+title: "Reklam Çözümleri"
+metaTitle: "Reklam Çözümleri: Addressable TV, 3D CGI, Video ve Performans Formatları"
+metaDescription: "Advance Digital reklam çözümleri: Zaproll, Addressable TV, Connected TV, 3D CGI Masthead, Interactive formatlar, Creator Native Video, Preroll, DOOH, Push, CPC/CPA ve AI Brand Lift."
+permalink: /cozumler/
+---
+{%- from "partials/media.njk" import card -%}
+
+<section class="page-hero dark">
+  <div class="glow glow--tl"></div>
+  <div class="hero-arcs" aria-hidden="true">{% include "partials/mark.njk" %}</div>
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Anasayfa</a></li><li>Çözümler</li></ol>
+    <span class="eyebrow eyebrow--pink">Reklam çözümleri</span>
+    <h1 class="display-xl">23 format.<br><span class="pink">Tek ekip.</span></h1>
+    <p class="lead">Display ve online videodan Addressable TV'ye, lokasyon bazlı kurgulardan performans modellerine; brief ve KPI'larınız doğrultusunda contextual, lokasyon ve DMP verisiyle hedeflenmiş medya çalışmaları.</p>
+  </div>
+</section>
+
+<nav class="cat-nav" aria-label="Kategoriler">
+  <div class="wrap">
+    {% for cat in categories %}<a href="#{{ cat.slug }}">{{ cat.name }}</a>{% endfor %}
+  </div>
+</nav>
+
+<section class="section deck">
+  <div class="wrap">
+    {% for cat in categories %}
+    <div class="cat-block" id="{{ cat.slug }}">
+      <div class="cat-head">
+        <h2>{{ cat.name }}</h2>
+        <p>{{ cat.intro }}</p>
+      </div>
+      <div class="cards">
+        {% for s in solutions | byCategory(cat.slug) %}{{ card(s, categories) | safe }}{% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

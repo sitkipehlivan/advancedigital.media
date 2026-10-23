@@ -1,0 +1,207 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: solutions
+  size: 1
+  alias: s
+permalink: "/cozumler/{{ s.slug }}/"
+eleventyComputed:
+  metaTitle: "{{ s.metaTitle }}"
+  metaDescription: "{{ s.metaDescription }}"
+  keywords: "{{ s.keywords }}"
+  ctaProduct: "{{ s.slug }}"
+  ctaTitle: "{{ s.name }} ile kampanyanızı planlayalım."
+  ogImage: "/assets/img/og/{{ s.slug }}.jpg"
+---
+{%- from "partials/icons.njk" import arrow, seal -%}
+{%- from "partials/media.njk" import media, card -%}
+{%- set cat = categories | findBySlug(s.category) -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": {{ s.name | json | safe }},
+      "serviceType": {{ cat.name | json | safe }},
+      "description": {{ s.metaDescription | json | safe }},
+      "provider": { "@id": "{{ site.url }}/#org" },
+      "areaServed": { "@type": "Country", "name": "Türkiye" },
+      "url": "{{ site.url }}/cozumler/{{ s.slug }}/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Anasayfa", "item": "{{ site.url }}/" },
+        { "@type": "ListItem", "position": 2, "name": "Çözümler", "item": "{{ site.url }}/cozumler/" },
+        { "@type": "ListItem", "position": 3, "name": {{ s.name | json | safe }}, "item": "{{ site.url }}/cozumler/{{ s.slug }}/" }
+      ]
+    }{% if s.faq %},
+    {
+      "@type": "FAQPage",
+      "mainEntity": [{% for f in s.faq %}
+        { "@type": "Question", "name": {{ f.q | json | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ f.a | json | safe }} } }{% if not loop.last %},{% endif %}{% endfor %}
+      ]
+    }{% endif %}
+  ]
+}
+</script>
+
+<section class="page-hero dark sol-hero">
+  <div class="glow glow--tl"></div>
+  <div class="glow glow--br" style="opacity:.6"></div>
+  <div class="wrap">
+    <div class="sol-hero-grid">
+      <div>
+        <ol class="crumbs"><li><a href="/">Anasayfa</a></li><li><a href="/cozumler/">Çözümler</a></li><li><a href="/cozumler/#{{ cat.slug }}">{{ cat.name }}</a></li></ol>
+        <span class="eyebrow eyebrow--pink">{{ cat.name }}</span>
+        <div class="sol-title-row">
+          <h1 class="display-l">{{ s.name }}</h1>
+          {% if s.badge == "Yeni" %}{{ seal("Yeni") | safe }}{% endif %}
+        </div>
+        <p class="lead" style="margin-top:22px">{{ s.lead }}</p>
+        <div class="chips">{% for k in s.kpis %}<span class="chip">{{ k }}</span>{% endfor %}</div>
+        <div class="hero-ctas">
+          <a class="btn" href="/iletisim/?urun={{ s.slug }}">Teklif iste {{ arrow() | safe }}</a>
+          <a class="btn btn--ghost" href="#detaylar">Detaylar</a>
+        </div>
+      </div>
+      <div>{{ media(s, true) | safe }}</div>
+    </div>
+  </div>
+</section>
+
+<section class="section deck" id="detaylar">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow">Öne çıkanlar</span>
+        <h2 class="display-m">{{ s.name }} neler sunar?</h2>
+        {% if s.sectors %}
+        <p class="mute" style="margin:28px 0 12px;font-family:var(--display);font-weight:600;color:var(--ink)">Kimler için ideal?</p>
+        <div class="sectors">{% for x in s.sectors %}<span class="chip">{{ x }}</span>{% endfor %}</div>
+        {% endif %}
+        {% if s.audience %}
+        <div class="audience">
+          <h3>Kitle profili</h3>
+          <ul style="margin:0;padding-left:1.1em;display:grid;gap:6px">{% for a in s.audience %}<li>{{ a }}</li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+      </div>
+      <div class="features">
+        {% for f in s.features %}<div class="feature reveal"><p>{{ f }}</p></div>{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if s.steps %}
+<section class="section--tight section light" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Süreç</span><h2 class="display-m">Nasıl çalışır?</h2></div>
+    </div>
+    <div class="steps" style="--n:{{ s.steps.length }}">
+      {% for st in s.steps %}
+      <div class="step reveal" data-d="{{ loop.index0 }}"><span class="n">{{ loop.index | pad2 }}</span><h3>{{ st.title }}</h3><p>{{ st.text }}</p></div>
+      {% endfor %}
+    </div>
+    {% if s.slug == "zaproll" %}
+    <div style="margin-top:22px;padding:22px 26px;border-radius:18px;background:var(--pink-soft);display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+      <span class="chip chip--pink">Erişim</span>
+      <p style="flex:1;min-width:240px">İnternete bağlı, <b>HbbTV destekli Smart TV</b>'lerde, Admongrel Addressable TV altyapısı üzerinden çalışır.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if s.slug == "zaproll" %}
+<section class="section dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow eyebrow--pink">Neden şimdi?</span><h2 class="display-m">İzleyici reklam kuşağında nereye gidiyor?</h2></div>
+    </div>
+    <div class="stats" style="margin-bottom:24px">
+      <div class="stat"><strong>%38</strong><span>Prime-time gözlem çalışmasında izleyiciler reklam kuşağı süresinin %38'inde başka kanaldaydı.¹</span></div>
+      <div class="stat"><strong>1–3<em> sn</em></strong><span>Kanal değiştiren izleyici yeni yayını tanımak için ilk saniyelerde ekrana tam odaklanır.</span></div>
+      <div class="stat"><strong>%87</strong><span>6 sn'lik bumper kampanyalarının reklam hatırlamada anlamlı artış sağladığı oran.²</span></div>
+      <div class="stat"><strong>6–15<em> sn</em></strong><span>Reklam yorgunluğu yaratmadan mesajı en net haliyle ileten kısa format.</span></div>
+    </div>
+    <p class="mute" style="font-size:.85rem">¹ Dix &amp; Phau, Journal of Advertising Research, canlı prime-time TV'de zapping gözlem çalışması. ² Google / YouTube, global Bumper ads Brand Lift analizi (YouTube bumper verisidir; Zaproll için kısa format kanıtı olarak sunulmuştur).</p>
+  </div>
+</section>
+{% endif %}
+
+{% if s.segments %}
+<section class="section light" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Hedefleme</span><h2 class="display-m">Top 5 audience segmenti</h2></div></div>
+    <div class="table-wrap">
+      <table class="table" style="background:#fff">
+        <thead><tr><th>Segment</th><th>Hane sayısı</th><th>Kişi sayısı</th></tr></thead>
+        <tbody>{% for g in s.segments %}<tr><td>{{ g.name }}</td><td>{{ g.hane }}</td><td>{{ g.kisi }}</td></tr>{% endfor %}</tbody>
+      </table>
+    </div>
+    <figure style="margin:48px 0 0" class="partner-card">
+      <h3>Admongrel premium yayın envanteri &amp; data sağlayıcıları</h3>
+      <img src="/assets/img/admongrel-envanter.webp" alt="Admongrel premium yayın envanteri ve first-party veri sağlayıcıları" loading="lazy">
+    </figure>
+  </div>
+</section>
+{% endif %}
+
+{% if s.compare %}
+<section class="section light" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Karşılaştırma</span><h2 class="display-m">{% if s.slug == 'ai-brand-lift' %}Geleneksel vs AI Brand Lift{% else %}Rakiplerle karşılaştırma{% endif %}</h2></div></div>
+    <div class="table-wrap">
+      <table class="table" style="background:#fff">
+        <thead><tr><th>Kriter</th>{% for c in s.compare.cols %}<th>{{ c }}</th>{% endfor %}</tr></thead>
+        <tbody>
+          {% for r in s.compare.rows %}
+          <tr>{% for cell in r %}{% if loop.first %}<td><b>{{ cell }}</b></td>{% elif cell === true %}<td class="yes">✓</td>{% elif cell === false %}<td class="no">✗</td>{% else %}<td>{{ cell }}</td>{% endif %}{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if s.faq %}
+<section class="section white">
+  <div class="wrap">
+    <div class="split">
+      <div><span class="eyebrow">SSS</span><h2 class="display-m">Sık sorulan sorular</h2><p class="lead" style="margin-top:18px">Aklınızdaki soru burada yoksa <a href="/iletisim/?urun={{ s.slug }}" class="pink">bize yazın</a>.</p></div>
+      <div class="faq">
+        {% for f in s.faq %}
+        <details {% if loop.first %}open{% endif %}><summary>{{ f.q }}<span class="pm" aria-hidden="true"></span></summary><p>{{ f.a }}</p></details>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{%- set rel = collections.posts | postsForSolution(s.slug) -%}
+{% if rel.length %}
+<section class="section light">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Blog</span><h2 class="display-m">{{ s.name }} hakkında yazılar</h2></div><a class="link-arrow" href="/blog/">Tüm yazılar {{ arrow() | safe }}</a></div>
+    <div class="posts">{% for p in rel | limit(3) %}{% include "partials/post-card.njk" %}{% endfor %}</div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section deck">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Birlikte iyi çalışır</span><h2 class="display-m">İlgili çözümler</h2></div><a class="link-arrow" href="/cozumler/">Tüm çözümler {{ arrow() | safe }}</a></div>
+    <div class="cards">
+      {% for r in solutions | bySlugs(s.related) %}{{ card(r, categories) | safe }}{% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}
