@@ -1,0 +1,75 @@
+---
+permalink: "/{{ sunum.slug }}/"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ sunum.title }}</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Advance Digital reklam çözümleri sunumu.">
+<meta property="og:title" content="{{ sunum.title }}">
+<meta property="og:image" content="{{ site.url }}/assets/sunum/s01.webp">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#0A0A0B;color:#fff;font:500 14px/1.2 "League Spartan",system-ui,sans-serif}
+  @font-face{font-family:"League Spartan";font-display:swap;font-weight:100 900;src:url(/assets/fonts/league-spartan-latin-wght-normal.woff2) format("woff2-variations")}
+  .top{position:fixed;inset:0 0 auto 0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:rgba(10,10,11,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .top a.logo svg{height:26px;width:auto;display:block}
+  .top .lg-ink{fill:#fff}.top .sig path{fill:#E4006D}
+  .top nav{display:flex;align-items:center;gap:8px}
+  .top .count{color:#A4A4AA;font-variant-numeric:tabular-nums;margin-right:6px}
+  .top button,.top a.btn{appearance:none;border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;border-radius:999px;padding:8px 14px 7px;font:inherit;cursor:pointer;text-decoration:none}
+  .top a.btn{background:#E4006D;border-color:#E4006D}
+  main{padding:64px 0 40px;display:grid;gap:clamp(10px,2vw,22px);justify-items:center}
+  .slide{position:relative;width:min(100vw - 24px,calc((100vh - 96px) * 16 / 9),1600px);aspect-ratio:16/9;background:#1a1a1c;border-radius:6px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  .slide img{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .slide video{position:absolute;object-fit:cover;background:#000}
+  @media (max-width:720px){.top .count{display:none}.top button{display:none}.slide{border-radius:3px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="/" aria-label="Advance Digital anasayfa">{% include "partials/logo.njk" %}</a>
+  <nav>
+    <span class="count" data-count>1 / {{ sunum.slides }}</span>
+    <button type="button" data-full>Tam ekran</button>
+    <a class="btn" href="/">Siteyi ziyaret et</a>
+  </nav>
+</header>
+<main>
+  {% for i in range(1, sunum.slides + 1) %}
+  {% set k = i | string %}
+  <section class="slide" id="s{{ i }}" data-n="{{ i }}" aria-label="Slayt {{ i }}">
+    <img src="/assets/sunum/s{{ i | pad2 }}.webp" alt="Slayt {{ i }}" width="1920" height="1080" {% if i > 2 %}loading="lazy"{% endif %} decoding="async">
+    {% for v in sunum.videos[k] %}
+    <video muted playsinline loop preload="none" poster="/assets/media/{{ v[0] }}.webp" style="left:{{ v[1]*100 }}%;top:{{ v[2]*100 }}%;width:{{ v[3]*100 }}%;height:{{ v[4]*100 }}%"><source src="/assets/media/{{ v[0] }}.mp4" type="video/mp4"></video>
+    {% endfor %}
+  </section>
+  {% endfor %}
+</main>
+<script>
+(() => {
+  const slides = [...document.querySelectorAll(".slide")];
+  const count = document.querySelector("[data-count]");
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    e.target.querySelectorAll("video").forEach((v) => e.isIntersecting ? v.play().catch(() => {}) : v.pause());
+    if (e.isIntersecting && e.intersectionRatio > 0.5) count.textContent = e.target.dataset.n + " / " + slides.length;
+  }), { threshold: [0, 0.5] });
+  slides.forEach((s) => io.observe(s));
+  const cur = () => +count.textContent.split(" ")[0];
+  const go = (n) => slides[Math.max(0, Math.min(slides.length - 1, n - 1))].scrollIntoView({ behavior: "smooth", block: "center" });
+  document.addEventListener("keydown", (e) => {
+    if (["ArrowDown", "ArrowRight", "PageDown", " "].includes(e.key)) { e.preventDefault(); go(cur() + 1); }
+    if (["ArrowUp", "ArrowLeft", "PageUp"].includes(e.key)) { e.preventDefault(); go(cur() - 1); }
+  });
+  document.querySelector("[data-full]").addEventListener("click", () => {
+    document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.();
+  });
+})();
+</script>
+</body>
+</html>
