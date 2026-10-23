@@ -1,0 +1,23 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for p in collections.all %}
+{%- if p.url and p.url != "/404.html" and p.url != "/tesekkurler/" and not p.data.draft and ".xml" not in p.url and not (("/cozumler/" in p.url) and p.url != "/cozumler/") %}
+  <url>
+    <loc>{{ p.url | absUrl(site.url) }}</loc>
+    <lastmod>{{ p.date | isoDate }}</lastmod>
+    <priority>{% if p.url == "/" %}1.0{% elif "/cozumler/" in p.url %}0.9{% else %}0.7{% endif %}</priority>
+  </url>
+{%- endif %}
+{%- endfor %}
+{%- for s in solutions %}
+  <url>
+    <loc>{{ site.url }}/cozumler/{{ s.slug }}/</loc>
+    <lastmod>{{ build.today }}</lastmod>
+    <priority>{% if s.featured %}0.9{% else %}0.8{% endif %}</priority>
+  </url>
+{%- endfor %}
+</urlset>

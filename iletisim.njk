@@ -1,0 +1,60 @@
+---
+layout: layouts/base.njk
+title: "İletişim"
+metaTitle: "İletişim ve Teklif Talebi"
+metaDescription: "Advance Digital ile iletişime geçin: Zaproll, Addressable TV, 3D CGI, Creator Native Video ve diğer reklam çözümleri için brief'inizi paylaşın, teklif alın."
+permalink: /iletisim/
+---
+{%- from "partials/icons.njk" import arrow, linkedin, instagram -%}
+<section class="page-hero dark" style="padding-bottom:clamp(64px,8vw,120px)">
+  <div class="glow glow--tl"></div>
+  <div class="glow glow--br" style="opacity:.6"></div>
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <ol class="crumbs"><li><a href="/">Anasayfa</a></li><li>İletişim</li></ol>
+        <span class="eyebrow eyebrow--pink">Teklif iste</span>
+        <h1 class="display-l">Birlikte neler yapabileceğimizi <span class="pink">konuşalım.</span></h1>
+        <p class="lead" style="margin-top:22px">Brief'inizi paylaşın; hedefinize uygun format, hedefleme kurgusu ve bütçe önerisiyle en kısa sürede dönelim.</p>
+        <ul class="contact-list">
+          <li><small>E-posta</small><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {% if site.phone %}<li><small>Telefon</small><a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a></li>{% endif %}
+          {% if site.address %}<li><small>Adres</small><span>{{ site.address }}</span></li>{% endif %}
+          <li><small>Sosyal</small><span style="display:flex;gap:18px;font-size:1.05rem">{% if site.linkedin %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}{% if site.instagram %}<a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}</span></li>
+        </ul>
+      </div>
+      <form class="form" name="teklif" method="POST" action="/tesekkurler/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="teklif">
+        <p class="sr-only"><label>Bu alanı boş bırakın <input name="bot-field"></label></p>
+        <div class="field"><label for="f-ad">Ad soyad</label><input id="f-ad" name="ad" autocomplete="name" required></div>
+        <div class="field"><label for="f-sirket">Şirket / marka</label><input id="f-sirket" name="sirket" autocomplete="organization" required></div>
+        <div class="field"><label for="f-mail">E-posta</label><input id="f-mail" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-tel">Telefon <span class="opt">(opsiyonel)</span></label><input id="f-tel" name="telefon" type="tel" autocomplete="tel"></div>
+        <div class="field field--full"><label for="f-urun">İlgilendiğiniz çözüm</label>
+          <select id="f-urun" name="urun">
+            <option value="">Seçiniz / emin değilim</option>
+            {% for cat in categories %}
+            <optgroup label="{{ cat.name }}">
+              {% for s in solutions | byCategory(cat.slug) %}<option value="{{ s.slug }}">{{ s.name }}</option>{% endfor %}
+            </optgroup>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field"><label for="f-hedef">Kampanya hedefi</label>
+          <select id="f-hedef" name="hedef">
+            <option value="">Seçiniz</option>
+            <option>Bilinirlik / awareness</option>
+            <option>Etkileşim</option>
+            <option>Trafik / tıklama</option>
+            <option>Satış / lead / uygulama indirme</option>
+            <option>Lansman</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-tarih">Planlanan dönem <span class="opt">(opsiyonel)</span></label><input id="f-tarih" name="donem" placeholder="Örn. Kasım 2026"></div>
+        <div class="field field--full"><label for="f-mesaj">Mesajınız</label><textarea id="f-mesaj" name="mesaj" placeholder="Hedef kitle, bütçe aralığı, KPI'lar…"></textarea></div>
+        <label class="check"><input type="checkbox" name="kvkk" required> <span><a href="/kvkk/" target="_blank">KVKK aydınlatma metnini</a> okudum; teklif talebim kapsamında benimle iletişime geçilmesini kabul ediyorum.</span></label>
+        <button class="btn" type="submit">Gönder {{ arrow() | safe }}</button>
+      </form>
+    </div>
+  </div>
+</section>

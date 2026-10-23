@@ -1,0 +1,175 @@
+{%- from "partials/icons.njk" import arrow, caret, linkedin, instagram, youtube -%}
+{%- set pageTitle = (metaTitle or title) -%}
+{%- set fullTitle = (pageTitle + " | Advance Digital") if pageTitle and not isHome else (site.name + " | Yeni Nesil Reklam Teknolojileri · Visible & Memorable") -%}
+{%- set desc = metaDescription or description or site.description -%}
+{%- set canonical = page.url | absUrl(site.url) -%}
+{%- set ogImg = (ogImage or cover or site.ogImage) | absUrl(site.url) -%}
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ fullTitle }}</title>
+  <meta name="description" content="{{ desc }}">
+  {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+  <link rel="canonical" href="{{ canonical }}">
+  <meta name="theme-color" content="#0A0A0B">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:site_name" content="Advance Digital">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="{{ pageTitle or fullTitle }}">
+  <meta property="og:description" content="{{ desc }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ ogImg }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
+  <link rel="alternate" type="application/atom+xml" title="Advance Digital Blog" href="/feed.xml">
+  <link rel="preload" href="/assets/fonts/league-spartan-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/questrial-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/main.css?v={{ build.v }}">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "{{ site.url }}/#org",
+        "name": "Advance Digital",
+        "url": "{{ site.url }}/",
+        "logo": "{{ site.url }}/assets/logo/advance-logo.svg",
+        "slogan": "{{ site.tagline }}",
+        "email": "{{ site.email }}",
+        "sameAs": [{% if site.linkedin %}"{{ site.linkedin }}"{% endif %}{% if site.instagram %}, "{{ site.instagram }}"{% endif %}{% if site.youtube %}, "{{ site.youtube }}"{% endif %}]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#web",
+        "url": "{{ site.url }}/",
+        "name": "Advance Digital",
+        "inLanguage": "tr-TR",
+        "publisher": { "@id": "{{ site.url }}/#org" }
+      }
+    ]
+  }
+  </script>
+  {% if site.ga4 %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ site.ga4 }}');</script>
+  {% endif %}
+</head>
+<body class="{{ bodyClass }}">
+  <a class="skip" href="#main">İçeriğe geç</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="gradPV" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4006D"/><stop offset="1" stop-color="#6A3DE8"/></linearGradient></defs></svg>
+
+  <header class="site-header" data-header>
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Advance Digital anasayfa">{% include "partials/logo.njk" %}</a>
+      <nav class="nav" aria-label="Ana menü">
+        <div class="nav-item" data-mega>
+          <button type="button" aria-expanded="false" aria-controls="mega">Çözümler {{ caret() | safe }}</button>
+          <div class="mega" id="mega">
+            <div class="wrap">
+              {% for cat in categories %}
+              <div>
+                <h3>{{ cat.name }}</h3>
+                <ul>
+                  {% for s in solutions | byCategory(cat.slug) %}
+                  <li><a href="/cozumler/{{ s.slug }}/">{{ s.name }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endfor %}
+              <div class="mega-foot">
+                <span>23 format · TV'den mobile, tek ekipten.</span>
+                <a class="link-arrow" href="/cozumler/" style="color:#fff">Tüm çözümler {{ arrow() | safe }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/cozumler/zaproll/" {% if page.url == "/cozumler/zaproll/" %}aria-current="page"{% endif %}>Zaproll <span class="new">Yeni</span></a>
+        <a href="/cozumler/addressable-tv/" {% if page.url == "/cozumler/addressable-tv/" %}aria-current="page"{% endif %}>Addressable TV</a>
+        <a href="/hakkimizda/" {% if page.url == "/hakkimizda/" %}aria-current="page"{% endif %}>Hakkımızda</a>
+        <a href="/blog/" {% if "/blog/" in page.url %}aria-current="page"{% endif %}>Blog</a>
+      </nav>
+      <div class="nav-cta"><a class="btn" href="/iletisim/">Teklif İste {{ arrow() | safe }}</a></div>
+      <button class="menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <details>
+      <summary>Çözümler</summary>
+      {% for cat in categories %}
+      <p class="eyebrow eyebrow--pink" style="margin:16px 0 8px;font-size:.66rem">{{ cat.name }}</p>
+      <ul>
+        {% for s in solutions | byCategory(cat.slug) %}<li><a href="/cozumler/{{ s.slug }}/">{{ s.name }}</a></li>{% endfor %}
+      </ul>
+      {% endfor %}
+    </details>
+    <a href="/cozumler/zaproll/">Zaproll <span class="chip chip--pink">Yeni</span></a>
+    <a href="/cozumler/addressable-tv/">Addressable TV</a>
+    <a href="/hakkimizda/">Hakkımızda</a>
+    <a href="/blog/">Blog</a>
+    <a href="/iletisim/">İletişim</a>
+    <a class="btn" href="/iletisim/">Teklif İste {{ arrow() | safe }}</a>
+  </div>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          {% include "partials/logo.njk" %}
+          <p class="tag">Visible &amp; Memorable</p>
+          <p>Reklam teknolojileri, performans pazarlama ve media-first projelerle markaları dijitalde görünür ve akılda kalıcı kılıyoruz.</p>
+          <div class="socials">
+            {% if site.linkedin %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">{{ linkedin() | safe }}</a>{% endif %}
+            {% if site.instagram %}<a href="{{ site.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">{{ instagram() | safe }}</a>{% endif %}
+            {% if site.youtube %}<a href="{{ site.youtube }}" target="_blank" rel="noopener" aria-label="YouTube">{{ youtube() | safe }}</a>{% endif %}
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>Öne Çıkanlar</h4>
+          <ul>
+            <li><a href="/cozumler/zaproll/">Zaproll</a></li>
+            <li><a href="/cozumler/addressable-tv/">Addressable TV</a></li>
+            <li><a href="/cozumler/3d-cgi-masthead/">3D CGI Masthead</a></li>
+            <li><a href="/cozumler/creator-native-video/">Creator Native Video</a></li>
+            <li><a href="/cozumler/ai-brand-lift/">AI Brand Lift</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Kurumsal</h4>
+          <ul>
+            <li><a href="/hakkimizda/">Hakkımızda</a></li>
+            <li><a href="/cozumler/">Tüm Çözümler</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/iletisim/">İletişim</a></li>
+            <li><a href="/kvkk/">KVKK &amp; Gizlilik</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>İletişim</h4>
+          <ul>
+            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {% if site.phone %}<li><a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a></li>{% endif %}
+            {% if site.address %}<li><span>{{ site.address }}</span></li>{% endif %}
+          </ul>
+        </div>
+      </div>
+      <div class="foot-word" aria-hidden="true">visible &amp; memorable</div>
+      <div class="foot-bottom">
+        <span>© {{ build.year }} Advance Digital. Tüm hakları saklıdır.</span>
+        <span><a href="/feed.xml">RSS</a> · <a href="/sitemap.xml">Site haritası</a></span>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/js/main.js?v={{ build.v }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+{#- Ürün görseli / videosu: cihaz çerçevesi içinde -#}
+{% macro vid(src, alt, cls="", auto=true, preload="none") %}<video class="{{ cls }}" muted playsinline loop preload="{{ preload }}" poster="/assets/media/{{ src }}.webp" {% if auto %}data-autoplay{% endif %} aria-label="{{ alt }}"><source src="/assets/media/{{ src }}.mp4" type="video/mp4"></video>{% endmacro %}
+
+
+{#- Temsili yayıncı sitesi: gerçek site detayı göstermeden reklam alanını gösterir -#}
+{% macro fsite(kind, src, alt, auto=true, preload="none") %}
+<div class="f-browser fsite fsite--{{ kind }}">
+  <div class="bar"><i></i><i></i><i></i><span></span></div>
+  <div class="fs-nav"><b></b><i></i><i></i><i></i><i></i><em></em></div>
+  {%- if kind == "sky" -%}
+  <div class="fs-body">
+    <div class="fs-main">
+      <div class="fs-hero"></div>
+      <div class="skel-lines"><i></i><i></i><i></i></div>
+      <div class="fs-grid"><i></i><i></i><i></i><i></i></div>
+      <div class="skel-lines"><i></i><i></i></div>
+    </div>
+    <aside class="fs-side"><span class="fs-adlabel">Reklam · 300×600</span><div class="fs-slot">{{ vid(src, alt, "", auto, preload) | safe }}</div></aside>
+  </div>
+  {%- else -%}
+  <div class="fs-body fs-body--player">
+    <div class="fs-main">
+      <div class="fs-player">
+        {{ vid(src, alt, "", auto, preload) | safe }}
+        <span class="fs-adtag">Reklam</span>
+        <span class="fs-skip">Reklamı geç ▸</span>
+        <span class="fs-ctrl"><i class="fs-play"></i><span class="fs-prog"><b></b></span><i class="fs-vol"></i></span>
+      </div>
+      <div class="skel-lines fs-title"><i></i><i></i></div>
+      <div class="skel-lines"><i></i><i></i><i></i></div>
+    </div>
+    <aside class="fs-list">{% for n in [1,2,3,4] %}<div><i></i><span><b></b><b></b></span></div>{% endfor %}</aside>
+  </div>
+  {%- endif -%}
+</div>
+{% endmacro %}
+
+{% macro media(s, eager=false) %}
+{%- set m = s.media -%}
+{%- if m.type == "video" -%}
+  {%- if m.frame == "browser" -%}
+  <div class="media-stage">
+    <div class="f-browser {% if not (m.src in ['interactive-masthead','cgi-masthead']) %}is-video{% endif %}">
+      <div class="bar"><i></i><i></i><i></i><span></span></div>
+      <div class="page">
+        {{ vid(m.src, m.alt) | safe }}
+        {% if m.src in ['interactive-masthead','cgi-masthead'] %}
+        <div class="skel"><i></i><i></i><i></i></div>
+        <div class="skel-lines"><i></i><i></i><i></i></div>
+        {% endif %}
+      </div>
+    </div>
+    {% if m.extra %}{{ vid(m.extra, m.alt, "extra") | safe }}{% endif %}
+  </div>
+  {%- elif m.frame in ["site-sky","site-player"] -%}
+  <div class="media-stage">{{ fsite("sky" if m.frame == "site-sky" else "player", m.src, m.alt) | safe }}</div>
+  {%- elif m.frame == "phone" -%}
+  <div class="media-stage"><div class="f-phone">{{ vid(m.src, m.alt) | safe }}</div></div>
+  {%- elif m.frame == "phone-land" -%}
+  <div class="media-stage"><div class="f-phone-land">{{ vid(m.src, m.alt) | safe }}</div></div>
+  {%- elif m.frame == "tv" -%}
+  <div class="media-stage f-tv"><div class="tv-screen">{{ vid(m.src, m.alt) | safe }}</div><div class="tv-stand"></div><div class="tv-base"></div></div>
+  {%- elif m.frame == "unit" -%}
+  <div class="media-stage f-unit"><span class="u-label">{{ m.unit }} REKLAM ALANI</span>{{ vid(m.src, m.alt) | safe }}</div>
+  {%- else -%}
+  <div class="media-stage f-none">{{ vid(m.src, m.alt) | safe }}</div>
+  {%- endif -%}
+{%- elif m.type == "image" -%}
+  <div class="media-stage f-image"><img src="/assets/img/{{ m.src }}.webp" alt="{{ m.alt }}" {% if not eager %}loading="lazy"{% endif %} decoding="async"></div>
+{%- elif m.type == "mock" -%}
+  {%- set lz = '' if eager else 'loading="lazy"' -%}
+  {%- if m.layout == "browser" -%}
+  <div class="media-stage mock {% if m.phone or m.cards %}has-over{% endif %}">
+    <div class="f-browser is-shot">
+      <div class="bar"><i></i><i></i><i></i><span>{% if m.url %}{{ m.url }}{% endif %}</span></div>
+      <div class="page"><img src="/assets/img/screens/{{ m.browser }}.webp" alt="{{ m.alt }}" {{ lz | safe }} decoding="async"></div>
+    </div>
+    {% if m.phone %}<div class="f-phone over"><img src="/assets/img/screens/{{ m.phone }}.webp" alt="" {{ lz | safe }} decoding="async"></div>{% endif %}
+    {% for c in m.cards %}<img class="float-card fc-{{ loop.index }}" src="/assets/img/screens/{{ c }}.webp" alt="" {{ lz | safe }} decoding="async">{% endfor %}
+  </div>
+  {%- else -%}
+  <div class="media-stage mock phones n{{ m.phones.length }}">
+    {% for ph in m.phones %}<div class="f-phone"><img src="/assets/img/screens/{{ ph }}.webp" alt="{{ m.alt if loop.first else '' }}" {{ lz | safe }} decoding="async"></div>{% endfor %}
+    {% if m.notify %}<img class="notify" src="/assets/img/screens/{{ m.notify }}.webp" alt="Push bildirimi örneği" decoding="async">{% endif %}
+  </div>
+  {%- endif -%}
+{%- elif m.type == "tvgrid" -%}
+  <div class="media-stage tvgrid">
+    {% for it in m.items %}
+    <figure><div class="tv-screen">{{ vid(it.src, s.name + " " + it.label) | safe }}</div><figcaption>{{ it.label }}</figcaption></figure>
+    {% endfor %}
+  </div>
+{%- elif m.type == "zaproll" -%}
+  {% include "partials/zaproll-tv.njk" %}
+{%- endif -%}
+{% endmacro %}
+
+{#- Kart küçük görseli -#}
+{% macro thumb(s) %}
+{%- set m = s.media -%}
+{%- if m.type == "video" -%}
+  <div class="card-media {% if m.frame in ['phone','unit','site-sky'] %}contain{% endif %}"><img src="/assets/media/{{ m.src }}.webp" alt="" loading="lazy" decoding="async" data-hover-video="/assets/media/{{ m.src }}.mp4"></div>
+{%- elif m.type == "image" -%}
+  <div class="card-media is-light contain"><img src="/assets/img/{{ m.src }}.webp" alt="" loading="lazy" decoding="async"></div>
+{%- elif m.type == "mock" -%}
+  {%- if m.layout == "browser" -%}
+  <div class="card-media shot"><img src="/assets/img/screens/{{ m.browser }}.webp" alt="" loading="lazy" decoding="async"></div>
+  {%- else -%}
+  <div class="card-media mini-phones">{% for ph in m.phones | limit(3) %}<span><img src="/assets/img/screens/{{ ph }}.webp" alt="" loading="lazy" decoding="async"></span>{% endfor %}</div>
+  {%- endif -%}
+{%- elif m.type == "tvgrid" -%}
+  <div class="card-media"><img src="/assets/media/{{ m.items[0].src }}.webp" alt="" loading="lazy" decoding="async" data-hover-video="/assets/media/{{ m.items[0].src }}.mp4"></div>
+{%- elif m.type == "zaproll" -%}
+  <div class="card-media"><img src="/assets/img/zaproll-thumb.webp" alt="" loading="lazy" decoding="async"></div>
+{%- endif -%}
+{% endmacro %}
+
+{% macro card(s, cats, feature=false) %}
+{%- from "partials/icons.njk" import arrow, seal -%}
+<a class="card {% if feature %}card--feature{% endif %}" href="/cozumler/{{ s.slug }}/" data-cat="{{ s.category }}">
+  {{ thumb(s) | safe }}
+  {% if s.badge == "Yeni" %}<div style="position:absolute;right:12px;top:12px">{{ seal("Yeni") | safe }}</div>{% endif %}
+  <div class="card-body">
+    <span class="card-cat">{{ (cats | findBySlug(s.category)).name }}</span>
+    <h3>{{ s.name }}</h3>
+    <p>{{ s.short }}</p>
+    <span class="go">İncele {{ arrow() | safe }}</span>
+  </div>
+</a>
+{% endmacro %}

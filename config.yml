@@ -1,0 +1,106 @@
+# Advance Digital — Decap CMS yapılandırması
+# Panel adresi: https://advancedigital.media/admin/
+#
+# GİRİŞ YÖNTEMİ: GitHub hesabı ile (Netlify OAuth sağlayıcısı üzerinden).
+# Kurulum adımları README.md içinde. "repo" satırını kendi GitHub deponuzla değiştirin.
+backend:
+  name: github
+  repo: sitkipehlivan/advance-website
+  branch: main
+  commit_messages:
+    create: "Blog: {{slug}} eklendi"
+    update: "Blog: {{slug}} güncellendi"
+    delete: "Blog: {{slug}} silindi"
+    uploadMedia: "Görsel yüklendi: {{path}}"
+    deleteMedia: "Görsel silindi: {{path}}"
+
+# Yerelde denemek için: `npm run cms` ve ayrı terminalde `npm run dev`, sonra http://localhost:8080/admin/
+local_backend: true
+
+# Yayın akışı: Taslak → İncelemede → Yayına hazır (birden fazla editör için)
+publish_mode: editorial_workflow
+
+locale: tr
+site_url: https://advancedigital.media
+display_url: https://advancedigital.media
+logo_url: /assets/logo/advance-logo.svg
+
+media_folder: src/assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: blog
+    label: Blog Yazıları
+    label_singular: Blog Yazısı
+    description: "Yazılar /blog/ altında yayınlanır. Kapak görselini 1600px genişliği geçmeyecek şekilde, sıkıştırılmış (JPG/WebP) yükleyin."
+    folder: src/blog/posts
+    create: true
+    slug: "{{slug}}"
+    preview_path: "blog/{{slug}}/"
+    sortable_fields: ["date", "title", "category"]
+    summary: "{{title}} · {{date | date('DD.MM.YYYY')}}"
+    fields:
+      - { label: "Başlık", name: title, widget: string, hint: "Arama sonuçlarında görünür; 60 karakter civarı ideal." }
+      - { label: "Kısa açıklama (SEO)", name: description, widget: text, hint: "Google'da başlığın altında görünür; 140–160 karakter." }
+      - { label: "Yayın tarihi", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false }
+      - { label: "Kapak görseli", name: cover, widget: image, required: false }
+      - { label: "Kapak görseli alternatif metni", name: coverAlt, widget: string, required: false }
+      - label: "Kategori"
+        name: category
+        widget: select
+        options: ["Addressable TV", "Yeni Formatlar", "Online Video", "Lokasyon & Outdoor", "Performans", "Ölçüm", "Sektör", "Vaka Çalışması", "Duyuru"]
+      - { label: "Etiketler", name: tags, widget: list, required: false, hint: "Virgülle ayırın" }
+      - label: "İlgili çözümler"
+        name: related_solutions
+        widget: select
+        multiple: true
+        required: false
+        hint: "Yazı, seçilen ürün sayfalarının altında da listelenir ve yan menüde bu çözümlere link verir."
+        options:
+          - { label: "Zaproll", value: "zaproll" }
+          - { label: "Admongrel Addressable TV", value: "addressable-tv" }
+          - { label: "Connected TV (CTV)", value: "connected-tv" }
+          - { label: "3D CGI Masthead", value: "3d-cgi-masthead" }
+          - { label: "3D CGI Skyscraper", value: "3d-cgi-skyscraper" }
+          - { label: "Interactive Masthead", value: "interactive-masthead" }
+          - { label: "Interactive Skyscraper", value: "interactive-skyscraper" }
+          - { label: "AR Product Placement", value: "ar-product-placement" }
+          - { label: "Advergame", value: "advergame" }
+          - { label: "Preroll+ (Advance Optimization)", value: "preroll-plus" }
+          - { label: "Standart Preroll", value: "standart-preroll" }
+          - { label: "Video Preroll CPCV", value: "video-preroll-cpcv" }
+          - { label: "Firstroll", value: "firstroll" }
+          - { label: "Rewarded Video", value: "rewarded-video" }
+          - { label: "Creator Native Video", value: "creator-native-video" }
+          - { label: "Contextual Video & Display", value: "contextual-video-display" }
+          - { label: "Mikro Lokasyon Hedeflemesi", value: "mikro-lokasyon-hedeflemesi" }
+          - { label: "DOOH + Dijital Entegrasyon", value: "dooh" }
+          - { label: "Push Notification", value: "push-notification" }
+          - { label: "Performans: Banner & Native CPC", value: "performans-cpc" }
+          - { label: "Performans: CPA & CPI", value: "performans-cpa-cpi" }
+          - { label: "AI Destekli Brand Lift Study", value: "ai-brand-lift" }
+          - { label: "YouTube İçerik Ortaklığı", value: "youtube-icerik-ortakligi" }
+      - { label: "Yazar", name: author, widget: string, default: "Advance Digital" }
+      - { label: "Taslak (yayınlama)", name: draft, widget: boolean, default: false, required: false }
+      - { label: "İçerik", name: body, widget: markdown }
+
+  - name: ayarlar
+    label: Site Ayarları
+    files:
+      - label: "İletişim ve sosyal medya"
+        name: site
+        file: src/_data/site.json
+        fields:
+          - { label: "Site adı", name: name, widget: string }
+          - { label: "Kısa ad", name: shortName, widget: string }
+          - { label: "Slogan", name: tagline, widget: string }
+          - { label: "Site adresi", name: url, widget: string }
+          - { label: "Varsayılan SEO açıklaması", name: description, widget: text }
+          - { label: "E-posta", name: email, widget: string }
+          - { label: "Telefon", name: phone, widget: string, required: false }
+          - { label: "Adres", name: address, widget: string, required: false }
+          - { label: "LinkedIn", name: linkedin, widget: string, required: false }
+          - { label: "Instagram", name: instagram, widget: string, required: false }
+          - { label: "YouTube", name: youtube, widget: string, required: false }
+          - { label: "GA4 ölçüm kimliği (G-XXXX)", name: ga4, widget: string, required: false, hint: "Doldurulduğunda Google Analytics tüm sayfalara eklenir. KVKK metnini güncellemeyi unutmayın." }
+          - { label: "Varsayılan paylaşım görseli", name: ogImage, widget: image }

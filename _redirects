@@ -1,0 +1,12 @@
+# Eski site URL'leri -> yeni sayfalar (SEO değerini korumak için 301)
+/2025te-ctv-gorunurlugu-etkiye-cevirmenin-yeni-yolu/*                          /cozumler/connected-tv/            301
+/2025te-ctv-gorunurlugu-etkiye-cevirmenin-yeni-yolu                            /cozumler/connected-tv/            301
+/programmatic-dooh-2025-dis-mekandan-dijitale-senkron-etki/*                   /cozumler/dooh/                    301
+/programmatic-dooh-2025-dis-mekandan-dijitale-senkron-etki                     /cozumler/dooh/                    301
+/in-game-reklamlarda-2025-olcum-standardi-iab-frameworkten-nasil-faydalanirsiniz/*  /cozumler/advergame/       301
+/in-game-reklamlarda-2025-olcum-standardi-iab-frameworkten-nasil-faydalanirsiniz    /cozumler/advergame/       301
+
+# Kısa adresler
+/zaproll          /cozumler/zaproll/          301
+/addressable-tv   /cozumler/addressable-tv/   301
+/brand-lift       /cozumler/ai-brand-lift/    301

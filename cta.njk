@@ -1,0 +1,14 @@
+{%- from "partials/icons.njk" import arrow -%}
+<section class="section cta-band">
+  <div class="arcs-bg" aria-hidden="true">{% include "partials/mark.njk" %}</div>
+  <div class="wrap">
+    <div>
+      <h2>{{ ctaTitle or "Bir sonraki kampanyanızı birlikte planlayalım." }}</h2>
+      <p>{{ ctaText or "Brief'inizi paylaşın; hedefinize uygun format, hedefleme ve bütçe önerisiyle dönelim." }}</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn--white" href="/iletisim/{% if ctaProduct %}?urun={{ ctaProduct }}{% endif %}">Teklif iste {{ arrow() | safe }}</a>
+      <a class="mail" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+  </div>
+</section>

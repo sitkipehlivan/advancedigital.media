@@ -1,0 +1,1303 @@
+[
+  {
+    "slug": "zaproll",
+    "name": "Zaproll",
+    "category": "tv",
+    "badge": "Yeni",
+    "featured": true,
+    "short": "Kanal değiştirme anında, yayın akışı bozulmadan gösterilen 6–15 saniyelik Addressable TV bumper'ı.",
+    "metaTitle": "Zaproll: Kanal Değiştirme (Zapping) Anında TV Reklamı",
+    "metaDescription": "Zaproll by Admongrel; izleyici kanal değiştirdiği anda, yayını bölmeden 6–15 sn'lik bumper gösteren yeni Addressable TV formatı. Advance Digital ile planlayın.",
+    "lead": "Reklam kuşağında kumandaya uzanan izleyici, yeni kanalı tanımak için ilk saniyelerde ekrana tam odaklanır. Zaproll bu anı yakalar: Admongrel Addressable TV altyapısıyla, hedef haneye 6–15 saniyelik kısa bir marka teması gösterir ve yayın arka planda kesintisiz sürer.",
+    "features": [
+      "Dinamik süre yapısı: 6–15 saniye arası kısa, net video veya overlay kurgular",
+      "Akıllı tetikleme: izleyici kanal değiştirme komutunu verdiği anda devreye girer",
+      "Akıcı deneyim: gösterim bittiğinde ya da izleyici kanalda sabitlendiğinde yayın kesintisiz sürer",
+      "Rahatsız etmeyen tasarım: izleme alışkanlığını engellemeyen, non-intrusive arayüz",
+      "Birinci taraf veri ve hane bazlı frekans yönetimiyle bütçe doğrudan hedef kitleye gider"
+    ],
+    "kpis": [
+      "Yüksek tamamlanma (VTR)",
+      "Hane bazlı erişim",
+      "Frekans kontrolü",
+      "Ad recall"
+    ],
+    "sectors": [
+      "FMCG",
+      "Telekom",
+      "Finans",
+      "Otomotiv",
+      "Perakende",
+      "E-ticaret"
+    ],
+    "steps": [
+      {
+        "title": "Zapping",
+        "text": "Reklam kuşağı başlar, izleyici kumandayla kanal değiştirir."
+      },
+      {
+        "title": "Tetikleme",
+        "text": "TV'deki HbbTV uygulaması geçişi algılar; hane profili ve frekans kuralı kontrol edilir."
+      },
+      {
+        "title": "Bumper",
+        "text": "Hedef haneye 6–15 saniyelik video ya da overlay gösterilir."
+      },
+      {
+        "title": "Yayın + Ölçüm",
+        "text": "Yayın kesintisiz sürer; gösterim, tamamlanma ve erişim raporlanır."
+      }
+    ],
+    "media": {
+      "type": "zaproll"
+    },
+    "faq": [
+      {
+        "q": "Zaproll nedir?",
+        "a": "Zaproll, Admongrel tarafından geliştirilen ve izleyici kanal değiştirdiği anda yayın akışını bölmeden 6–15 saniyelik bir marka bumper'ı gösteren Addressable TV reklam formatıdır. Advance Digital, Zaproll kampanyalarının planlama, hedefleme ve raporlamasını yönetir."
+      },
+      {
+        "q": "Zaproll hangi ekranlarda çalışır?",
+        "a": "İnternete bağlı, HbbTV destekli akıllı televizyonlarda, Admongrel Addressable TV altyapısı üzerinden çalışır."
+      },
+      {
+        "q": "Zaproll ile hangi kitleleri hedefleyebilirim?",
+        "a": "Hane yapısı ve demografi, il/ilçe bazlı lokasyon, izleme alışkanlıkları (dizi, spor, haber vb.) ve birinci taraf veri segmentleriyle hedefleme yapılabilir; aynı haneye aşırı gösterim frekans sınırıyla engellenir."
+      },
+      {
+        "q": "Zaproll klasik TV reklamından nasıl ayrılır?",
+        "a": "Klasik kuşak reklamı izleyicinin kanal değiştirerek kaçtığı anda kaybolur. Zaproll ise tam bu kaçış anını, izleyicinin ekrana en dikkatli baktığı birkaç saniyeye yerleşen kısa bir marka temasına dönüştürür ve dijital metriklerle ölçülür."
+      }
+    ],
+    "related": [
+      "addressable-tv",
+      "connected-tv",
+      "ai-brand-lift"
+    ],
+    "keywords": "zaproll, zapping reklam, kanal değiştirme reklamı, addressable tv bumper, hbbtv reklam, admongrel"
+  },
+  {
+    "slug": "addressable-tv",
+    "name": "Admongrel Addressable TV",
+    "category": "tv",
+    "badge": "",
+    "featured": true,
+    "short": "Türkiye'de 6,4 milyon akıllı haneye hedeflenebilir, ölçülebilir TV reklamı: banner, video ve EPG formatları.",
+    "metaTitle": "Addressable TV Reklamı | Admongrel ile Hane Bazlı TV Hedeflemesi",
+    "metaDescription": "Admongrel Addressable TV ile 6,4 milyon akıllı haneye ve 22,1 milyon izleyiciye hedeflenebilir TV reklamı. L-Banner, Slideband, Preroll, Video Ad Replacement, EPG Ads.",
+    "lead": "Admongrel; Türkiye'de 6,4 milyon akıllı hane ve 22,1 milyon izleyiciye ulaşan, Connected TV ve Addressable TV'de hedeflenebilir ve ölçülebilir bir reklam platformu. Advance olarak televizyonun büyük ekran gücünü dijitalin hedefleme ve ölçüm disipliniyle birleştiriyoruz.",
+    "features": [
+      "Interactive Display: Alt Banner, L-Banner ve Slideband ile yayın kesilmeden ekranda güçlü marka görünürlüğü, QR entegrasyonu ile kullanıcı aksiyonu",
+      "Video Ads: Preroll ve Video Ad Replacement ile yüksek completion rate, segment bazlı hedefleme",
+      "EPG Ads: Elektronik Program Rehberi'nde içerik seçimi anında marka teması; awareness ve lansman için ideal",
+      "Gerçek zamanlı kampanya takibi ve dinamik yayın optimizasyonu",
+      "Household reach, frekans ölçümü ve cross-platform attribution",
+      "TV'de reklamla temas eden haneyi Advance Network'te dijitalde yeniden hedefleme"
+    ],
+    "kpis": [
+      "Household reach",
+      "Frekans",
+      "VTR",
+      "Cross-platform attribution"
+    ],
+    "sectors": [
+      "Finans",
+      "FMCG",
+      "Otomotiv",
+      "Perakende",
+      "Telekom",
+      "Turizm"
+    ],
+    "steps": [
+      {
+        "title": "TV'de ulaşım",
+        "text": "Addressable TV ile finans, ekonomi, haber gibi içerikleri takip eden doğru kitleye ulaşılır."
+      },
+      {
+        "title": "Dijitalde yeniden hedefleme",
+        "text": "TV reklamına maruz kalan kullanıcılar anonimleştirilmiş first-party audience ile dijital kanallarda yeniden hedeflenir."
+      },
+      {
+        "title": "Ölçüm & optimizasyon",
+        "text": "Yapay zeka destekli Brand Lift Study ile kampanya etkisi ölçülür, optimize edilir."
+      }
+    ],
+    "media": {
+      "type": "tvgrid",
+      "items": [
+        {
+          "src": "atv-l-banner",
+          "label": "L-Banner"
+        },
+        {
+          "src": "atv-slideband",
+          "label": "Slideband"
+        },
+        {
+          "src": "atv-alt-banner",
+          "label": "Alt Banner"
+        },
+        {
+          "src": "atv-preroll",
+          "label": "Preroll"
+        },
+        {
+          "src": "atv-video-replacement",
+          "label": "Video Ad Replacement"
+        }
+      ]
+    },
+    "segments": [
+      {
+        "name": "Prime Time TV İzleyicileri",
+        "hane": "5.180.000",
+        "kisi": "17.612.000"
+      },
+      {
+        "name": "Eğlence",
+        "hane": "4.530.000",
+        "kisi": "15.402.000"
+      },
+      {
+        "name": "Yemek",
+        "hane": "3.890.000",
+        "kisi": "13.226.000"
+      },
+      {
+        "name": "Gündüz Kuşağı Program Takipçileri",
+        "hane": "3.240.000",
+        "kisi": "11.016.000"
+      },
+      {
+        "name": "Futbol / Spor",
+        "hane": "2.910.000",
+        "kisi": "9.894.000"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Addressable TV nedir?",
+        "a": "Addressable TV, internete bağlı televizyonlarda aynı yayını izleyen farklı hanelere, hane profiline göre farklı reklamlar gösterebilen TV reklamcılığı modelidir. Hedefleme ve ölçüm dijital kampanyalardaki gibi hane bazında yapılır."
+      },
+      {
+        "q": "Admongrel ile hangi yayın envanterine ulaşılır?",
+        "a": "Admongrel premium yayın envanterinde Ekotürk, SZC, Ulusal, TV8 Int, EuroStar ve Euro D gibi kanallar yer alır. Envanter kampanya dönemine göre değişebileceği için güncel listeyi planlama aşamasında paylaşıyoruz."
+      },
+      {
+        "q": "Addressable TV kampanyası nasıl ölçülür?",
+        "a": "Gösterim, tamamlanma oranı, tekil hane erişimi ve frekans gerçek zamanlı raporlanır. İsteğe bağlı olarak AI destekli Brand Lift çalışmasıyla reklam hatırlanırlığı, marka algısı ve tercih etkisi ölçülür."
+      }
+    ],
+    "related": [
+      "zaproll",
+      "connected-tv",
+      "ai-brand-lift"
+    ],
+    "keywords": "addressable tv, adresli tv reklamı, admongrel, hbbtv reklam, smart tv reklam, l-banner, epg reklam"
+  },
+  {
+    "slug": "connected-tv",
+    "name": "Connected TV (CTV)",
+    "category": "tv",
+    "badge": "",
+    "featured": false,
+    "short": "TV'nin büyük ekran etkisi, dijitalin ölçülebilirliğiyle: premium Smart TV envanterinde %100 görünür alan.",
+    "metaTitle": "Connected TV (CTV) Reklamı | Premium Smart TV Envanteri",
+    "metaDescription": "Connected TV reklamlarıyla TV'nin büyük ekran etkisini dijital ölçülebilirlikle birleştirin. Düşük fraud riski, premium Smart TV envanteri, %100 görünür alan.",
+    "lead": "Connected TV, televizyonun büyük ekran etkisini dijitalin ölçülebilirliğiyle birleştirir. Premium Smart TV envanterinde, %100 görünür alanda ve marka güvenliği yüksek yayın ortamında markanızı salondaki ekrana taşıyoruz.",
+    "features": [
+      "TV'nin büyük ekran etkisinin dijital ölçülebilirlik ile birleşmiş hali",
+      "Fraud riski çok düşük",
+      "Premium Smart TV envanteri",
+      "%100 görünür alan",
+      "Marka güvenliği yüksek yayın ortamı"
+    ],
+    "kpis": [
+      "Viewability",
+      "VTR",
+      "Erişim",
+      "Marka güvenliği"
+    ],
+    "sectors": [
+      "Turizm",
+      "Otomotiv",
+      "FMCG",
+      "Finans"
+    ],
+    "media": {
+      "type": "video",
+      "src": "ctv",
+      "frame": "tv",
+      "alt": "Connected TV reklam örneği"
+    },
+    "faq": [
+      {
+        "q": "CTV ile Addressable TV arasındaki fark nedir?",
+        "a": "CTV, internete bağlı TV'lerdeki uygulama ve platformlarda gösterilen video reklamları kapsar. Addressable TV ise canlı yayın sinyalinin üzerine hane bazında hedeflenmiş reklam yerleştirir. İki kanal birlikte planlandığında büyük ekran erişimi tamamlanır."
+      },
+      {
+        "q": "CTV reklamları nasıl ölçülür?",
+        "a": "Gösterim, tamamlanma oranı (VTR), erişim ve frekans dijital kampanyalarda olduğu gibi raporlanır; Brand Lift çalışmasıyla marka etkisi ayrıca ölçülebilir."
+      }
+    ],
+    "related": [
+      "addressable-tv",
+      "zaproll",
+      "video-preroll-cpcv"
+    ],
+    "keywords": "connected tv reklam, ctv reklamı, smart tv reklam, akıllı tv reklam"
+  },
+  {
+    "slug": "3d-cgi-masthead",
+    "name": "3D CGI Masthead",
+    "category": "yeni-formatlar",
+    "badge": "",
+    "featured": true,
+    "short": "Üç boyutlu render teknolojisiyle ürünü fiziksel bir obje gibi sergileyen premium masthead.",
+    "metaTitle": "3D CGI Masthead Reklam Formatı | Advance Digital",
+    "metaDescription": "3D CGI Masthead; ürünü üç boyutlu render ile fiziksel bir obje gibi sergileyen, standart masthead'e göre 3–4 kat daha yüksek engagement sunan premium reklam formatı.",
+    "lead": "Üç boyutlu render teknolojisiyle oluşturulmuş premium masthead modeli. Yüksek dikkat seviyesiyle marka ürününü fiziksel bir obje gibi sergiler; dönüş rotasyonları, zoom ve hareket efektleriyle kullanıcı etkileşimini artırır.",
+    "features": [
+      "Üç boyutlu render teknolojisiyle oluşturulmuş premium masthead modeli",
+      "Yüksek dikkat seviyesiyle marka ürününü fiziksel bir obje gibi sergileme imkânı",
+      "Kullanıcı etkileşimini artıran dönüş rotasyonları, zoom ve hareket efektleri",
+      "Teknik olarak standart masthead'den 3–4 kat daha yüksek engagement",
+      "Premium marka deneyimi sunmak isteyen markalar için özel format"
+    ],
+    "kpis": [
+      "Engagement",
+      "Dwell time",
+      "Viewability",
+      "CTR"
+    ],
+    "sectors": [
+      "Otomotiv",
+      "Teknoloji",
+      "FMCG",
+      "Moda",
+      "Kozmetik"
+    ],
+    "media": {
+      "type": "video",
+      "src": "cgi-masthead",
+      "frame": "browser",
+      "alt": "3D CGI Masthead reklam örneği"
+    },
+    "faq": [
+      {
+        "q": "3D CGI Masthead hangi alanlarda yayınlanır?",
+        "a": "Premium haber ve içerik sitelerinin üst bölümündeki masthead alanında, masaüstü ve mobil uyumlu olarak yayınlanır."
+      },
+      {
+        "q": "3D model için ne gerekir?",
+        "a": "Markanın ürün görselleri veya mevcut 3D/CAD dosyası yeterlidir; yoksa ürün modellemesi kreatif sürecin parçası olarak planlanır."
+      }
+    ],
+    "related": [
+      "3d-cgi-skyscraper",
+      "interactive-masthead",
+      "ar-product-placement"
+    ],
+    "keywords": "3d cgi masthead, 3d reklam, cgi reklam, masthead reklam, rich media"
+  },
+  {
+    "slug": "3d-cgi-skyscraper",
+    "name": "3D CGI Skyscraper",
+    "category": "yeni-formatlar",
+    "badge": "Yeni",
+    "featured": false,
+    "short": "300x600 ve 320x480 alanlarda döndürülebilir, yakınlaştırılabilir 3D ürün modellemesi.",
+    "metaTitle": "3D CGI Skyscraper Reklam | 300x600 3D Ürün Banner'ı",
+    "metaDescription": "3D CGI Skyscraper; 300x600 masaüstü ve 320x480 mobil alanlarda ürünü döndürme, yakınlaştırma ve renk değiştirme gibi mikro etkileşimlerle sunan premium format.",
+    "lead": "Standart skyscraper formatının premium gelişmiş versiyonu. 300x600 px masaüstü ve 320x480 px mobil reklam alanında ürün üç boyutlu modellenir; kullanıcı ürünü döndürür, yakınlaştırır, rengini değiştirir.",
+    "features": [
+      "300x600 px masaüstü + 320x480 px mobil alanda üç boyutlu ürün modellemesi",
+      "Ürünün döndürme, yakınlaştırma, renk değiştirme gibi mikro etkileşim özellikleri",
+      "Standart skyscraper formatının premium geliştirilmiş versiyonu",
+      "Yüksek dikkat ve etkileşim sağlayan kreatif yapı",
+      "Teknoloji markaları, FMCG, otomotiv ve moda kategorileri için ideal"
+    ],
+    "kpis": [
+      "Etkileşim oranı",
+      "Dwell time",
+      "CTR"
+    ],
+    "sectors": [
+      "Teknoloji",
+      "FMCG",
+      "Otomotiv",
+      "Moda"
+    ],
+    "media": {
+      "type": "video",
+      "src": "cgi-skyscraper",
+      "frame": "site-sky",
+      "alt": "3D CGI Skyscraper reklam örneği"
+    },
+    "faq": [
+      {
+        "q": "3D CGI Skyscraper hangi boyutlarda çalışır?",
+        "a": "Masaüstünde 300x600 px, mobilde 320x480 px reklam alanlarında çalışır; standart programatik envanterde yayınlanabilir."
+      }
+    ],
+    "related": [
+      "3d-cgi-masthead",
+      "interactive-skyscraper",
+      "ar-product-placement"
+    ],
+    "keywords": "3d skyscraper, 300x600 3d banner, 3d ürün reklamı, cgi banner"
+  },
+  {
+    "slug": "interactive-masthead",
+    "name": "Interactive Masthead",
+    "category": "yeni-formatlar",
+    "badge": "",
+    "featured": false,
+    "short": "Video, carousel ve CTA'yı birleştiren, standart masthead'e göre 4–6 kat daha yüksek etkileşimli format.",
+    "metaTitle": "Interactive Masthead Reklam Formatı | Advance Digital",
+    "metaDescription": "Interactive Masthead; video + carousel + CTA birleşimiyle mikro landing page deneyimi sunan, standart masthead'e göre 4–6 kat daha yüksek etkileşim sağlayan premium format.",
+    "lead": "Kullanıcının reklama aktif katılımını sağlayan premium etkileşim formatı. Video, carousel ve CTA birleşimiyle reklam alanı küçük bir landing page'e dönüşür.",
+    "features": [
+      "Kullanıcının reklama aktif katılımını sağlayan premium etkileşim formatı",
+      "Standart masthead'e göre 4–6 kat daha yüksek etkileşim",
+      "Video + carousel + CTA birleşimi ile mikro landing page deneyimi",
+      "Segment bazlı içerik kişiselleştirmesi",
+      "Ürün tanıtımları, lansmanlar ve kampanya mesajları için güçlü etki"
+    ],
+    "kpis": [
+      "Etkileşim oranı",
+      "CTR",
+      "Video izlenme"
+    ],
+    "sectors": [
+      "Moda",
+      "Perakende",
+      "Turizm",
+      "Teknoloji"
+    ],
+    "media": {
+      "type": "video",
+      "src": "interactive-masthead",
+      "frame": "browser",
+      "alt": "Interactive Masthead reklam örneği"
+    },
+    "faq": [
+      {
+        "q": "Interactive Masthead'de hangi kreatif öğeler kullanılabilir?",
+        "a": "Video, ürün carousel'i, CTA butonları ve segmente göre değişen içerik kartları tek bir masthead alanında birleştirilebilir."
+      }
+    ],
+    "related": [
+      "3d-cgi-masthead",
+      "interactive-skyscraper",
+      "contextual-video-display"
+    ],
+    "keywords": "interactive masthead, etkileşimli reklam, masthead reklam, rich media reklam"
+  },
+  {
+    "slug": "interactive-skyscraper",
+    "name": "Interactive Skyscraper",
+    "category": "yeni-formatlar",
+    "badge": "Yeni",
+    "featured": false,
+    "short": "Tilt, drag, swipe ve tap davranışlarına göre hareket eden animasyonlu rich media.",
+    "metaTitle": "Interactive Skyscraper | Etkileşimli Rich Media Banner",
+    "metaDescription": "Interactive Skyscraper; tilt, drag, swipe ve tap gibi kullanıcı davranışlarıyla hareket eden, ürün incelemesi ve lansmanlar için güçlü rich media formatı.",
+    "lead": "Kullanıcı etkileşimine göre hareket eden animasyonlu rich media. Tilt, drag, swipe ve tap gibi davranışlarla dinamik bir deneyim sunar; ürün incelemesi, lansman ve UI/UX storytelling için güçlü bir alan yaratır.",
+    "features": [
+      "Kullanıcı etkileşimine göre hareket eden animasyonlu rich media",
+      "Tilt, drag, swipe, tap gibi davranışlarla dinamik deneyim",
+      "Ürün incelemesi, lansman ve UI/UX storytelling için güçlü alan",
+      "Etkileşim süresi yüksek, premium kreatif yapı"
+    ],
+    "kpis": [
+      "Etkileşim süresi",
+      "Etkileşim oranı",
+      "CTR"
+    ],
+    "sectors": [
+      "Finans",
+      "Teknoloji",
+      "Telekom",
+      "E-ticaret"
+    ],
+    "media": {
+      "type": "video",
+      "src": "interactive-skyscraper",
+      "frame": "site-sky",
+      "alt": "Interactive Skyscraper reklam örneği"
+    },
+    "faq": [
+      {
+        "q": "Interactive Skyscraper mobilde çalışır mı?",
+        "a": "Evet. Format mobil öncelikli tasarlanır; telefonu eğme (tilt), kaydırma ve dokunma gibi mobil davranışlara tepki verir."
+      }
+    ],
+    "related": [
+      "interactive-masthead",
+      "3d-cgi-skyscraper",
+      "advergame"
+    ],
+    "keywords": "interactive skyscraper, etkileşimli banner, rich media, mobil rich media"
+  },
+  {
+    "slug": "ar-product-placement",
+    "name": "AR Product Placement",
+    "category": "yeni-formatlar",
+    "badge": "Yeni",
+    "featured": false,
+    "short": "Kullanıcı kamerasını açar, ürünü kendi ortamında AR olarak dener.",
+    "metaTitle": "AR Reklam | Artırılmış Gerçeklik ile Ürün Deneyimi",
+    "metaDescription": "AR Product Placement Richmedia ile kullanıcı kamerasını açarak ürünü kendi ortamında artırılmış gerçeklikle görüntüler. Moda, aksesuar, otomotiv, kozmetik için yüksek dönüşüm.",
+    "lead": "Kamera açılarak kullanıcının kendi ortamında ürünü AR olarak görüntülemesini sağlayan rich media. Fiziksel deneyime en yakın dijital reklam modeli.",
+    "features": [
+      "Kamera açılarak kullanıcının kendi ortamında ürünü AR olarak görüntülemesi",
+      "Fiziksel deneyime en yakın dijital reklam modeli",
+      "Moda, aksesuar, otomotiv, dekorasyon ve kozmetik kategorilerinde yüksek dönüşüm",
+      "Kullanıcı ürünle fiziksel yakınlık kurar, marka algısı güçlenir"
+    ],
+    "kpis": [
+      "AR açılma oranı",
+      "Etkileşim süresi",
+      "Paylaşım"
+    ],
+    "sectors": [
+      "Moda",
+      "Aksesuar",
+      "Otomotiv",
+      "Dekorasyon",
+      "Kozmetik"
+    ],
+    "media": {
+      "type": "image",
+      "src": "ar-placement",
+      "alt": "AR Product Placement reklam akışı"
+    },
+    "faq": [
+      {
+        "q": "AR reklam için uygulama indirmek gerekir mi?",
+        "a": "Hayır. Deneyim tarayıcıda açılır; kullanıcı kamera iznini verdiğinde ürün kendi ortamında görüntülenir."
+      }
+    ],
+    "related": [
+      "3d-cgi-skyscraper",
+      "3d-cgi-masthead",
+      "advergame"
+    ],
+    "keywords": "ar reklam, artırılmış gerçeklik reklam, ar banner, sanal deneme"
+  },
+  {
+    "slug": "advergame",
+    "name": "Advergame",
+    "category": "yeni-formatlar",
+    "badge": "",
+    "featured": false,
+    "short": "Markaya özel oyun: kullanıcı markayla ortalama 1–3 dakika geçirir. Non-gaming network'te yayın.",
+    "metaTitle": "Advergame | Markaya Özel Oyun Reklamı",
+    "metaDescription": "Advergame ile kullanıcı markanızla ortalama 1–3 dakika vakit geçirir. Non-gaming network'te yayınlanan, lansman ve yaratıcı kampanyalar için özel oyun deneyimi.",
+    "lead": "Markaya özel tasarlanmış oyunlar, non-gaming network'te yayında. Kullanıcının markayla ortalama 1–3 dakika vakit geçirdiği, oyun tabanlı deneyim sayesinde hatırlanması yüksek bir premium alan.",
+    "features": [
+      "Kullanıcının markayla ortalama 1–3 dakika vakit geçirdiği premium alan",
+      "Oyun tabanlı deneyim sayesinde yüksek hatırlanma",
+      "Lansmanlar ve yaratıcı kampanyalar için özel tasarlanan deneyim",
+      "Non-gaming network: oyun sitelerinin dışında, geniş kitleye erişim"
+    ],
+    "kpis": [
+      "Engagement",
+      "Dwell time",
+      "Completed actions"
+    ],
+    "sectors": [
+      "Oyuncak",
+      "Spor",
+      "FMCG",
+      "Perakende"
+    ],
+    "media": {
+      "type": "image",
+      "src": "advergame",
+      "alt": "Advergame reklam örnekleri"
+    },
+    "faq": [
+      {
+        "q": "Advergame hangi KPI'larla ölçülür?",
+        "a": "Etkileşim (engagement), oyunda geçirilen süre (dwell time) ve tamamlanan aksiyonlar (oyunu bitirme, ödül kazanma, CTA tıklaması) temel KPI'lardır."
+      }
+    ],
+    "related": [
+      "interactive-skyscraper",
+      "rewarded-video",
+      "ar-product-placement"
+    ],
+    "keywords": "advergame, oyun reklamı, playable ad, markalı oyun, in-game reklam"
+  },
+  {
+    "slug": "preroll-plus",
+    "name": "Preroll+ (Advance Optimization)",
+    "category": "video",
+    "badge": "",
+    "featured": false,
+    "short": "%90+ viewability ve %90+ VCR; segment scoring ile yüksek potansiyelli kullanıcı ağırlığı.",
+    "metaTitle": "Preroll+ | %90+ Viewability ve VCR ile Video Reklam",
+    "metaDescription": "Preroll+ (Advance Optimization); %90+ viewability, %90+ VCR, premium whitelist içerik yayını ve segment scoring teknolojisiyle yüksek potansiyelli kullanıcıya video reklam.",
+    "lead": "Advance Optimization ile güçlendirilmiş preroll modeli. Premium whitelist içerikte yayınlanır; segment scoring teknolojisi bütçeyi yüksek potansiyelli kullanıcıya ağırlıklandırır.",
+    "features": [
+      "%90+ viewability ve %90+ VCR",
+      "Premium whitelist içerik yayını",
+      "Segment scoring teknolojisi ile yüksek potansiyelli kullanıcı ağırlığı",
+      "Marka güvenliği en üst seviyede",
+      "Star, Kanal D, NOW, atv, Show TV, TV8, tabii, puhutv, DMAX, Hürriyet ve daha fazlası"
+    ],
+    "kpis": [
+      "Viewability %90+",
+      "VCR %90+",
+      "Brand safety"
+    ],
+    "sectors": [
+      "Tüm sektörler"
+    ],
+    "media": {
+      "type": "mock",
+      "alt": "Preroll+ reklam örneği",
+      "layout": "browser",
+      "browser": "preroll-plus",
+      "url": "showtv.com.tr"
+    },
+    "faq": [
+      {
+        "q": "Preroll+ ile standart preroll arasındaki fark nedir?",
+        "a": "Preroll+, Advance Optimization katmanıyla çalışır: yalnızca whitelist premium içerikte yayın yapılır ve segment scoring ile bütçe yüksek potansiyelli kullanıcılara ağırlıklandırılır; hedef viewability ve VCR %90'ın üzerindedir."
+      }
+    ],
+    "related": [
+      "standart-preroll",
+      "video-preroll-cpcv",
+      "firstroll"
+    ],
+    "keywords": "preroll reklam, video reklam, viewability, vcr, premium video"
+  },
+  {
+    "slug": "standart-preroll",
+    "name": "Standart Preroll",
+    "category": "video",
+    "badge": "",
+    "featured": false,
+    "short": "İçeriğe geçmeden %100 görünür alanda; %80+ viewability, %80+ VCR.",
+    "metaTitle": "Preroll Video Reklam | Premium Yayıncılarda Video Reklam",
+    "metaDescription": "Standart Preroll; içeriğe geçmeden %100 görünür alanda, %80+ viewability ve %80+ VCR ile premium mecralarda stabil ve geniş erişim sağlayan video reklam modeli.",
+    "lead": "İçeriğe geçmeden, %100 görünür alanda konumlanan video reklam. Kullanıcının dikkat seviyesinin en yüksek olduğu anda mesajı iletir; premium mecralarda stabil ve geniş erişim sağlar.",
+    "features": [
+      "İçeriğe geçmeden %100 görünür alanda konumlanır",
+      "%80+ viewability, %80+ VCR",
+      "Kullanıcının dikkat seviyesinin en yüksek olduğu anda mesaj iletimi",
+      "Premium mecralarda stabil, geniş erişim"
+    ],
+    "kpis": [
+      "Viewability %80+",
+      "VCR %80+",
+      "Erişim"
+    ],
+    "sectors": [
+      "Tüm sektörler"
+    ],
+    "media": {
+      "type": "mock",
+      "alt": "Standart Preroll reklam örneği",
+      "layout": "browser",
+      "browser": "standart-preroll",
+      "url": "puhutv.com"
+    },
+    "faq": [
+      {
+        "q": "Preroll reklamlar hangi sitelerde yayınlanır?",
+        "a": "Advance Premium Network kapsamındaki ulusal yayıncıların video oynatıcılarında, içerik başlamadan önce yayınlanır."
+      }
+    ],
+    "related": [
+      "preroll-plus",
+      "video-preroll-cpcv",
+      "firstroll"
+    ],
+    "keywords": "preroll, preroll reklam, video reklam, instream video"
+  },
+  {
+    "slug": "video-preroll-cpcv",
+    "name": "Video Preroll CPCV",
+    "category": "video",
+    "badge": "",
+    "featured": false,
+    "short": "Ödeme yalnızca video %100 tamamlandığında: ROI odağında en verimli video modeli.",
+    "metaTitle": "CPCV Video Reklam | Tamamlanan İzlenme Başına Ödeme",
+    "metaDescription": "Video Preroll CPCV modelinde ödeme yalnızca video %100 tamamlandığında yapılır. ROI odağında en verimli video modeli, premium video envanterinde yüksek kalite yayın.",
+    "lead": "Ödemenin yalnızca video %100 tamamlandığında yapıldığı satın alma modeli. Bütçe doğrudan KPI'a hizmet eder; premium video envanterinde yüksek kalite yayın sağlanır.",
+    "features": [
+      "Ödeme yalnızca video %100 tamamlandığında yapılır",
+      "ROI odağında en verimli video modeli",
+      "KPI'a doğrudan hizmet eden bütçe kullanımı",
+      "Premium video envanterinde yüksek kalite yayın"
+    ],
+    "kpis": [
+      "CPCV",
+      "Tamamlanan izlenme",
+      "ROI"
+    ],
+    "sectors": [
+      "Tüm sektörler"
+    ],
+    "media": {
+      "type": "mock",
+      "alt": "Video Preroll CPCV reklam örneği",
+      "layout": "browser",
+      "browser": "video-preroll-cpcv",
+      "url": "showtv.com.tr"
+    },
+    "faq": [
+      {
+        "q": "CPCV nedir?",
+        "a": "CPCV (Cost Per Completed View), reklamverenin yalnızca sonuna kadar izlenen video başına ödeme yaptığı satın alma modelidir."
+      }
+    ],
+    "related": [
+      "preroll-plus",
+      "standart-preroll",
+      "rewarded-video"
+    ],
+    "keywords": "cpcv, cost per completed view, garantili izlenme, video reklam modeli"
+  },
+  {
+    "slug": "firstroll",
+    "name": "Firstroll",
+    "category": "video",
+    "badge": "",
+    "featured": false,
+    "short": "Kullanıcının o gün ekranda gördüğü ilk reklam: günün ilk marka teması.",
+    "metaTitle": "Firstroll | Günün İlk Video Reklamı",
+    "metaDescription": "Firstroll ile kullanıcının ekranda gördüğü ilk reklam markanız olur. Günün ilk marka temasıyla en yüksek dikkat ve hatırlanma; awareness kampanyaları için rakipsiz konum.",
+    "lead": "Kullanıcının ekranında gördüğü ilk reklam olması nedeniyle en yüksek dikkati toplar. Günün ilk marka temasını yaratır; awareness odaklı kampanyalar için rakipsiz bir konumdur.",
+    "features": [
+      "Kullanıcının ekranda gördüğü ilk reklam olması nedeniyle en yüksek dikkat",
+      "Günün ilk marka temasını yaratır",
+      "Awareness odaklı kampanyalar için rakipsiz konum",
+      "Yüksek hatırlanma (recall) katkısı"
+    ],
+    "kpis": [
+      "Ad recall",
+      "Erişim",
+      "VCR"
+    ],
+    "sectors": [
+      "Kozmetik",
+      "Moda",
+      "FMCG",
+      "Lansman"
+    ],
+    "media": {
+      "type": "mock",
+      "alt": "Firstroll reklam örneği",
+      "layout": "browser",
+      "browser": "firstroll",
+      "url": "dmax.com.tr"
+    },
+    "faq": [
+      {
+        "q": "Firstroll hangi kampanyalar için uygundur?",
+        "a": "Lansman ve bilinirlik (awareness) kampanyaları için idealdir; günün ilk reklam teması olduğu için hatırlanma katkısı yüksektir."
+      }
+    ],
+    "related": [
+      "standart-preroll",
+      "preroll-plus",
+      "ai-brand-lift"
+    ],
+    "keywords": "firstroll, ilk reklam, video reklam, awareness kampanyası"
+  },
+  {
+    "slug": "rewarded-video",
+    "name": "Rewarded Video",
+    "category": "video",
+    "badge": "",
+    "featured": false,
+    "short": "Kullanıcının ödül karşılığında gönüllü izlediği video: pozitif deneyim, yüksek engagement.",
+    "metaTitle": "Rewarded Video Reklam | Ödüllü Video Reklam Modeli",
+    "metaDescription": "Rewarded Video; kullanıcının ödül karşılığında gönüllü izlediği, pozitif deneyimle marka algısını güçlendiren ve en yüksek engagement modellerinden biri olan video reklam.",
+    "lead": "Kullanıcının bir ödül karşılığında gönüllü olarak izlediği video reklam modeli. Pozitif kullanıcı deneyimiyle marka algısını güçlendirir ve performans KPI'larıyla birlikte çalışabilir.",
+    "features": [
+      "Pozitif kullanıcı deneyimi ile marka algısını güçlendirir",
+      "En yüksek engagement modellerinden biri",
+      "Performans KPI'ları ile birlikte çalışabilir"
+    ],
+    "kpis": [
+      "Engagement",
+      "VCR",
+      "Install / Aksiyon"
+    ],
+    "sectors": [
+      "Oyun",
+      "Uygulama",
+      "Oyuncak",
+      "FMCG"
+    ],
+    "media": {
+      "type": "video",
+      "src": "rewarded-video",
+      "frame": "phone-land",
+      "alt": "Rewarded Video reklam örneği"
+    },
+    "faq": [
+      {
+        "q": "Rewarded video nerede yayınlanır?",
+        "a": "Mobil oyun ve uygulamalarda, kullanıcının ekstra can, puan ya da içerik gibi bir ödül karşılığında izlemeyi seçtiği alanlarda yayınlanır."
+      }
+    ],
+    "related": [
+      "advergame",
+      "video-preroll-cpcv",
+      "performans-cpa-cpi"
+    ],
+    "keywords": "rewarded video, ödüllü reklam, in-game reklam, mobil oyun reklamı"
+  },
+  {
+    "slug": "creator-native-video",
+    "name": "Creator Native Video",
+    "category": "video",
+    "badge": "",
+    "featured": true,
+    "short": "Advance × Blatt: creator içeriklerini premium yayıncı ağında garantili izlenmeyle yayına alan video çözümü.",
+    "metaTitle": "Creator Native Video | Influencer İçeriği + Premium Yayın",
+    "metaDescription": "Advance × Blatt Creator Native Video; TikTok-native creator içeriklerini 20+ premium yayıncıda garantili izlenmeyle yayınlar. Üretim, dağıtım ve ölçüm tek pakette.",
+    "lead": "TikTok-native creator içeriklerini Advance Premium Publisher Video Network'te garantili izlenme ile yayına alan yeni nesil video çözümü. Üretim, dağıtım ve ölçüm tek pakette.",
+    "features": [
+      "%80+ video completion rate potansiyeli",
+      "23 farklı audience segmenti (Gen-Z, Foodies, Auto Intenders vb.)",
+      "Premium yayıncı envanterinde brand-safe ortam",
+      "Garantili izlenme modeli + Brand Lift ölçüm imkânı"
+    ],
+    "kpis": [
+      "VCR %80+",
+      "Garantili izlenme",
+      "Brand Lift"
+    ],
+    "sectors": [
+      "Kozmetik",
+      "Yemek",
+      "Teknoloji",
+      "Moda",
+      "Otomotiv"
+    ],
+    "steps": [
+      {
+        "title": "Creator seçimi",
+        "text": "Blatt Media ağından kategoriye uygun kreatör (Lifestyle, Beauty, Tech, Gaming vb.) seçilir. Brief'ten itibaren 72 saat içinde içerik onaya hazır."
+      },
+      {
+        "title": "Video üretimi",
+        "text": "Kare ve yatay formatlarda, yüksek çekim standartlarında, hook'lu ve platform estetiğine uygun içerik üretilir. Hukuk filtresi ile markaya teslim edilir."
+      },
+      {
+        "title": "Smart distribution",
+        "text": "Advance Premium Network üzerinden (Star, Kanal D, Show, TRT1, Hürriyet, Puhutv, DMAX vb. 20+ yayıncı) hedef kitleye özel, garantili izlenme ile yayına alınır."
+      }
+    ],
+    "compare": {
+      "cols": [
+        "Creator Video Network",
+        "Influencer",
+        "Prodüksiyon"
+      ],
+      "rows": [
+        [
+          "Fiyat / Performans",
+          true,
+          false,
+          false
+        ],
+        [
+          "Hız",
+          true,
+          false,
+          false
+        ],
+        [
+          "Çoklu platform hakkı",
+          true,
+          false,
+          true
+        ],
+        [
+          "Doğal içerik",
+          true,
+          true,
+          false
+        ],
+        [
+          "Yayına hazır teslim",
+          true,
+          false,
+          true
+        ]
+      ]
+    },
+    "media": {
+      "type": "video",
+      "src": "cnv-1",
+      "frame": "site-player",
+      "alt": "Creator Native Video örneği"
+    },
+    "faq": [
+      {
+        "q": "Creator Native Video, influencer pazarlamasından nasıl ayrılır?",
+        "a": "Influencer iş birliğinde erişim kreatörün kendi takipçisiyle sınırlıdır. Creator Native Video'da içerik kreatör estetiğiyle üretilir ancak 20+ premium yayıncıda, seçilen kitle segmentine garantili izlenmeyle dağıtılır ve Brand Lift ile ölçülür."
+      },
+      {
+        "q": "İçerik ne kadar sürede hazır olur?",
+        "a": "Brief'ten itibaren 72 saat içinde içerik onaya hazır hale gelir."
+      }
+    ],
+    "related": [
+      "contextual-video-display",
+      "ai-brand-lift",
+      "preroll-plus"
+    ],
+    "keywords": "creator native video, creator reklam, influencer video reklam, blatt, ugc video reklam"
+  },
+  {
+    "slug": "contextual-video-display",
+    "name": "Contextual Video & Display",
+    "category": "video",
+    "badge": "",
+    "featured": false,
+    "short": "Cookieless dünyada semantik AI ile içerik analizine dayalı, niyet anına göre hedefleme.",
+    "metaTitle": "Contextual Targeting | Cookieless Bağlamsal Reklam",
+    "metaDescription": "Contextual Video & Display; cookieless dünyada semantik AI ile içeriğin duygu tonu, ana konusu ve bağlamına göre hedefleme. Daha yüksek CTR & VCR, minimum gösterim israfı.",
+    "lead": "Cookieless dünyada semantik yapay zeka ile içerik analizine dayalı hedefleme. Reklamınız, kullanıcının o an okuduğu içeriğin konusu ve duygu tonuyla uyumlu olduğunda gösterilir.",
+    "features": [
+      "Cookieless dünyada semantik AI ile içerik analizine dayalı hedefleme",
+      "İçeriğin duygu tonu, ana konusu ve semantik bağlamlarına göre sınıflandırma",
+      "Markaya uygun içerikte daha yüksek CTR & VCR",
+      "Niyet–moment (intent) bazlı gösterim",
+      "Minimum gösterim israfı"
+    ],
+    "kpis": [
+      "CTR",
+      "VCR",
+      "Brand safety"
+    ],
+    "sectors": [
+      "Turizm",
+      "Finans",
+      "Perakende",
+      "Otomotiv"
+    ],
+    "media": {
+      "type": "mock",
+      "alt": "Contextual reklam örneği",
+      "layout": "browser",
+      "browser": "contextual",
+      "url": "ntv.com.tr"
+    },
+    "faq": [
+      {
+        "q": "Contextual hedefleme cookie gerektirir mi?",
+        "a": "Hayır. Hedefleme kullanıcı verisine değil, sayfadaki içeriğin semantik analizine dayanır; bu nedenle üçüncü taraf çerezlere bağımlı değildir."
+      }
+    ],
+    "related": [
+      "creator-native-video",
+      "performans-cpc",
+      "standart-preroll"
+    ],
+    "keywords": "contextual targeting, bağlamsal reklam, cookieless reklam, semantik hedefleme"
+  },
+  {
+    "slug": "mikro-lokasyon-hedeflemesi",
+    "name": "Mikro Lokasyon Hedeflemesi",
+    "category": "lokasyon",
+    "badge": "",
+    "featured": false,
+    "short": "Billboard, mağaza çevresi ya da kritik noktalarda görünürlük; outdoor temasını dijitalde tamamlama.",
+    "metaTitle": "Mikro Lokasyon Hedeflemesi | Lokasyon Bazlı Reklam",
+    "metaDescription": "Mikro lokasyon hedeflemesi ile billboard, mağaza çevresi ve kritik noktalarda kullanıcıya ulaşın; dijital re-targeting ve push notification ile omnichannel etkiyi maksimuma taşıyın.",
+    "lead": "Lokasyon bazlı hedeflemeyle billboard, mağaza çevresi ya da marka için kritik noktalarda kullanıcı görünürlüğü sağlanır. Fiziksel temas dijitalde yeniden hedeflenir ve final mesaj push notification ile iletilir.",
+    "features": [
+      "İlk temas: billboard, mağaza çevresi veya kritik noktalarda kullanıcı görünürlüğü",
+      "Dijital re-targeting: outdoor temas eden kullanıcıya premium video veya banner gösterimi",
+      "Push notification: hem outdoor hem dijital temas yaşayan kullanıcıya final mesaj",
+      "Üç adım bir araya geldiğinde omnichannel etki maksimum seviyeye ulaşır"
+    ],
+    "kpis": [
+      "Mağaza ziyareti",
+      "Erişim",
+      "CTR"
+    ],
+    "sectors": [
+      "Perakende",
+      "Restoran",
+      "Otomotiv",
+      "Finans"
+    ],
+    "steps": [
+      {
+        "title": "İlk temas",
+        "text": "Lokasyon bazlı hedefleme ile billboard, mağaza çevresi veya kritik noktalarda görünürlük sağlanır."
+      },
+      {
+        "title": "Dijital re-targeting",
+        "text": "Outdoor temas eden kullanıcıya premium video veya banner gösterimi gerçekleştirilir."
+      },
+      {
+        "title": "Push notification",
+        "text": "Hem outdoor hem dijital temas yaşayan kullanıcıya final mesaj iletilir."
+      }
+    ],
+    "media": {
+      "type": "mock",
+      "alt": "Mikro lokasyon hedeflemesi",
+      "layout": "browser",
+      "browser": "mikro-web",
+      "url": "",
+      "phone": "mikro-phone"
+    },
+    "faq": [
+      {
+        "q": "Mikro lokasyon hedeflemesinde yarıçap ne kadar küçük olabilir?",
+        "a": "Hedefleme mağaza, AVM ya da billboard çevresi gibi mikro alanlar için kurgulanır; uygun yarıçap kampanya amacına ve envanter yoğunluğuna göre planlama aşamasında belirlenir."
+      }
+    ],
+    "related": [
+      "dooh",
+      "push-notification",
+      "performans-cpc"
+    ],
+    "keywords": "lokasyon bazlı reklam, geofence reklam, mikro lokasyon hedefleme, konum hedefleme"
+  },
+  {
+    "slug": "dooh",
+    "name": "DOOH + Dijital Entegrasyon",
+    "category": "lokasyon",
+    "badge": "",
+    "featured": false,
+    "short": "Dijital outdoor ekranlarındaki teması online video ve push ile tamamlayan omnichannel kurgu.",
+    "metaTitle": "DOOH Reklam | Programatik Dijital Outdoor + Online Entegrasyon",
+    "metaDescription": "DOOH + Outdoor & Dijital Entegrasyon; dijital açık hava ekranlarındaki teması online re-targeting ve push notification ile birleştirerek omnichannel etkiyi maksimuma taşır.",
+    "lead": "Dijital açık hava (DOOH) ekranlarında başlayan marka temasını online kanallarda devam ettiren entegre kurgu. Outdoor'un büyük ölçekli etkisi, dijitalin hedefleme ve ölçüm gücüyle buluşur.",
+    "features": [
+      "İlk temas: DOOH ekranları ile kritik noktalarda kullanıcı görünürlüğü",
+      "Dijital re-targeting: outdoor temas eden kullanıcıya premium video veya banner",
+      "Push notification ile final mesaj",
+      "Programatik satın alma ile esnek zamanlama ve lokasyon seçimi"
+    ],
+    "kpis": [
+      "Erişim",
+      "Frekans",
+      "Lift"
+    ],
+    "sectors": [
+      "Perakende",
+      "Moda",
+      "Telekom",
+      "FMCG"
+    ],
+    "media": {
+      "type": "video",
+      "src": "dooh",
+      "frame": "none",
+      "alt": "DOOH reklam örneği"
+    },
+    "faq": [
+      {
+        "q": "DOOH kampanyası dijitalle nasıl bağlanır?",
+        "a": "DOOH ekranlarının bulunduğu bölgelerde temas eden kullanıcılar dijital kanallarda yeniden hedeflenir ve kampanya mesajı push notification ile tamamlanır."
+      }
+    ],
+    "related": [
+      "mikro-lokasyon-hedeflemesi",
+      "push-notification",
+      "addressable-tv"
+    ],
+    "keywords": "dooh, dijital outdoor, programatik dooh, açık hava reklam"
+  },
+  {
+    "slug": "push-notification",
+    "name": "Push Notification",
+    "category": "lokasyon",
+    "badge": "",
+    "featured": false,
+    "short": "Native cihaz bildirimiyle %100 görünür, %5–18 CTR aralığında hızlı aksiyon aldıran format.",
+    "metaTitle": "Push Notification Reklam | Native Bildirim ile %5–18 CTR",
+    "metaDescription": "Push Notification reklamları native cihaz bildirimiyle %100 görünür; geofence + segment hedefleme ve %5–18 arası CTR ile kampanya anonslarında en yüksek dönüşüm.",
+    "lead": "Native cihaz bildirimiyle %100 görünür reklam formatı. Geofence ve segment hedeflemeyle doğru anda, doğru kişiye; kampanya anonslarında hızlı aksiyon aldırır.",
+    "features": [
+      "Native cihaz bildirimi ile %100 görünür",
+      "Geofence + segment hedefleme",
+      "Kampanya anonslarında en yüksek dönüşüm",
+      "%5–18 arası CTR",
+      "Hızlı aksiyon aldıran efektif format"
+    ],
+    "kpis": [
+      "CTR %5–18",
+      "Dönüşüm",
+      "Erişim"
+    ],
+    "sectors": [
+      "FMCG",
+      "Restoran",
+      "E-ticaret",
+      "Perakende"
+    ],
+    "media": {
+      "type": "mock",
+      "alt": "Push notification reklam örneği",
+      "layout": "phones",
+      "phones": [
+        "push-panel"
+      ],
+      "notify": "push-card"
+    },
+    "faq": [
+      {
+        "q": "Push notification reklamları kimlere gösterilir?",
+        "a": "Bildirim almayı kabul etmiş kullanıcılara, segment ve lokasyon (geofence) kriterlerine göre gösterilir."
+      }
+    ],
+    "related": [
+      "mikro-lokasyon-hedeflemesi",
+      "dooh",
+      "performans-cpc"
+    ],
+    "keywords": "push notification reklam, bildirim reklamı, web push, geofence"
+  },
+  {
+    "slug": "performans-cpc",
+    "name": "Performans: Banner & Native CPC",
+    "category": "performans",
+    "badge": "",
+    "featured": false,
+    "short": "AI destekli dönüşüm optimizasyonu ve lookalike segmentlerle düşük maliyetli, kaliteli trafik.",
+    "metaTitle": "CPC Reklam | Standart Banner ve Native CPC Kampanyaları",
+    "metaDescription": "Standart Banner CPC ve Native CPC modelleri; AI destekli dönüşüm optimizasyonu, lookalike segmentler ve düşük maliyetli, yüksek kaliteli trafik ile performans kampanyaları.",
+    "lead": "Tıklama başına ödeme modeliyle çalışan standart banner ve native kampanyalar. Yapay zeka destekli dönüşüm optimizasyonu ve lookalike segmentlerle düşük maliyetli, yüksek kaliteli trafik.",
+    "features": [
+      "AI destekli dönüşüm optimizasyonu",
+      "Lookalike segmentler",
+      "Düşük maliyetli, yüksek kaliteli trafik",
+      "Lead, satış, uygulama indirme gibi KPI'lara doğrudan erişim"
+    ],
+    "kpis": [
+      "CPC",
+      "CTR",
+      "Lead",
+      "Satış"
+    ],
+    "sectors": [
+      "E-ticaret",
+      "Finans",
+      "Telekom",
+      "Perakende"
+    ],
+    "media": {
+      "type": "mock",
+      "alt": "Native ve banner CPC reklam örneği",
+      "layout": "browser",
+      "browser": "performans-cpc",
+      "url": "nefisyemektarifleri.com"
+    },
+    "faq": [
+      {
+        "q": "Native reklam nedir?",
+        "a": "Native reklam, yayıncı sitesinin içerik akışına görsel olarak uyum sağlayan, kullanıcı deneyimini bozmayan reklam formatıdır; CPC modeliyle yalnızca tıklama başına ödeme yapılır."
+      }
+    ],
+    "related": [
+      "performans-cpa-cpi",
+      "contextual-video-display",
+      "ai-brand-lift"
+    ],
+    "keywords": "cpc reklam, native reklam, banner reklam, performans pazarlama"
+  },
+  {
+    "slug": "performans-cpa-cpi",
+    "name": "Performans: CPA & CPI",
+    "category": "performans",
+    "badge": "",
+    "featured": false,
+    "short": "Satış, lead veya uygulama indirme başına ödeme: KPI garantili performans modelleri.",
+    "metaTitle": "CPA ve CPI Reklam Modelleri | Satış ve App Install Kampanyaları",
+    "metaDescription": "CPA (acquisition/sale) ve CPI (app install) performans modelleri; AI destekli dönüşüm optimizasyonu, lookalike segmentler ve satış, uygulama indirme KPI'larına doğrudan erişim.",
+    "lead": "Yalnızca gerçekleşen aksiyona ödeme yapılan performans modelleri. CPA ile satış ve müşteri kazanımı, CPI ile uygulama indirme hedeflerine doğrudan erişim.",
+    "features": [
+      "CPA (Acquisition / Sale) ve CPI (App Install) modelleri",
+      "AI destekli dönüşüm optimizasyonu",
+      "Lookalike segmentler",
+      "Düşük maliyetli, yüksek kaliteli trafik"
+    ],
+    "kpis": [
+      "CPA",
+      "CPI",
+      "ROAS"
+    ],
+    "sectors": [
+      "Telekom",
+      "Finans",
+      "E-ticaret",
+      "Uygulama"
+    ],
+    "media": {
+      "type": "mock",
+      "alt": "CPA ve CPI reklam örneği",
+      "layout": "phones",
+      "phones": [
+        "cpa-1",
+        "cpa-2"
+      ]
+    },
+    "faq": [
+      {
+        "q": "CPA ve CPI arasındaki fark nedir?",
+        "a": "CPA'da ödeme satış, başvuru ya da üyelik gibi tanımlı bir aksiyon başına; CPI'da ise mobil uygulama indirme (install) başına yapılır."
+      }
+    ],
+    "related": [
+      "performans-cpc",
+      "rewarded-video",
+      "push-notification"
+    ],
+    "keywords": "cpa reklam, cpi reklam, app install kampanyası, performans reklam"
+  },
+  {
+    "slug": "ai-brand-lift",
+    "name": "AI Destekli Brand Lift Study",
+    "category": "performans",
+    "badge": "",
+    "featured": true,
+    "short": "Anket yerine gerçek kullanıcı davranışıyla uplift modeli: anlık, segment detaylı, optimizasyon önerili.",
+    "metaTitle": "AI Brand Lift Study | Yapay Zeka ile Marka Etkisi Ölçümü",
+    "metaDescription": "Dataexperien iş birliğiyle AI destekli Brand Lift; anket yerine gerçek kullanıcı davranışıyla uplift modeli, segment/mecra/kreatif bazlı etki ve dashboard üzerinden gerçek zamanlı sonuç.",
+    "lead": "Dataexperien Campaign Effectiveness iş birliğiyle, anket bazlı yaklaşımlar yerine gerçek kullanıcı davranışıyla çalışan uplift modeli. Sonuçlar kampanya sürerken dashboard'a düşer, optimizasyon önerileriyle stratejiye doğrudan katkı sağlar.",
+    "features": [
+      "Anket bazlı yaklaşımlar yerine gerçek kullanıcı davranışıyla uplift modeli",
+      "Segment + davranış + attention analizi ile yüksek doğruluk",
+      "Segment / mecra / kreatif bazlı ayrıştırılmış etkiler",
+      "Dashboard üzerinden gerçek zamanlı sonuçlar",
+      "Kampanya içi optimizasyon önerileri",
+      "Marka stratejisine direkt katkı"
+    ],
+    "compare": {
+      "cols": [
+        "Geleneksel",
+        "AI destekli"
+      ],
+      "rows": [
+        [
+          "Örneklem",
+          "Küçük örneklem",
+          "Gerçek kullanıcı davranışı"
+        ],
+        [
+          "Sonuç zamanı",
+          "Geç sonuç",
+          "Anlık uplift"
+        ],
+        [
+          "Derinlik",
+          "Genel metrikler",
+          "Segment detayında içgörü"
+        ],
+        [
+          "Aksiyon",
+          "Rapor",
+          "Optimizasyon önerileri ve stratejik karar desteği"
+        ]
+      ]
+    },
+    "kpis": [
+      "Ad recall",
+      "Marka algısı",
+      "Tercih",
+      "Satın alma niyeti"
+    ],
+    "sectors": [
+      "Tüm sektörler"
+    ],
+    "media": {
+      "type": "mock",
+      "alt": "AI destekli Brand Lift çalışması",
+      "layout": "browser",
+      "browser": "brand-lift-web",
+      "url": "dailymotion.com",
+      "cards": [
+        "brand-lift-mobile",
+        "brand-lift-survey"
+      ]
+    },
+    "faq": [
+      {
+        "q": "Brand Lift çalışması nedir?",
+        "a": "Reklama maruz kalan (exposed) ve kalmayan (control) kitleleri karşılaştırarak kampanyanın reklam hatırlanırlığı, marka algısı ve tercih üzerindeki etkisini ölçen çalışmadır."
+      },
+      {
+        "q": "AI destekli Brand Lift'in farkı nedir?",
+        "a": "Küçük örneklemli anketlerin geç sonuçları yerine gerçek kullanıcı davranışı ve attention verisiyle çalışır; etkiyi segment, mecra ve kreatif bazında anlık raporlar ve kampanya sürerken optimizasyon önerir."
+      }
+    ],
+    "related": [
+      "addressable-tv",
+      "creator-native-video",
+      "zaproll"
+    ],
+    "keywords": "brand lift, brand lift study, marka etkisi ölçümü, dataexperien, reklam etkinliği"
+  },
+  {
+    "slug": "youtube-icerik-ortakligi",
+    "name": "YouTube İçerik Ortaklığı",
+    "category": "icerik",
+    "badge": "",
+    "featured": false,
+    "short": "Sponsorluk, 'sunar' entegrasyonu, alt bant ve ürün yerleştirme ile güçlü YouTube kanallarında marka.",
+    "metaTitle": "YouTube Kanal Entegrasyonu ve Sponsorluk | Advance Digital",
+    "metaDescription": "YouTube içerik ortaklıklarıyla sponsorluk, sunar/sundu entegrasyonu, alt bant, ürün yerleştirme ve preroll. Örnek: Nur Viral – 227 B abone, 4,6 Mn görüntüleme.",
+    "lead": "Markanızı güçlü YouTube kanallarının içerik akışına doğal biçimde yerleştiriyoruz: sponsorluk, \"sunar/sundu\" entegrasyonları, alt bant, ürün yerleştirme ve preroll.",
+    "features": [
+      "Sponsorluk ve \"sunar/sundu\" entegrasyonları",
+      "Alt bant ve ürün yerleştirme",
+      "Kanal içi preroll",
+      "Örnek kanal Nur Viral: her pazartesi \"Gökyüzü Gündemi\", her cuma \"Derin Sohbet\", dönem dönem sağlık içerikleri",
+      "Nur Viral: 227 B abone, 655 video, 4,6 Mn görüntüleme, 1,4 Mn benzersiz izleyici (Haziran 2026)",
+      "Ortalama izlenme süresi 5:32 (izlenme oranı %24,8), %68,6 geri dönen izleyici"
+    ],
+    "audience": [
+      "%64 kadın / %36 erkek",
+      "Ağırlıklı yaş grubu: 45–54 (%26,5), 55–64 (%23,1), 35–44 (%18)",
+      "%79 Türkiye merkezli izleyici",
+      "İlgi alanları: alışveriş, mali hizmetler, seyahat, finansal planlama"
+    ],
+    "kpis": [
+      "Görüntüleme",
+      "Ortalama izlenme süresi",
+      "Geri dönen izleyici"
+    ],
+    "sectors": [
+      "Finans",
+      "Sağlık",
+      "Seyahat",
+      "Perakende"
+    ],
+    "media": {
+      "type": "video",
+      "src": "youtube-nur-viral",
+      "frame": "browser",
+      "alt": "Nur Viral YouTube kanalı"
+    },
+    "faq": [
+      {
+        "q": "YouTube içerik ortaklığında hangi entegrasyonlar yapılabilir?",
+        "a": "Bölüm sponsorluğu, \"sunar/sundu\" anonsları, alt bant, ürün yerleştirme ve kanal içi preroll gibi entegrasyonlar kampanya hedefine göre birlikte planlanır."
+      }
+    ],
+    "related": [
+      "creator-native-video",
+      "ai-brand-lift",
+      "contextual-video-display"
+    ],
+    "keywords": "youtube sponsorluk, youtube kanal entegrasyonu, nur viral, youtube reklam"
+  }
+]

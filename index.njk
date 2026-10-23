@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+title: "Blog"
+metaTitle: "Blog: Addressable TV, Yeni Reklam Formatları ve Ölçüm"
+metaDescription: "Advance Digital blog: Addressable TV, Zaproll, 3D CGI reklam formatları, Creator Native Video ve AI destekli Brand Lift üzerine rehberler ve sektör yazıları."
+permalink: /blog/
+---
+<section class="page-hero dark">
+  <div class="glow glow--tl"></div>
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Anasayfa</a></li><li>Blog</li></ol>
+    <span class="eyebrow eyebrow--pink">Blog</span>
+    <h1 class="display-xl">Dijital etki<br><span class="pink">hikâyeleri.</span></h1>
+    <p class="lead">Yeni reklam formatları, Addressable TV, ölçüm ve kampanya kurguları üzerine rehberler.</p>
+  </div>
+</section>
+
+<section class="section deck">
+  <div class="wrap">
+    {% set posts = collections.posts %}
+    {% if posts.length %}
+    <div class="posts">
+      {% for p in posts %}
+        {% if loop.first %}
+        <a class="post-card post-card--lead reveal" href="{{ p.url }}">
+          <div class="pc-img"><img src="{{ p.data.cover or '/assets/img/og-default.jpg' }}" alt="" decoding="async"></div>
+          <div style="display:grid;gap:16px">
+            <div class="meta"><b>{{ p.data.category }}</b><span>{{ p.date | trDate }}</span></div>
+            <h3>{{ p.data.title }}</h3>
+            <p>{{ p.data.description }}</p>
+          </div>
+        </a>
+        {% else %}
+        {% include "partials/post-card.njk" %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="lead">Yakında burada olacağız.</p>
+    {% endif %}
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

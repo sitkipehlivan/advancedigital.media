@@ -1,0 +1,6 @@
+<a class="post-card reveal" href="{{ p.url }}">
+  <div class="pc-img"><img src="{{ p.data.cover or '/assets/img/og-default.jpg' }}" alt="" loading="lazy" decoding="async"></div>
+  <div class="meta"><b>{{ p.data.category }}</b><span>{{ p.date | trDate }}</span></div>
+  <h3>{{ p.data.title }}</h3>
+  <p>{{ p.data.description }}</p>
+</a>

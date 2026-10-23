@@ -1,0 +1,72 @@
+---
+layout: layouts/base.njk
+ogType: article
+---
+{%- from "partials/icons.njk" import arrow -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | json | safe }},
+  "description": {{ description | json | safe }},
+  "datePublished": "{{ page.date | isoDate }}",
+  "dateModified": "{{ (updated or page.date) | isoDate }}",
+  "inLanguage": "tr-TR",
+  "mainEntityOfPage": "{{ page.url | absUrl(site.url) }}",
+  {% if cover %}"image": "{{ cover | absUrl(site.url) }}",{% endif %}
+  "author": { "@type": "Organization", "name": {{ (author or "Advance Digital") | json | safe }} },
+  "publisher": { "@id": "{{ site.url }}/#org" },
+  "keywords": {{ (tags or []) | join(", ") | json | safe }}
+}
+</script>
+
+<section class="page-hero dark post-hero" style="padding-bottom:clamp(110px,10vw,150px)">
+  <div class="glow glow--tl"></div>
+  <div class="wrap" style="max-width:1000px">
+    <ol class="crumbs"><li><a href="/">Anasayfa</a></li><li><a href="/blog/">Blog</a></li><li>{{ category }}</li></ol>
+    <h1 class="display-m" style="font-size:clamp(2.1rem,5vw,3.8rem)">{{ title }}</h1>
+    <p class="lead" style="margin-bottom:24px">{{ description }}</p>
+    <div class="meta"><span class="chip chip--pink">{{ category }}</span><span>{{ page.date | trDate }}</span><span>·</span><span>{{ content | readingTime }} dk okuma</span><span>·</span><span>{{ author or "Advance Digital" }}</span></div>
+  </div>
+</section>
+
+{% if cover %}
+<div class="wrap post-cover" style="max-width:1100px"><img src="{{ cover }}" alt="{{ coverAlt or title }}" decoding="async"></div>
+{% endif %}
+
+<section class="section light" style="padding-top:clamp(48px,6vw,80px)">
+  <div class="wrap">
+    <div class="post-layout">
+      <article class="prose">
+        {{ content | safe }}
+        {% if tags and tags.length %}<div class="tags">{% for t in tags %}<span class="chip">#{{ t }}</span>{% endfor %}</div>{% endif %}
+      </article>
+      <aside class="aside-box">
+        {% set rs = solutions | bySlugs(related_solutions) %}
+        {% if rs.length %}
+        <div class="aside-card">
+          <h4>Yazıda geçen çözümler</h4>
+          <ul>{% for r in rs %}<li><a href="/cozumler/{{ r.slug }}/">{{ r.name }} <span class="pink">→</span></a></li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+        <div class="aside-card aside-card--dark">
+          <h4>Teklif alın</h4>
+          <p>Bu yazıdaki formatlarla kampanyanızı birlikte planlayalım.</p>
+          <a class="btn btn--sm" href="/iletisim/{% if rs.length %}?urun={{ rs[0].slug }}{% endif %}">İletişime geç {{ arrow() | safe }}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+{%- set others = collections.posts | exceptUrl(page.url) | limit(3) -%}
+{% if others.length %}
+<section class="section white">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Okumaya devam</span><h2 class="display-m">Diğer yazılar</h2></div><a class="link-arrow" href="/blog/">Tüm yazılar {{ arrow() | safe }}</a></div>
+    <div class="posts">{% for p in others %}{% include "partials/post-card.njk" %}{% endfor %}</div>
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/cta.njk" %}

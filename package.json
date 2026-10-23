@@ -1,0 +1,16 @@
+{
+  "name": "advance-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Advance Digital kurumsal web sitesi (Eleventy + Decap CMS + Netlify)",
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "cms": "npx decap-server"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-plugin-rss": "^2.0.4"
+  }
+}

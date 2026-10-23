@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+title: "Sayfa bulunamadı"
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+{%- from "partials/icons.njk" import arrow -%}
+<section class="hero dark" style="min-height:86vh">
+  <div class="glow glow--tl"></div>
+  <div class="glow glow--br"></div>
+  <div class="hero-arcs" aria-hidden="true">{% include "partials/mark.njk" %}</div>
+  <div class="wrap">
+    <span class="eyebrow eyebrow--pink">404 · Sinyal yok</span>
+    <h1 class="display-xl">Bu kanalda<br>yayın yok<span class="pink">.</span></h1>
+    <p class="lead" style="margin:24px 0 36px">Aradığınız sayfa taşınmış ya da kaldırılmış olabilir. Kanalı değiştirelim mi?</p>
+    <div class="hero-ctas"><a class="btn" href="/">Anasayfa {{ arrow() | safe }}</a><a class="btn btn--ghost" href="/cozumler/">Çözümler</a></div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+[
+  { "slug": "yeni-formatlar", "name": "Yeni Formatlar", "intro": "3D, AR ve etkileşimli rich media ile standart alanların ötesine geçen premium deneyimler." },
+  { "slug": "tv", "name": "Addressable & Connected TV", "intro": "Televizyonun büyük ekran etkisini hane bazlı hedefleme ve dijital ölçümle birleştiren çözümler." },
+  { "slug": "video", "name": "Online Video", "intro": "Premium yayıncı envanterinde yüksek görünürlük ve tamamlanma oranıyla çalışan video modelleri." },
+  { "slug": "lokasyon", "name": "Lokasyon & Outdoor", "intro": "Fiziksel dünyadaki teması dijitalde tamamlayan omnichannel kurgular." },
+  { "slug": "performans", "name": "Performans & Ölçüm", "intro": "KPI odaklı satın alma modelleri ve kampanya etkisini gerçek davranışla ölçen yapay zeka." },
+  { "slug": "icerik", "name": "İçerik Ortaklıkları", "intro": "Markayı güçlü içerik üreticilerinin hikâyesine doğal biçimde yerleştiren iş birlikleri." }
+]
