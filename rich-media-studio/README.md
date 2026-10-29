@@ -22,3 +22,5 @@ rich-media-studio/
 
 ## Sayfa metinleri
 Format açıklamaları, "Deneyin" notları ve materyal spec'leri `src/_data/richMedia.json` içindedir.
+
+Son güncelleme: 3D CGI Masthead adı ve Kanal D yayın mockup videosu eklendi.
