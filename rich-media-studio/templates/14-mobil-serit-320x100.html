@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ad.size" content="width=320,height=100">
+    <title>Mobil Şerit 320x100</title>
+    <!-- NEEDS: b1.jpg b2.jpg b3.jpg b4.jpg b5.jpg b6.jpg b7.jpg b8.jpg b9.jpg -->
+    <style>
+/*HEAD*/
+        #ad { position: relative; width: 320px; height: 100px; overflow: hidden; cursor: pointer; background: var(--soft); }
+        .brand { position: absolute; left: 0; top: 0; width: 84px; height: 100px; padding: 0 8px; display: flex; flex-direction: column; justify-content: center; gap: 6px; color: #fff;
+            background: linear-gradient(160deg, var(--brand3) 0%, var(--brand) 50%, var(--brand2) 100%); }
+        .brand .h { font-size: 14px; line-height: 1.05; }
+        .brand .btn { font-size: 10px; padding: 5px 7px; background: #fff; color: var(--brand2); border-color: #fff; align-self: flex-start; }
+        .rail { position: absolute; left: 84px; top: 0; width: 236px; height: 100px; overflow-x: auto; overflow-y: hidden;
+            scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; }
+        .rail::-webkit-scrollbar { display: none; }
+        .track { display: flex; gap: 0; height: 100px; }
+        .item { flex: 0 0 118px; width: 118px; height: 100px; scroll-snap-align: start; padding: 4px 2px 4px 4px; }
+        .item img { width: 112px; height: 92px; display: block; border-radius: 6px; box-shadow: 0 2px 6px rgba(90,20,0,0.2); pointer-events: none; }
+        .swipe { position: absolute; right: 6px; top: 50%; width: 22px; height: 22px; margin-top: -11px; border-radius: 50%; background: rgba(229,38,43,0.9); color: #fff;
+            font: 900 14px/22px Arial, sans-serif; text-align: center; pointer-events: none; animation: nudge 1.4s ease-in-out infinite; }
+        @keyframes nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-4px); } }
+    </style>
+    <script type="text/javascript">
+/*CONFIG*/
+    </script>
+</head>
+<body>
+    <div id="ad" onclick="exitClick(event)">
+        <div class="brand"><div class="h">30. Yıl<br>Fırsatları</div><button class="btn" onclick="exitClick(event)">Keşfet ›</button></div>
+        <div class="rail" id="rail"><div class="track" id="track"></div></div>
+        <div class="swipe">›</div>
+    </div>
+    <script type="text/javascript">
+        var AUTO_MS = 2200;
+        var rail = document.getElementById('rail'), track = document.getElementById('track');
+        PRODUCTS.forEach(function (p, i) {
+            var d = document.createElement('div'); d.className = 'item';
+            d.innerHTML = '<img src="' + p.b + '" alt="' + p.name + '">';
+            d.addEventListener('click', function (e) { productClick(i, e); });
+            track.appendChild(d);
+        });
+        // Parmakla kaydırılabilir; dokunulmazsa kendi ilerler
+        var timer, touched = false;
+        function next() {
+            var max = rail.scrollWidth - rail.clientWidth;
+            rail.scrollLeft = rail.scrollLeft >= max - 4 ? 0 : rail.scrollLeft + 118;
+        }
+        function start() { clearInterval(timer); timer = setInterval(next, AUTO_MS); }
+        rail.addEventListener('pointerdown', function () { clearInterval(timer); touched = true; });
+        rail.addEventListener('pointerup', function () { setTimeout(start, 4000); });
+        rail.addEventListener('mouseenter', function () { clearInterval(timer); });
+        rail.addEventListener('mouseleave', start);
+        start();
+    </script>
+</body>
+</html>

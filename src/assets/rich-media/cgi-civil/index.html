@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Civil 30. Yıl CGI Masthead 970x250</title>
+    <meta name="ad.size" content="width=970,height=250">
+    <style>
+        /* CSS Başlangıç */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: transparent; /* Alpha kanal desteği için */
+        }
+
+        #banner_container {
+            position: relative;
+            width: 970px;
+            height: 250px;
+            cursor: pointer;
+        }
+
+        #video_element {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Tüm alanı kaplayan tıklama bölgesi */
+        #tap_area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+        /* CSS Bitiş */
+    </style>
+</head>
+<body>
+
+	
+	
+    <div id="banner_container">
+        
+        <video id="video_element" autoplay muted playsinline>
+            <source src="civil-cgi-masthead.webm" type="video/webm"> 
+            Tarayıcınız video etiketini desteklemiyor.
+        </video>
+
+        <div id="tap_area"></div>
+
+    </div>
+
+<script>
+    // JAVASCRIPT BAŞLANGIÇ
+
+    // Click Tag Zorunlu Tanımlaması
+    var clickTag = 'https://www.civilim.com'; // Kampanya click tracker'ı ile değiştirilecek 
+    
+    // Yedek Tıklama URL'si
+    var clickThroughUrl = '#';
+
+    var video = document.getElementById('video_element');
+    var maxDuration = 12; // SON SANİYE
+
+    // Tıklama Olayı (Tap Area)
+    document.getElementById('tap_area').addEventListener('click', function() {
+        if (typeof window.clickTag !== 'undefined') {
+            window.open(window.clickTag, '_blank');
+        } else {
+            window.open(clickThroughUrl, '_blank');
+        }
+    });
+
+    // Video Başlatma Garantisi
+    function startVideo() {
+        setTimeout(function() {
+            var playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {}).catch(error => {
+                    console.warn("Lokalde oynatma engellendi.");
+                });
+            }
+        }, 50); 
+    }
+
+    video.addEventListener('loadedmetadata', startVideo);
+    document.addEventListener('DOMContentLoaded', startVideo);
+
+    // Video'nun 12. saniyede durdurulması (Son karede kalması için)
+    video.addEventListener('timeupdate', function() {
+        if (video.currentTime >= maxDuration - 0.1) {
+            video.pause();
+        }
+    });
+    
+    // JAVASCRIPT BİTİŞ
+</script>
+	
+
+	
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ad.size" content="width=970,height=250">
+    <title>Pushdown Video Masthead 970x250 → 970x500</title>
+    <!-- NEEDS: b1.jpg b2.jpg b3.jpg b4.jpg b5.jpg b6.jpg b7.jpg b8.jpg b9.jpg -->
+    <style>
+/*HEAD*/
+        #ad {
+            position: relative;
+            width: 970px;
+            height: 250px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--brand3) 0%, var(--brand) 50%, var(--brand2) 100%);
+            cursor: pointer;
+            transition: height 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        #ad.open { height: 500px; }
+
+        /* ---------- Kapalı hal (970x250) ---------- */
+        #collapsed {
+            position: absolute; left: 0; top: 0;
+            width: 970px; height: 250px;
+            transition: opacity 0.3s ease;
+        }
+        #ad.open #collapsed { opacity: 0; pointer-events: none; }
+        .thumbVideo {
+            position: absolute; left: 28px; top: 40px;
+            width: 300px; height: 169px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 3px solid #fff;
+            box-shadow: 0 8px 20px rgba(90, 20, 0, 0.35);
+            background: url('poster.jpg') center / cover;
+        }
+        .thumbVideo video { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .play {
+            position: absolute; left: 50%; top: 50%;
+            width: 56px; height: 56px; margin: -28px 0 0 -28px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.95);
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+            animation: ring 2s ease-out infinite;
+        }
+        .play svg { width: 26px; height: 26px; margin-left: 3px; }
+        @keyframes ring { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); } 100% { box-shadow: 0 0 0 18px rgba(255,255,255,0); } }
+        .ccopy {
+            position: absolute; left: 352px; top: 0;
+            width: 250px; height: 250px;
+            display: flex; flex-direction: column; justify-content: center; gap: 10px;
+            color: #fff;
+        }
+        .ccopy .kicker { font-size: 12px; letter-spacing: 1.5px; opacity: 0.92; }
+        .ccopy h1 { font-size: 30px; line-height: 1.04; font-weight: 900; }
+        .ccopy .btn { align-self: flex-start; font-size: 13px; padding: 8px 16px; background: #fff; color: var(--brand2); border-color: #fff; }
+        .cprod {
+            position: absolute; top: 15px; left: 660px;
+            width: 264px; height: 220px;
+            transform: rotate(2deg);
+            border-radius: 12px; overflow: hidden;
+            background: #fff;
+            box-shadow: 0 6px 16px rgba(90, 20, 0, 0.3);
+        }
+        .cprod img { position: absolute; inset: 0; width: 264px; height: 220px; display: block; opacity: 0; transition: opacity 0.5s ease; }
+        .cprod img.on { opacity: 1; }
+
+        /* ---------- Açık hal (970x500) ---------- */
+        #expanded {
+            position: absolute; left: 0; top: 0;
+            width: 970px; height: 500px;
+            background: var(--soft);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease 0.2s;
+        }
+        #ad.open #expanded { opacity: 1; pointer-events: auto; }
+        .bigVideo {
+            position: absolute; left: 24px; top: 24px;
+            width: 640px; height: 360px;
+            border-radius: 14px; overflow: hidden;
+            background: #000;
+            box-shadow: 0 10px 26px rgba(90, 20, 0, 0.25);
+        }
+        .bigVideo video { width: 640px; height: 360px; display: block; object-fit: cover; }
+        .ecopy {
+            position: absolute; left: 24px; top: 400px;
+            width: 640px; height: 76px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .ecopy .kicker { font-size: 12px; letter-spacing: 1.5px; color: var(--brand); }
+        .ecopy h2 { font-size: 26px; color: var(--ink); line-height: 1.1; font-weight: 900; }
+        .ecopy .btn { font-size: 15px; padding: 10px 22px; }
+        .rail {
+            position: absolute; left: 688px; top: 24px;
+            width: 258px; height: 452px;
+            overflow: hidden;
+            border-radius: 14px;
+        }
+        .railTrack { display: flex; flex-direction: column; gap: 12px; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+        .railItem { flex: 0 0 215px; height: 215px; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(90, 20, 0, 0.14); }
+        .railItem img { width: 258px; height: 215px; display: block; }
+        .close {
+            position: absolute; right: 16px; top: 10px;
+            height: 30px; padding: 0 12px;
+            border-radius: 999px;
+            background: rgba(0,0,0,0.6); color: #fff;
+            border: 2px solid #fff;
+            font: 900 12px Arial, sans-serif;
+            cursor: pointer;
+            z-index: 10;
+            display: none;
+        }
+        #ad.open .close { display: block; }
+    </style>
+    <script type="text/javascript">
+/*CONFIG*/
+    </script>
+</head>
+<body>
+    <div id="ad" onclick="exitClick(event)">
+
+        <div id="collapsed">
+            <div class="thumbVideo" id="openBtn">
+                <video id="teaser" muted playsinline autoplay loop preload="auto" poster="poster.jpg">
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+                <div class="play"><svg viewBox="0 0 24 24"><path fill="#e5262b" d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <div class="ccopy">
+                <div class="kicker">30. YIL FIRSATLARI</div>
+                <h1>Filmi izle,<br>fırsatları gör</h1>
+                <button class="btn" id="openBtn2">Genişlet ve İzle ▾</button>
+            </div>
+            <div class="cprod" id="cprod"></div>
+        </div>
+
+        <div id="expanded">
+            <div class="bigVideo">
+                <video id="big" playsinline controls preload="none" poster="poster.jpg">
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="ecopy">
+                <div>
+                    <div class="kicker">02–15 KASIM</div>
+                    <h2>Civil 30. Yıl'a özel fiyatlar</h2>
+                </div>
+                <button class="btn" onclick="exitClick(event)">Alışverişe Başla ›</button>
+            </div>
+            <div class="rail"><div class="railTrack" id="railTrack"></div></div>
+        </div>
+
+        <button class="close" id="close">KAPAT ✕</button>
+    </div>
+
+    <script type="text/javascript">
+        var EXPANDED_H = 500;
+        var ad = document.getElementById('ad');
+        var big = document.getElementById('big');
+        var teaser = document.getElementById('teaser');
+        var railTrack = document.getElementById('railTrack');
+        var railPos = 0, railTimer = null;
+
+        PRODUCTS.forEach(function (p, i) {
+            var d = document.createElement('div');
+            d.className = 'railItem';
+            d.innerHTML = '<img src="' + p.b + '" alt="' + p.name + '">';
+            d.addEventListener('click', function (e) { productClick(i, e); });
+            railTrack.appendChild(d);
+        });
+        /* Kapalı haldeki ürün vitrini */
+        var cprod = document.getElementById('cprod'), cIdx = 0;
+        PRODUCTS.forEach(function (p, i) {
+            var im = document.createElement('img');
+            im.src = p.b; im.alt = p.name; if (i === 0) im.className = 'on';
+            cprod.appendChild(im);
+        });
+        setInterval(function () {
+            var ims = cprod.children;
+            ims[cIdx].className = '';
+            cIdx = (cIdx + 1) % ims.length;
+            ims[cIdx].className = 'on';
+        }, 2400);
+        cprod.addEventListener('click', function (e) { productClick(cIdx, e); });
+
+        function railNext() {
+            railPos = (railPos + 1) % (PRODUCTS.length - 1);
+            railTrack.style.transform = 'translateY(' + (-railPos * 227) + 'px)';
+        }
+
+        /* Yayıncı/ad server'a boyut değişimini bildir (gerçek pushdown'da yayıncının expand API'si kullanılır) */
+        function notify(h) {
+            try { window.parent.postMessage({ type: 'ad-resize', height: h }, '*'); } catch (err) {}
+        }
+
+        function expand(e) {
+            if (e) e.stopPropagation();
+            ad.className = 'open';
+            notify(EXPANDED_H);
+            teaser.pause();
+            big.currentTime = 0;
+            big.muted = false;           // Kullanıcı tıkladığı için sesli oynatılabilir
+            var p = big.play();
+            if (p && p.catch) p.catch(function () { big.muted = true; big.play(); });
+            clearInterval(railTimer);
+            railTimer = setInterval(railNext, 2600);
+        }
+        function collapse(e) {
+            if (e) e.stopPropagation();
+            ad.className = '';
+            big.pause();
+            teaser.play();
+            clearInterval(railTimer);
+            setTimeout(function () { notify(250); }, 550);
+        }
+        document.getElementById('openBtn').addEventListener('click', expand);
+        document.getElementById('openBtn2').addEventListener('click', expand);
+        document.getElementById('close').addEventListener('click', collapse);
+        document.querySelector('.bigVideo').addEventListener('click', function (e) { e.stopPropagation(); });
+    </script>
+</body>
+</html>

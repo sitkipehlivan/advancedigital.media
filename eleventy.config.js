@@ -36,6 +36,7 @@ export default function (eleventyConfig) {
     const words = String(content || "").replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
     return Math.max(1, Math.round(words / 200));
   });
+  eleventyConfig.addFilter("where", (arr, key, val) => (arr || []).filter((x) => x && x[key] === val));
   eleventyConfig.addFilter("exceptUrl", (arr, url) => (arr || []).filter((p) => p.url !== url));
   eleventyConfig.addFilter("pad2", (n) => String(n).padStart(2, "0"));
   eleventyConfig.addFilter("json", (v) => JSON.stringify(v));

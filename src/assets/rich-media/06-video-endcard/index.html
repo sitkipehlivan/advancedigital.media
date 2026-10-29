@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ad.size" content="width=970,height=250">
+    <title>Video End Card Masthead 970x250</title>
+    <!-- NEEDS: ../_ortak/b1.jpg ../_ortak/b2.jpg ../_ortak/b3.jpg ../_ortak/b4.jpg ../_ortak/b5.jpg ../_ortak/b6.jpg ../_ortak/b7.jpg ../_ortak/b8.jpg ../_ortak/b9.jpg -->
+    <style>
+
+        /* ===== Marka ayarları: başka markaya uyarlarken sadece burayı değiştirin ===== */
+        :root {
+            --brand: #f15a22;      /* ana renk */
+            --brand2: #e5262b;     /* koyu ton */
+            --brand3: #ff8a1e;     /* açık ton */
+            --ink: #3b1d12;        /* metin */
+            --paper: #ffffff;      /* zemin */
+            --soft: #fff4ec;       /* yumuşak zemin */
+        }
+        @font-face {
+            font-family: 'BrandFont';
+            src: url('../_ortak/nunito-900.woff2') format('woff2');
+            font-weight: 900;
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'BrandFont';
+            src: url('../_ortak/nunito-900-ext.woff2') format('woff2');
+            font-weight: 900;
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { margin: 0; overflow: hidden; background: transparent; }
+        body {
+            font-family: 'BrandFont', 'Arial Rounded MT Bold', Arial, sans-serif;
+            font-weight: 900;
+            -webkit-font-smoothing: antialiased;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .btn {
+            background: linear-gradient(135deg, var(--brand3) 0%, var(--brand) 55%, var(--brand2) 100%);
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 999px;
+            font: inherit;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(180, 40, 0, 0.35);
+            transition: transform 0.2s ease;
+        }
+        .btn:hover { transform: scale(1.05); }
+
+        #ad {
+            position: relative;
+            width: 970px;
+            height: 250px;
+            overflow: hidden;
+            background: var(--paper);
+            cursor: pointer;
+        }
+
+        /* ---------- 1. Sahne: video ---------- */
+        #sceneVideo {
+            position: absolute; inset: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        #sceneVideo.out { opacity: 0; transform: scale(0.97); pointer-events: none; }
+        .blur {
+            position: absolute; inset: -20px;
+            background: url('../_ortak/poster.jpg') center / cover;
+            filter: blur(18px) saturate(1.3);
+            opacity: 0.9;
+        }
+        .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(229,38,43,0.92) 0, rgba(241,90,34,0.85) 46%, rgba(241,90,34,0.15) 70%); }
+        .copy {
+            position: absolute;
+            left: 40px; top: 0;
+            width: 440px; height: 250px;
+            display: flex; flex-direction: column; justify-content: center; gap: 10px;
+            color: #fff;
+        }
+        .copy .kicker { font-size: 12px; letter-spacing: 1.5px; opacity: 0.92; }
+        .copy h1 { font-size: 34px; line-height: 1.03; font-weight: 900; }
+        .copy p { font-size: 14px; opacity: 0.92; }
+        .copy .row { display: flex; align-items: center; gap: 14px; margin-top: 6px; }
+        .copy .btn { font-size: 13px; padding: 7px 16px; background: #fff; color: var(--brand2); border-color: #fff; }
+        .timeline { width: 150px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.35); overflow: hidden; }
+        .timeline i { display: block; height: 100%; width: 0; background: #fff; }
+
+        .video {
+            position: absolute;
+            right: 0; top: 0;
+            width: 444px; height: 250px;
+            background: #000;
+        }
+        .video video { width: 444px; height: 250px; display: block; object-fit: cover; }
+        .sound {
+            position: absolute; left: 12px; bottom: 12px;
+            width: 32px; height: 32px; border-radius: 50%;
+            background: rgba(0,0,0,0.55); border: 0; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .sound svg { width: 18px; height: 18px; }
+
+        /* ---------- 2. Sahne: ürün end card ---------- */
+        #sceneEnd {
+            position: absolute; inset: 0;
+            background: var(--soft);
+            opacity: 0;
+            transform: translateX(40px);
+            pointer-events: none;
+            transition: opacity 0.5s ease 0.15s, transform 0.5s ease 0.15s;
+        }
+        #sceneEnd.in { opacity: 1; transform: translateX(0); pointer-events: auto; }
+        .side {
+            position: absolute; left: 0; top: 0;
+            width: 92px; height: 250px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+            color: var(--brand2);
+            font-size: 11px; text-align: center; line-height: 1.2;
+        }
+        .replay {
+            width: 46px; height: 46px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .replay svg { width: 22px; height: 22px; }
+        .viewport {
+            position: absolute;
+            left: 140px; top: 20px;
+            width: 780px; height: 210px;
+            overflow: hidden;
+        }
+        .track {
+            display: flex; gap: 12px;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .tile {
+            flex: 0 0 252px;
+            height: 210px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 3px 10px rgba(90, 20, 0, 0.12);
+        }
+        .tile img { width: 252px; height: 210px; display: block; }
+        .arrow {
+            position: absolute; top: 105px;
+            width: 36px; height: 36px; margin-top: -18px;
+            display: flex; align-items: center; justify-content: center;
+            font: 900 20px Arial, sans-serif;
+            padding: 0;
+            z-index: 3;
+        }
+        .arrow.l { left: 98px; }
+        .arrow.r { right: 12px; }
+    </style>
+    <script type="text/javascript">
+
+        /* ===== ClickTag tanımları: her ürün kendi clickTag'ine gider ===== */
+        var clickTag  = "https://www.civilim.com";
+        var clickTag1 = "https://www.civilim.com";
+        var clickTag2 = "https://www.civilim.com";
+        var clickTag3 = "https://www.civilim.com";
+        var clickTag4 = "https://www.civilim.com";
+        var clickTag5 = "https://www.civilim.com";
+        var clickTag6 = "https://www.civilim.com";
+        var clickTag7 = "https://www.civilim.com";
+        var clickTag8 = "https://www.civilim.com";
+        var clickTag9 = "https://www.civilim.com";
+
+        /* ===== Ürün listesi: b = 300x250 banner, w = 970x250 banner ===== */
+        var PRODUCTS = [
+            { name: "Molfix Bebek Bezi",            short: "Bebek Bezi",  price: "250 TL",       b: "../_ortak/b1.jpg", w: "w1.jpg" },
+            { name: "Konuşan Bebek & Araba",        short: "Oyuncak",     price: "550 TL'den",   b: "../_ortak/b2.jpg", w: "w2.jpg" },
+            { name: "Panduf & Eşofman Takımı",      short: "Panduf",      price: "150 TL'den",   b: "../_ortak/b3.jpg", w: "w3.jpg" },
+            { name: "Philips Avent Emzik & Biberon",short: "Emzik",       price: "400 TL'den",   b: "../_ortak/b4.jpg", w: "w4.jpg" },
+            { name: "Eşofman & Spor Ayakkabı",      short: "Eşofman",     price: "650 TL'den",   b: "../_ortak/b5.jpg", w: "w5.jpg" },
+            { name: "Oyun Parkı & Bebek Arabası",   short: "Oyun Parkı",  price: "4.900 TL'den", b: "../_ortak/b6.jpg", w: "w6.jpg" },
+            { name: "Oto Koltuğu & Bebek Arabası",  short: "Oto Koltuğu", price: "9.990 TL'den", b: "../_ortak/b7.jpg", w: "w7.jpg" },
+            { name: "Pijama & Panduf",              short: "Pijama",      price: "390 TL",       b: "../_ortak/b8.jpg", w: "w8.jpg" },
+            { name: "Zıbın Seti & Bakım Çantası",   short: "Zıbın Seti",  price: "790 TL",       b: "../_ortak/b9.jpg", w: "w9.jpg" }
+        ];
+
+        function exitClick(e) {
+            if (e) e.stopPropagation();
+            window.open(clickTag, '_blank');
+        }
+        function productClick(i, e) {
+            if (e) e.stopPropagation();
+            window.open(window['clickTag' + (i + 1)] || clickTag, '_blank');
+        }
+
+    </script>
+</head>
+<body>
+    <div id="ad" onclick="exitClick(event)">
+
+        <div id="sceneVideo">
+            <div class="blur"></div>
+            <div class="shade"></div>
+            <div class="copy">
+                <div class="kicker">CİVİL 30. YIL</div>
+                <h1>Yeni sezon<br>çocuk modası</h1>
+                <p>Video bitince kampanyalı ürünler açılır.</p>
+                <div class="row">
+                    <button class="btn" id="skip">Ürünlere Geç ›</button>
+                    <div class="timeline"><i id="tl"></i></div>
+                </div>
+            </div>
+            <div class="video">
+                <video id="video" muted playsinline autoplay preload="auto" poster="../_ortak/poster.jpg">
+                    <source src="../_ortak/video.mp4" type="video/mp4">
+                </video>
+                <button class="sound" id="sound" aria-label="Sesi aç">
+                    <svg viewBox="0 0 24 24" id="iconMuted"><path fill="#fff" d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM12 4L9.91 6.09 12 8.18V4zm-7.91-.09L2.81 5.18 6.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.03c1.38-.31 2.63-.95 3.69-1.81l2.38 2.38 1.41-1.41L4.09 3.91z"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="sceneEnd">
+            <div class="side">
+                <button class="btn replay" id="replay" aria-label="Tekrar izle">
+                    <svg viewBox="0 0 24 24"><path fill="#fff" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+                </button>
+                TEKRAR<br>İZLE
+            </div>
+            <button class="btn arrow l" id="prev" aria-label="Önceki">‹</button>
+            <div class="viewport"><div class="track" id="track"></div></div>
+            <button class="btn arrow r" id="next" aria-label="Sonraki">›</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var AUTO_MS = 2600;
+        var STEP = 264;   // kart genişliği (252) + boşluk (12)
+        var video = document.getElementById('video');
+        var sceneVideo = document.getElementById('sceneVideo');
+        var sceneEnd = document.getElementById('sceneEnd');
+        var track = document.getElementById('track');
+        var pos = 0, timer = null;
+
+        /* Ürün kartları (sonsuz döngü için ilk 3 kart sona kopyalanır) */
+        var tiles = PRODUCTS.concat(PRODUCTS.slice(0, 3));
+        tiles.forEach(function (p, k) {
+            var i = k % PRODUCTS.length;
+            var t = document.createElement('div');
+            t.className = 'tile';
+            t.innerHTML = '<img src="' + p.b + '" alt="' + p.name + '">';
+            t.addEventListener('click', function (e) { productClick(i, e); });
+            track.appendChild(t);
+        });
+        function go(n, animate) {
+            pos = n;
+            track.style.transition = animate === false ? 'none' : '';
+            track.style.transform = 'translateX(' + (-pos * STEP) + 'px)';
+        }
+        track.addEventListener('transitionend', function () {
+            if (pos >= PRODUCTS.length) go(pos - PRODUCTS.length, false);
+        });
+        function next() { if (pos >= PRODUCTS.length) { go(pos - PRODUCTS.length, false); track.offsetWidth; } go(pos + 1); }
+        function prev() { if (pos <= 0) { go(PRODUCTS.length, false); track.offsetWidth; } go(pos - 1); }
+        function startAuto() { clearInterval(timer); timer = setInterval(next, AUTO_MS); }
+        function stopAuto() { clearInterval(timer); }
+
+        document.getElementById('next').addEventListener('click', function (e) { e.stopPropagation(); next(); startAuto(); });
+        document.getElementById('prev').addEventListener('click', function (e) { e.stopPropagation(); prev(); startAuto(); });
+        sceneEnd.addEventListener('mouseenter', stopAuto);
+        sceneEnd.addEventListener('mouseleave', function () { if (sceneEnd.className === 'in') startAuto(); });
+
+        /* Sahne geçişleri */
+        function showEnd() {
+            video.pause();
+            sceneVideo.className = 'out';
+            sceneEnd.className = 'in';
+            go(0, false);
+            startAuto();
+        }
+        function showVideo() {
+            stopAuto();
+            sceneEnd.className = '';
+            sceneVideo.className = '';
+            video.currentTime = 0;
+            video.play();
+        }
+        video.addEventListener('ended', showEnd);
+        video.addEventListener('timeupdate', function () {
+            if (video.duration) document.getElementById('tl').style.width = (video.currentTime / video.duration * 100) + '%';
+        });
+        document.getElementById('skip').addEventListener('click', function (e) { e.stopPropagation(); showEnd(); });
+        document.getElementById('replay').addEventListener('click', function (e) { e.stopPropagation(); showVideo(); });
+        document.getElementById('sound').addEventListener('click', function (e) {
+            e.stopPropagation();
+            video.muted = !video.muted;
+            this.style.opacity = video.muted ? 1 : 0.5;
+        });
+
+        var p = video.play();
+        if (p && p.catch) p.catch(function () { /* autoplay engellenirse poster görünür, kullanıcı ürünlere geçebilir */ });
+    </script>
+</body>
+</html>
