@@ -6,7 +6,7 @@
 rich-media-studio/
   templates/   ← şablonlar (her biri bir reklam formatı)
   assets/      ← örnek görseller: b1–b9 = 300×250, w1–w9 = 970×250, video.mp4, poster.jpg
-  cgi/         ← 2.5D CGI masthead sahnesi ve render betiği
+  cgi/         ← 3D CGI masthead sahnesi ve render betiği
   build.py     ← şablonları siteye ve yayına hazır zip'lere derler
 ```
 

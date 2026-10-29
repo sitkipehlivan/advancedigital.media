@@ -33,6 +33,18 @@
   }, { rootMargin: "300px 0px" });
   frames.forEach(function (f) { io.observe(f); });
 
+  // Yayın mockup videoları: görünür olunca yükle ve oynat
+  var mio = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) {
+        if (!v.getAttribute("src")) v.setAttribute("src", v.dataset.src);
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      } else { v.pause(); }
+    });
+  }, { rootMargin: "200px 0px" });
+  document.querySelectorAll(".rm-mockup video").forEach(function (v) { mio.observe(v); });
+
   // Pushdown örneği genişleyince alanı büyüt
   window.addEventListener("message", function (e) {
     if (!e.data || e.data.type !== "ad-resize") return;

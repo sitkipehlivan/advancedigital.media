@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 title: "Rich Media Stüdyosu"
 metaTitle: "Rich Media Stüdyosu: Canlı Reklam Formatları ve Materyal Spec'leri"
-metaDescription: "Markanızın hazır 300x250, 970x250 ve video materyallerinden üretilen rich media formatlarını canlı deneyin: akordeon, kazı kazan, çarkıfelek, shoppable video, pushdown, 3D küp ve 2.5D CGI masthead. Her formatın altında gerekli materyal listesi."
+metaDescription: "Markanızın hazır 300x250, 970x250 ve video materyallerinden üretilen rich media formatlarını canlı deneyin: akordeon, kazı kazan, çarkıfelek, shoppable video, pushdown, 3D küp ve 3D CGI masthead. Her formatın altında gerekli materyal listesi."
 keywords: "rich media, interactive masthead, 3D CGI masthead, shoppable video, pushdown, kazı kazan banner, çarkıfelek banner, 300x600, 728x90, 160x600, 320x100"
 permalink: /richmedia/
 bodyClass: "page-rm"
@@ -70,6 +70,12 @@ ctaProduct: "interactive-masthead"
               {% endif %}
             </div>
           </div>
+          {% if f.mockup %}
+          <figure class="rm-mockup">
+            <video data-src="/assets/rich-media/{{ f.mockup.src }}" poster="/assets/rich-media/{{ f.mockup.poster }}" muted loop playsinline controls preload="none" aria-label="{{ f.mockup.caption }}"></video>
+            <figcaption>{{ f.mockup.caption }}</figcaption>
+          </figure>
+          {% endif %}
           <div class="rm-info">
             <div class="rm-text">
               <div class="rm-title"><h3>{{ f.name }}</h3>{% if f.new %}<span class="chip chip--pink">Yeni</span>{% endif %}</div>
