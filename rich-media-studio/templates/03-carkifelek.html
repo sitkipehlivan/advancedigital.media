@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ad.size" content="width=970,height=250">
+    <title>Çarkıfelek Masthead 970x250</title>
+    <!-- NEEDS: b1.jpg b2.jpg b3.jpg b4.jpg b5.jpg b6.jpg b7.jpg b8.jpg -->
+    <style>
+/*HEAD*/
+        #ad {
+            position: relative;
+            width: 970px;
+            height: 250px;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 470px 125px, rgba(255,255,255,0.35) 0, rgba(255,255,255,0) 170px),
+                linear-gradient(135deg, var(--brand3) 0%, var(--brand) 50%, var(--brand2) 100%);
+            cursor: pointer;
+        }
+
+        /* Sol metin kolonu */
+        .copy {
+            position: absolute;
+            left: 36px; top: 0;
+            width: 300px; height: 250px;
+            display: flex; flex-direction: column; justify-content: center; gap: 10px;
+            color: #fff;
+        }
+        .copy .kicker { font-size: 12px; letter-spacing: 1.5px; opacity: 0.9; }
+        .copy h1 { font-size: 34px; line-height: 1.02; font-weight: 900; }
+        .copy p { font-size: 13px; line-height: 1.3; opacity: 0.92; max-width: 250px; }
+        .copy .btn {
+            align-self: flex-start;
+            margin-top: 4px;
+            font-size: 16px;
+            padding: 9px 26px;
+            background: #fff;
+            color: var(--brand2);
+            border-color: #fff;
+            animation: nudge 2.4s ease-in-out infinite;
+        }
+        .copy .btn[disabled] { opacity: 0.6; animation: none; cursor: default; }
+        @keyframes nudge { 0%, 70%, 100% { transform: scale(1); } 80% { transform: scale(1.1); } 90% { transform: scale(0.97); } }
+
+        /* Çark */
+        .wheel-wrap {
+            position: absolute;
+            left: 360px; top: 15px;
+            width: 220px; height: 220px;
+        }
+        #wheel {
+            width: 220px; height: 220px;
+            display: block;
+            border-radius: 50%;
+            box-shadow: 0 8px 22px rgba(90, 20, 0, 0.35);
+            transition: transform 4.2s cubic-bezier(0.15, 0.7, 0.15, 1);
+        }
+        .pointer {
+            position: absolute;
+            left: 50%; top: -8px;
+            width: 0; height: 0;
+            margin-left: -13px;
+            border-left: 13px solid transparent;
+            border-right: 13px solid transparent;
+            border-top: 26px solid #fff;
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.35));
+            z-index: 2;
+        }
+        .hub {
+            position: absolute;
+            left: 50%; top: 50%;
+            width: 56px; height: 56px;
+            margin: -28px 0 0 -28px;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid var(--brand2);
+            color: var(--brand2);
+            font-size: 12px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            z-index: 2;
+        }
+
+        /* Ödül kartı */
+        .prize {
+            position: absolute;
+            left: 640px; top: 15px;
+            width: 300px; height: 220px;
+            perspective: 900px;
+        }
+        .card {
+            position: relative;
+            width: 100%; height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.7s cubic-bezier(0.3, 1.3, 0.5, 1);
+        }
+        .card.flipped { transform: rotateY(180deg); }
+        .side {
+            position: absolute;
+            inset: 0;
+            border-radius: 14px;
+            overflow: hidden;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            background: #fff;
+            box-shadow: 0 8px 22px rgba(90, 20, 0, 0.3);
+        }
+        .front {
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+            color: var(--brand2);
+            border: 3px dashed rgba(229, 38, 43, 0.35);
+        }
+        .front .q { font-size: 70px; line-height: 1; }
+        .front span { font-size: 13px; color: var(--ink); opacity: 0.7; }
+        .back { transform: rotateY(180deg); background: #fff; }
+        .back img { width: 264px; height: 220px; display: block; margin: 0 auto; }
+        .back .tag {
+            position: absolute; left: 10px; top: 10px;
+            background: var(--brand2); color: #fff;
+            font-size: 11px; padding: 4px 9px; border-radius: 999px;
+        }
+        .back .go {
+            position: absolute; right: 10px; bottom: 10px;
+            font-size: 12px; padding: 6px 12px;
+        }
+
+        .confetti {
+            position: absolute; top: -12px;
+            width: 8px; height: 12px;
+            pointer-events: none; z-index: 9;
+            animation: fall linear forwards;
+        }
+        @keyframes fall { to { transform: translateY(280px) rotate(540deg); opacity: 0.2; } }
+    </style>
+    <script type="text/javascript">
+/*CONFIG*/
+    </script>
+</head>
+<body>
+    <div id="ad" onclick="exitClick(event)">
+        <div class="copy">
+            <div class="kicker">30. YILA ÖZEL</div>
+            <h1>Çarkı çevir,<br>fırsatını kap!</h1>
+            <p>Çark hangi üründe durursa o fırsat senin için açılır.</p>
+            <button class="btn" id="spinBtn">ÇEVİR</button>
+        </div>
+
+        <div class="wheel-wrap" id="wheelWrap">
+            <div class="pointer"></div>
+            <canvas id="wheel" width="440" height="440"></canvas>
+            <div class="hub">ÇEVİR</div>
+        </div>
+
+        <div class="prize">
+            <div class="card" id="card">
+                <div class="side front"><div class="q">?</div><span>Fırsatın burada açılacak</span></div>
+                <div class="side back" id="back">
+                    <img id="prizeImg" alt="">
+                    <div class="tag">SENİN FIRSATIN</div>
+                    <button class="btn go">İncele ›</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var SEGMENTS = 8;   // Çarktaki ürün sayısı (PRODUCTS listesinin ilk N tanesi)
+        var list = PRODUCTS.slice(0, SEGMENTS);
+        var seg = 360 / list.length;
+        var wheel = document.getElementById('wheel');
+        var ctx = wheel.getContext('2d');
+        var spinBtn = document.getElementById('spinBtn');
+        var card = document.getElementById('card');
+        var rotation = 0, spinning = false, won = -1;
+
+        function drawWheel() {
+            var css = getComputedStyle(document.documentElement);
+            var colors = [css.getPropertyValue('--brand2').trim(), '#ffffff', css.getPropertyValue('--brand3').trim(), '#ffffff'];
+            var c = 220, r = 214;
+            ctx.clearRect(0, 0, 440, 440);
+            for (var i = 0; i < list.length; i++) {
+                var a0 = (-90 + i * seg) * Math.PI / 180, a1 = (-90 + (i + 1) * seg) * Math.PI / 180;
+                ctx.beginPath(); ctx.moveTo(c, c); ctx.arc(c, c, r, a0, a1); ctx.closePath();
+                ctx.fillStyle = colors[i % colors.length]; ctx.fill();
+                ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(255,255,255,0.9)'; ctx.stroke();
+
+                ctx.save();
+                ctx.translate(c, c);
+                ctx.rotate((a0 + a1) / 2);
+                var light = colors[i % colors.length] === '#ffffff';
+                ctx.fillStyle = light ? css.getPropertyValue('--brand2').trim() : '#ffffff';
+                ctx.textAlign = 'right';
+                ctx.font = '900 24px BrandFont, Arial, sans-serif';
+                ctx.fillText(list[i].short, r - 22, 2);
+                ctx.font = '900 19px BrandFont, Arial, sans-serif';
+                ctx.globalAlpha = 0.85;
+                ctx.fillText(list[i].price.replace("'den", ''), r - 22, 26);
+                ctx.restore();
+            }
+            ctx.beginPath(); ctx.arc(c, c, r, 0, Math.PI * 2);
+            ctx.lineWidth = 10; ctx.strokeStyle = '#ffffff'; ctx.stroke();
+            // Kenar ışıkları
+            for (var k = 0; k < 24; k++) {
+                var a = k * 15 * Math.PI / 180;
+                ctx.beginPath();
+                ctx.arc(c + Math.cos(a) * (r - 1), c + Math.sin(a) * (r - 1), 4.5, 0, Math.PI * 2);
+                ctx.fillStyle = k % 2 ? '#ffd34d' : '#fff7d6'; ctx.fill();
+            }
+        }
+
+        function spin(e) {
+            if (e) e.stopPropagation();
+            if (spinning) return;
+            spinning = true;
+            spinBtn.disabled = true;
+            card.className = 'card';
+            won = Math.floor(Math.random() * list.length);
+            var target = 360 - (won + 0.5) * seg + (Math.random() - 0.5) * seg * 0.6;
+            var base = rotation - (rotation % 360);
+            rotation = base + 360 * 6 + target;
+            wheel.style.transform = 'rotate(' + rotation + 'deg)';
+        }
+        wheel.addEventListener('transitionend', function () {
+            spinning = false;
+            spinBtn.disabled = false;
+            spinBtn.textContent = 'TEKRAR ÇEVİR';
+            document.getElementById('prizeImg').src = list[won].b;
+            document.getElementById('prizeImg').alt = list[won].name;
+            card.className = 'card flipped';
+            confetti();
+        });
+
+        spinBtn.addEventListener('click', spin);
+        document.getElementById('wheelWrap').addEventListener('click', spin);
+        document.getElementById('back').addEventListener('click', function (e) {
+            if (won >= 0) productClick(won, e);
+        });
+        // Ön yüz (soru işareti) tıklanınca da çark döner
+        document.querySelector('.front').addEventListener('click', spin);
+
+        function confetti() {
+            var colors = ['#ffd34d', '#ffffff', '#2bb673', '#3aa0ff', '#ff8a1e'];
+            for (var i = 0; i < 40; i++) {
+                var c = document.createElement('div');
+                c.className = 'confetti';
+                c.style.left = (600 + Math.random() * 360) + 'px';
+                c.style.background = colors[i % colors.length];
+                c.style.animationDuration = (1.3 + Math.random() * 1.3) + 's';
+                c.style.animationDelay = (Math.random() * 0.4) + 's';
+                document.getElementById('ad').appendChild(c);
+                setTimeout(function (el) { el.remove(); }.bind(null, c), 3200);
+            }
+        }
+
+        drawWheel();
+        if (document.fonts && document.fonts.load) document.fonts.load('900 20px BrandFont').then(drawWheel);
+    </script>
+</body>
+</html>

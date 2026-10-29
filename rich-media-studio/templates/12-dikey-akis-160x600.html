@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ad.size" content="width=160,height=600">
+    <title>Dikey Akış 160x600</title>
+    <!-- NEEDS: b1.jpg b2.jpg b3.jpg b4.jpg b5.jpg b6.jpg b7.jpg b8.jpg b9.jpg -->
+    <style>
+/*HEAD*/
+        #ad { position: relative; width: 160px; height: 600px; overflow: hidden; cursor: pointer;
+            background: linear-gradient(180deg, var(--brand3) 0%, var(--brand) 45%, var(--brand2) 100%); color: #fff; }
+        .head { position: absolute; left: 0; right: 0; top: 0; height: 92px; text-align: center; padding-top: 18px; }
+        .head .k { font-size: 10px; letter-spacing: 1.5px; opacity: 0.9; }
+        .head .h { font-size: 21px; line-height: 1.02; margin-top: 4px; }
+        .rail { position: absolute; left: 5px; top: 92px; width: 150px; height: 430px; overflow: hidden; border-radius: 10px;
+            -webkit-mask: linear-gradient(180deg, transparent 0, #000 18px, #000 412px, transparent 430px); mask: linear-gradient(180deg, transparent 0, #000 18px, #000 412px, transparent 430px); }
+        .track { display: flex; flex-direction: column; gap: 8px; will-change: transform; }
+        .item { flex: 0 0 125px; width: 150px; height: 125px; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 3px 8px rgba(90,20,0,0.25); transition: transform 0.2s; }
+        .item:hover { transform: scale(1.04); }
+        .item img { width: 150px; height: 125px; display: block; pointer-events: none; }
+        .foot { position: absolute; left: 0; right: 0; bottom: 16px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+        .foot small { font-size: 10px; letter-spacing: 1px; }
+        .foot .btn { font-size: 13px; padding: 8px 14px; background: #fff; color: var(--brand2); border-color: #fff; }
+    </style>
+    <script type="text/javascript">
+/*CONFIG*/
+    </script>
+</head>
+<body>
+    <div id="ad" onclick="exitClick(event)">
+        <div class="head"><div class="k">30. YIL</div><div class="h">Fırsat<br>Vitrini</div></div>
+        <div class="rail" id="rail"><div class="track" id="track"></div></div>
+        <div class="foot"><small>02–15 KASIM</small><button class="btn" onclick="exitClick(event)">Keşfet ›</button></div>
+    </div>
+    <script type="text/javascript">
+        var SPEED = 26;   // piksel/saniye kayma hızı
+        var track = document.getElementById('track');
+        // Kesintisiz akış için liste iki kez eklenir
+        PRODUCTS.concat(PRODUCTS).forEach(function (p, k) {
+            var i = k % PRODUCTS.length;
+            var d = document.createElement('div'); d.className = 'item';
+            d.innerHTML = '<img src="' + p.b + '" alt="' + p.name + '">';
+            d.addEventListener('click', function (e) { productClick(i, e); });
+            track.appendChild(d);
+        });
+        var loop = PRODUCTS.length * (125 + 8), y = 0, last = null, paused = false;
+        function frame(ts) {
+            if (last !== null && !paused) { y = (y + SPEED * (ts - last) / 1000) % loop; track.style.transform = 'translateY(' + (-y) + 'px)'; }
+            last = ts; requestAnimationFrame(frame);
+        }
+        var rail = document.getElementById('rail');
+        rail.addEventListener('mouseenter', function () { paused = true; });
+        rail.addEventListener('mouseleave', function () { paused = false; });
+        requestAnimationFrame(frame);
+    </script>
+</body>
+</html>

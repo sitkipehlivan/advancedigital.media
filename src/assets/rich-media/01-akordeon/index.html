@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ad.size" content="width=970,height=250">
+    <title>Akordeon Masthead 970x250</title>
+    <!-- NEEDS: ../_ortak/b1.jpg ../_ortak/b2.jpg ../_ortak/b3.jpg ../_ortak/b4.jpg ../_ortak/b5.jpg ../_ortak/b6.jpg -->
+    <style>
+
+        /* ===== Marka ayarları: başka markaya uyarlarken sadece burayı değiştirin ===== */
+        :root {
+            --brand: #f15a22;      /* ana renk */
+            --brand2: #e5262b;     /* koyu ton */
+            --brand3: #ff8a1e;     /* açık ton */
+            --ink: #3b1d12;        /* metin */
+            --paper: #ffffff;      /* zemin */
+            --soft: #fff4ec;       /* yumuşak zemin */
+        }
+        @font-face {
+            font-family: 'BrandFont';
+            src: url('../_ortak/nunito-900.woff2') format('woff2');
+            font-weight: 900;
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'BrandFont';
+            src: url('../_ortak/nunito-900-ext.woff2') format('woff2');
+            font-weight: 900;
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { margin: 0; overflow: hidden; background: transparent; }
+        body {
+            font-family: 'BrandFont', 'Arial Rounded MT Bold', Arial, sans-serif;
+            font-weight: 900;
+            -webkit-font-smoothing: antialiased;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .btn {
+            background: linear-gradient(135deg, var(--brand3) 0%, var(--brand) 55%, var(--brand2) 100%);
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 999px;
+            font: inherit;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(180, 40, 0, 0.35);
+            transition: transform 0.2s ease;
+        }
+        .btn:hover { transform: scale(1.05); }
+
+        #ad {
+            position: relative;
+            width: 970px;
+            height: 250px;
+            overflow: hidden;
+            background: var(--paper);
+            cursor: pointer;
+        }
+        .panels { display: flex; width: 970px; height: 250px; }
+
+        .panel {
+            position: relative;
+            flex: 0 0 100px;
+            height: 250px;
+            overflow: hidden;
+            border-right: 2px solid #fff;
+            transition: flex-basis 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .panel:last-child { border-right: 0; }
+        .panel.open { flex-basis: 470px; }
+
+        /* Kapalı panel yüzü */
+        .face {
+            position: absolute;
+            inset: 0;
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0 18px;
+            color: #fff;
+            background: linear-gradient(180deg, var(--brand3) 0%, var(--brand) 55%, var(--brand2) 100%);
+            transition: opacity 0.3s ease;
+        }
+        .panel:nth-child(even) .face {
+            background: linear-gradient(180deg, var(--brand) 0%, var(--brand2) 100%);
+        }
+        .face .num {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.22);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px;
+        }
+        .face .vname {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 17px;
+            line-height: 1;
+            white-space: nowrap;
+            max-height: 120px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .face .vprice {
+            font-size: 12px;
+            color: var(--brand2);
+            background: #fff;
+            border-radius: 999px;
+            padding: 4px 8px;
+            white-space: nowrap;
+        }
+
+        /* Açık panel içeriği */
+        .content {
+            position: absolute;
+            inset: 0;
+            width: 470px;
+            display: flex;
+            align-items: center;
+            background: var(--soft);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease 0.15s;
+        }
+        .panel.open .face { opacity: 0; }
+        .panel.open .content { opacity: 1; pointer-events: auto; }
+        .content img { width: 300px; height: 250px; display: block; flex: 0 0 300px; }
+        .info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 0 14px 0 16px;
+        }
+        .info .label { font-size: 11px; letter-spacing: 1px; color: var(--brand); }
+        .info .name { font-size: 16px; line-height: 1.15; color: var(--ink); }
+        .info .price { font-size: 24px; color: var(--brand2); }
+        .info .btn { font-size: 13px; padding: 8px 14px; margin-top: 4px; }
+
+        /* İlerleme çubuğu (otomatik geçiş göstergesi) */
+        .bar {
+            position: absolute;
+            left: 0; bottom: 0;
+            height: 4px;
+            width: 0;
+            background: var(--brand2);
+            z-index: 5;
+        }
+        .bar.run { width: 100%; transition: width linear; }
+    </style>
+    <script type="text/javascript">
+
+        /* ===== ClickTag tanımları: her ürün kendi clickTag'ine gider ===== */
+        var clickTag  = "https://www.civilim.com";
+        var clickTag1 = "https://www.civilim.com";
+        var clickTag2 = "https://www.civilim.com";
+        var clickTag3 = "https://www.civilim.com";
+        var clickTag4 = "https://www.civilim.com";
+        var clickTag5 = "https://www.civilim.com";
+        var clickTag6 = "https://www.civilim.com";
+        var clickTag7 = "https://www.civilim.com";
+        var clickTag8 = "https://www.civilim.com";
+        var clickTag9 = "https://www.civilim.com";
+
+        /* ===== Ürün listesi: b = 300x250 banner, w = 970x250 banner ===== */
+        var PRODUCTS = [
+            { name: "Molfix Bebek Bezi",            short: "Bebek Bezi",  price: "250 TL",       b: "../_ortak/b1.jpg", w: "w1.jpg" },
+            { name: "Konuşan Bebek & Araba",        short: "Oyuncak",     price: "550 TL'den",   b: "../_ortak/b2.jpg", w: "w2.jpg" },
+            { name: "Panduf & Eşofman Takımı",      short: "Panduf",      price: "150 TL'den",   b: "../_ortak/b3.jpg", w: "w3.jpg" },
+            { name: "Philips Avent Emzik & Biberon",short: "Emzik",       price: "400 TL'den",   b: "../_ortak/b4.jpg", w: "w4.jpg" },
+            { name: "Eşofman & Spor Ayakkabı",      short: "Eşofman",     price: "650 TL'den",   b: "../_ortak/b5.jpg", w: "w5.jpg" },
+            { name: "Oyun Parkı & Bebek Arabası",   short: "Oyun Parkı",  price: "4.900 TL'den", b: "../_ortak/b6.jpg", w: "w6.jpg" },
+            { name: "Oto Koltuğu & Bebek Arabası",  short: "Oto Koltuğu", price: "9.990 TL'den", b: "b7.jpg", w: "w7.jpg" },
+            { name: "Pijama & Panduf",              short: "Pijama",      price: "390 TL",       b: "b8.jpg", w: "w8.jpg" },
+            { name: "Zıbın Seti & Bakım Çantası",   short: "Zıbın Seti",  price: "790 TL",       b: "b9.jpg", w: "w9.jpg" }
+        ];
+
+        function exitClick(e) {
+            if (e) e.stopPropagation();
+            window.open(clickTag, '_blank');
+        }
+        function productClick(i, e) {
+            if (e) e.stopPropagation();
+            window.open(window['clickTag' + (i + 1)] || clickTag, '_blank');
+        }
+
+    </script>
+</head>
+<body>
+    <div id="ad" onclick="exitClick(event)">
+        <div class="panels" id="panels"></div>
+    </div>
+
+    <script type="text/javascript">
+        var COUNT = 6;          // Akordeonda gösterilecek ürün sayısı (6 panel = 970px)
+        var AUTO_MS = 2800;     // Otomatik geçiş süresi
+
+        var list = PRODUCTS.slice(0, COUNT);
+        var panelsEl = document.getElementById('panels');
+        var current = 0, timer = null, resumeTimer = null;
+
+        list.forEach(function (p, i) {
+            var el = document.createElement('div');
+            el.className = 'panel';
+            el.innerHTML =
+                '<div class="face"><div class="num">' + (i + 1) + '</div>' +
+                '<div class="vname">' + p.short + '</div>' +
+                '<div class="vprice">' + p.price + '</div></div>' +
+                '<div class="content"><img src="' + p.b + '" alt="' + p.name + '">' +
+                '<div class="info"><div class="label">30. YIL FIRSATI</div>' +
+                '<div class="name">' + p.name + '</div>' +
+                '<div class="price">' + p.price + '</div>' +
+                '<button class="btn">Hemen İncele ›</button></div></div>';
+            el.addEventListener('mouseenter', function () { open(i); stopAuto(); });
+            el.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (current === i) productClick(i, e);  // Açık panel: ürüne git
+                else { open(i); stopAuto(); scheduleResume(); } // Kapalı panel (mobil ilk dokunuş): aç
+            });
+            panelsEl.appendChild(el);
+        });
+
+        var bar = document.createElement('div');
+        bar.className = 'bar';
+        document.getElementById('ad').appendChild(bar);
+
+        function open(i) {
+            current = i;
+            var ps = panelsEl.children;
+            for (var k = 0; k < ps.length; k++) ps[k].className = 'panel' + (k === i ? ' open' : '');
+        }
+        function runBar() {
+            bar.className = 'bar';
+            bar.style.transitionDuration = '0ms';
+            bar.offsetWidth;
+            bar.style.transitionDuration = AUTO_MS + 'ms';
+            bar.className = 'bar run';
+        }
+        function startAuto() {
+            stopAuto();
+            runBar();
+            timer = setInterval(function () { open((current + 1) % list.length); runBar(); }, AUTO_MS);
+        }
+        function stopAuto() {
+            clearInterval(timer); timer = null;
+            bar.className = 'bar';
+        }
+        function scheduleResume() {
+            clearTimeout(resumeTimer);
+            resumeTimer = setTimeout(startAuto, 5000);
+        }
+        document.getElementById('ad').addEventListener('mouseleave', scheduleResume);
+
+        open(0);
+        startAuto();
+    </script>
+</body>
+</html>

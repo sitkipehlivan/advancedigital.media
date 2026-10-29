@@ -1,0 +1,173 @@
+{
+  "_not": "Rich Media Stüdyosu sayfasının (/richmedia/) içeriği. Yeni format eklemek için 'formats' listesine kayıt ekleyin. demo.src: src/assets/rich-media/ altındaki klasör. size filtresi 'sizes' listesindeki anahtarlardan biri olmalı.",
+  "sizes": [
+    { "key": "970x250", "label": "970×250" },
+    { "key": "728x90", "label": "728×90" },
+    { "key": "300x600", "label": "300×600" },
+    { "key": "300x250", "label": "300×250" },
+    { "key": "160x600", "label": "160×600" },
+    { "key": "mobil", "label": "Mobil" }
+  ],
+  "groups": [
+    { "key": "videosuz", "label": "Videosuz", "intro": "Markanın hazır bannerlarıyla çalışır. Ek prodüksiyon gerekmez." },
+    { "key": "videolu", "label": "Videolu", "intro": "Banner görselleri ve marka videosu birlikte kullanılır." },
+    { "key": "premium", "label": "Premium", "intro": "Ürün fotoğraflarından üretilen sinematik formatlar." }
+  ],
+  "formats": [
+    {
+      "slug": "akordeon",
+      "name": "Akordeon Masthead",
+      "group": "videosuz",
+      "size": "970x250", "sizeLabel": "970×250",
+      "w": 970, "h": 250,
+      "demo": { "type": "iframe", "src": "01-akordeon" },
+      "desc": "Ürünler dikey dilimlerde durur. Üzerine gelinen dilim açılır, banner ile birlikte fiyat ve buton görünür. Kendiliğinden sırayla döner.",
+      "try": "Dilimlerin üzerinde gezinin, açık dilime tıklayın.",
+      "specs": { "materyal": "6 adet 300×250 (JPG/PNG)", "ek": "Ürün kısa adları, fiyatlar, her ürün için link", "teknik": "HTML5 · ~450 KB", "hazirlik": "1–2 iş günü" }
+    },
+    {
+      "slug": "kazi-kazan",
+      "name": "Kazı Kazan",
+      "group": "videosuz",
+      "size": "970x250", "sizeLabel": "970×250",
+      "w": 970, "h": 250,
+      "demo": { "type": "iframe", "src": "02-kazi-kazan" },
+      "desc": "Kullanıcı imleci ya da parmağıyla kartı kazır. Kartın yarısına yakını açılınca konfeti patlar, altta rastgele bir ürün ve buton çıkar.",
+      "try": "İmleci kartın üzerinde gezdirin. Sayfayı yenileyince farklı ürün çıkar.",
+      "specs": { "materyal": "3–9 adet 970×250 (JPG)", "ek": "Başlık metni (en fazla 20 karakter), linkler", "teknik": "HTML5 · ~650 KB", "hazirlik": "1–2 iş günü" }
+    },
+    {
+      "slug": "carkifelek",
+      "name": "Çarkıfelek",
+      "group": "videosuz",
+      "size": "970x250", "sizeLabel": "970×250",
+      "w": 970, "h": 250,
+      "demo": { "type": "iframe", "src": "03-carkifelek" },
+      "desc": "Çarkta 8 ürün kısa adı ve fiyatıyla yer alır. Çevirince durduğu ürünün kartı dönerek açılır ve o ürünün sayfasına gider.",
+      "try": "Çevir'e basın, açılan karta tıklayın.",
+      "specs": { "materyal": "8 adet 300×250 (JPG/PNG)", "ek": "Ürün kısa adları (en fazla 12 karakter), fiyatlar, linkler", "teknik": "HTML5 · ~580 KB", "hazirlik": "1–2 iş günü" }
+    },
+    {
+      "slug": "geri-sayim",
+      "name": "Geri Sayım Vitrini",
+      "group": "videosuz",
+      "size": "970x250", "sizeLabel": "970×250",
+      "w": 970, "h": 250,
+      "demo": { "type": "iframe", "src": "04-geri-sayim" },
+      "desc": "Solda kampanya bitimine canlı geri sayım, ortada dönen ürün vitrini, sağda tüm ürünlerin ızgarası. Izgarada üzerine gelinen ürün vitrine çıkar.",
+      "try": "Sağdaki küçük kartların üzerinde gezinin.",
+      "specs": { "materyal": "9 adet 300×250 (JPG/PNG)", "ek": "Kampanya bitiş tarihi ve saati, linkler", "teknik": "HTML5 · ~640 KB", "hazirlik": "1–2 iş günü" }
+    },
+    {
+      "slug": "kayan-vitrin",
+      "name": "Kayan Vitrin",
+      "group": "videosuz",
+      "size": "728x90", "sizeLabel": "728×90",
+      "w": 728, "h": 90, "new": true,
+      "demo": { "type": "iframe", "src": "13-kayan-vitrin-728x90" },
+      "desc": "Leaderboard alanında ürünler kesintisiz yatay bir şeritte akar. Üzerine gelince durur, her ürün kendi sayfasına gider.",
+      "try": "Şeridin üzerine gelin, bir ürüne tıklayın.",
+      "specs": { "materyal": "4–9 adet 300×250 (JPG/PNG)", "ek": "Kısa başlık, linkler", "teknik": "HTML5 · ~620 KB", "hazirlik": "1 iş günü" }
+    },
+    {
+      "slug": "kup",
+      "name": "3D Küp",
+      "group": "videosuz",
+      "size": "300x250", "sizeLabel": "300×250",
+      "w": 300, "h": 250, "new": true,
+      "demo": { "type": "iframe", "src": "10-kup-300x250" },
+      "desc": "300×250 bannerlar dönen bir prizmanın yüzlerine yerleşir. Kendiliğinden döner, kullanıcı sürükleyerek de çevirebilir.",
+      "try": "Küpü sağa sola sürükleyin.",
+      "specs": { "materyal": "4–9 adet 300×250 (JPG/PNG)", "ek": "Linkler", "teknik": "HTML5 · ~620 KB", "hazirlik": "1 iş günü" }
+    },
+    {
+      "slug": "dikey-akis",
+      "name": "Dikey Akış",
+      "group": "videosuz",
+      "size": "160x600", "sizeLabel": "160×600",
+      "w": 160, "h": 600, "new": true,
+      "demo": { "type": "iframe", "src": "12-dikey-akis-160x600" },
+      "desc": "Skyscraper alanında ürünler yukarı doğru kesintisiz akar. Üzerine gelince durur.",
+      "try": "Akışın üzerine gelin.",
+      "specs": { "materyal": "4–9 adet 300×250 (JPG/PNG)", "ek": "Kısa başlık, linkler", "teknik": "HTML5 · ~620 KB", "hazirlik": "1 iş günü" }
+    },
+    {
+      "slug": "mobil-deste",
+      "name": "Mobil Kart Destesi",
+      "group": "videosuz",
+      "size": "mobil", "sizeLabel": "320×480",
+      "w": 320, "h": 480,
+      "demo": { "type": "iframe", "src": "05-mobil-deste" },
+      "desc": "300×250 bannerlar üst üste bir deste olur. Parmakla kaydırılır, dokunulan kart ürüne gider. Mobil interstitial ve scroller alanları için.",
+      "try": "Üstteki kartı sürükleyin ya da oklara basın.",
+      "specs": { "materyal": "4–9 adet 300×250 (JPG/PNG)", "ek": "Başlık metni, linkler", "teknik": "HTML5 · ~620 KB", "hazirlik": "1–2 iş günü" }
+    },
+    {
+      "slug": "mobil-serit",
+      "name": "Mobil Şerit",
+      "group": "videosuz",
+      "size": "mobil", "sizeLabel": "320×100",
+      "w": 320, "h": 100, "new": true,
+      "demo": { "type": "iframe", "src": "14-mobil-serit-320x100" },
+      "desc": "Mobil banner alanında ürünler parmakla kaydırılabilen bir şeritte durur. Dokunulmazsa kendiliğinden ilerler.",
+      "try": "Şeridi yana kaydırın.",
+      "specs": { "materyal": "4–9 adet 300×250 (JPG/PNG)", "ek": "Kısa başlık, linkler", "teknik": "HTML5 · ~620 KB", "hazirlik": "1 iş günü" }
+    },
+    {
+      "slug": "video-endcard",
+      "name": "Video ve End Card",
+      "group": "videolu",
+      "size": "970x250", "sizeLabel": "970×250",
+      "w": 970, "h": 250,
+      "demo": { "type": "iframe", "src": "06-video-endcard" },
+      "desc": "Önce marka videosu oynar. Video bitince sahne kendiliğinden kayan bir ürün carousel'ine dönüşür. Tekrar izle butonu videoyu baştan başlatır.",
+      "try": "\"Ürünlere Geç\"e basın.",
+      "specs": { "materyal": "MP4 video (16:9, en az 1280×720, en fazla 15 sn) ve 300×250'ler", "ek": "Başlık metni, linkler", "teknik": "HTML5 + video · ~1,2 MB", "hazirlik": "2 iş günü" }
+    },
+    {
+      "slug": "shoppable-video",
+      "name": "Shoppable Video",
+      "group": "videolu",
+      "size": "970x250", "sizeLabel": "970×250",
+      "w": 970, "h": 250,
+      "demo": { "type": "iframe", "src": "07-shoppable-video" },
+      "desc": "Videoda hangi ürün görünüyorsa yanındaki kartta o ürün belirir. Listeden bir ürüne tıklanınca video o sahneye atlar, karta tıklanınca ürün sayfası açılır.",
+      "try": "Sağdaki \"Spor Ayakkabı\" satırına tıklayın.",
+      "specs": { "materyal": "MP4 video (16:9) ve videodaki ürünlerin 300×250'leri", "ek": "Ürünlerin videoda göründüğü saniyeler, fiyatlar, linkler", "teknik": "HTML5 + video · ~900 KB", "hazirlik": "2 iş günü" }
+    },
+    {
+      "slug": "pushdown",
+      "name": "Pushdown Video",
+      "group": "videolu",
+      "size": "970x250", "sizeLabel": "970×250 → 970×500",
+      "w": 970, "h": 250, "expand": 500,
+      "demo": { "type": "iframe", "src": "08-pushdown" },
+      "desc": "Kapalı halde video önizlemesi ve dönen ürün kartı görünür. Tıklanınca alan 970×500'e açılır, video sesli oynar, sağda ürünler kayar. Yayıncının genişleyen format desteği gerekir.",
+      "try": "\"Genişlet ve İzle\"ye basın, sonra Kapat.",
+      "specs": { "materyal": "MP4 video (16:9, sesli) ve 300×250'ler", "ek": "Başlık metni, linkler", "teknik": "HTML5 + video · ~1,2 MB", "hazirlik": "2 iş günü" }
+    },
+    {
+      "slug": "video-vitrin",
+      "name": "Video + Vitrin",
+      "group": "videolu",
+      "size": "300x600", "sizeLabel": "300×600",
+      "w": 300, "h": 600, "new": true,
+      "demo": { "type": "iframe", "src": "11-video-vitrin-300x600" },
+      "desc": "Half page alanında üstte marka videosu, altında dönen ürün vitrini ve buton. Videoyla bilinirlik, vitrinle click aynı alanda.",
+      "try": "Vitrinin üzerine gelin, bir ürüne tıklayın.",
+      "specs": { "materyal": "MP4 video (16:9) ve 300×250'ler", "ek": "Başlık metni, linkler", "teknik": "HTML5 + video · ~1,2 MB", "hazirlik": "1–2 iş günü" }
+    },
+    {
+      "slug": "cgi-masthead",
+      "name": "2.5D CGI Masthead",
+      "group": "premium",
+      "size": "970x250", "sizeLabel": "970×250",
+      "w": 970, "h": 250,
+      "demo": { "type": "video", "src": "cgi-civil/civil-cgi-masthead.webm" },
+      "desc": "Ürünler fotoğraflarından kesilip derinlik, ışık ve kamera hareketiyle canlandırılır. Sağdan sola sinematik bir akışla geçerken çerçevenin dışına taşar, fiyat etiketleri açılır. Arka planı şeffaf olduğu için taşan kısımlarda yayıncı sitesi görünür.",
+      "try": "Koyu zemin yayıncı sitesinin yerine geçer. Taşan ürünlerin arkasında site görünür.",
+      "link": "/cozumler/3d-cgi-masthead/",
+      "specs": { "materyal": "Arka planı temizlenmiş ürün PNG'leri (en az 1000 px), logo veya maskot PNG", "ek": "Fiyatlar, kampanya metni, link", "teknik": "Şeffaf WebM video · 4 MB'a kadar · 12 sn", "hazirlik": "3–4 iş günü" }
+    }
+  ]
+}

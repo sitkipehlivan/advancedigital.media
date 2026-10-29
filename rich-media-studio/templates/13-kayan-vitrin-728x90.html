@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ad.size" content="width=728,height=90">
+    <title>Kayan Vitrin 728x90</title>
+    <!-- NEEDS: b1.jpg b2.jpg b3.jpg b4.jpg b5.jpg b6.jpg b7.jpg b8.jpg b9.jpg -->
+    <style>
+/*HEAD*/
+        #ad { position: relative; width: 728px; height: 90px; overflow: hidden; cursor: pointer; background: var(--soft); }
+        .brand { position: absolute; left: 0; top: 0; width: 150px; height: 90px; padding: 0 14px; display: flex; flex-direction: column; justify-content: center; color: #fff;
+            background: linear-gradient(135deg, var(--brand3) 0%, var(--brand) 50%, var(--brand2) 100%); }
+        .brand .k { font-size: 10px; letter-spacing: 1.3px; opacity: 0.92; }
+        .brand .h { font-size: 19px; line-height: 1.02; margin-top: 2px; }
+        .rail { position: absolute; left: 150px; top: 0; width: 458px; height: 90px; overflow: hidden;
+            -webkit-mask: linear-gradient(90deg, transparent 0, #000 16px, #000 442px, transparent 458px); mask: linear-gradient(90deg, transparent 0, #000 16px, #000 442px, transparent 458px); }
+        .track { display: flex; gap: 6px; padding: 5px 0; will-change: transform; }
+        .item { flex: 0 0 96px; width: 96px; height: 80px; border-radius: 6px; overflow: hidden; background: #fff; box-shadow: 0 2px 6px rgba(90,20,0,0.18); transition: transform 0.2s; }
+        .item:hover { transform: scale(1.05); }
+        .item img { width: 96px; height: 80px; display: block; pointer-events: none; }
+        .cta { position: absolute; right: 0; top: 0; width: 120px; height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: #fff; }
+        .cta small { font-size: 10px; letter-spacing: 1px; color: var(--brand2); }
+        .cta .btn { font-size: 12px; padding: 7px 12px; }
+    </style>
+    <script type="text/javascript">
+/*CONFIG*/
+    </script>
+</head>
+<body>
+    <div id="ad" onclick="exitClick(event)">
+        <div class="brand"><div class="k">CİVİL 30. YIL</div><div class="h">Fırsatları<br>kaçırma!</div></div>
+        <div class="rail" id="rail"><div class="track" id="track"></div></div>
+        <div class="cta"><small>02–15 KASIM</small><button class="btn" onclick="exitClick(event)">Keşfet ›</button></div>
+    </div>
+    <script type="text/javascript">
+        var SPEED = 34;   // piksel/saniye
+        var track = document.getElementById('track');
+        PRODUCTS.concat(PRODUCTS).forEach(function (p, k) {
+            var i = k % PRODUCTS.length;
+            var d = document.createElement('div'); d.className = 'item';
+            d.innerHTML = '<img src="' + p.b + '" alt="' + p.name + '">';
+            d.addEventListener('click', function (e) { productClick(i, e); });
+            track.appendChild(d);
+        });
+        var loop = PRODUCTS.length * (96 + 6), x = 0, last = null, paused = false;
+        function frame(ts) {
+            if (last !== null && !paused) { x = (x + SPEED * (ts - last) / 1000) % loop; track.style.transform = 'translateX(' + (-x) + 'px)'; }
+            last = ts; requestAnimationFrame(frame);
+        }
+        var rail = document.getElementById('rail');
+        rail.addEventListener('mouseenter', function () { paused = true; });
+        rail.addEventListener('mouseleave', function () { paused = false; });
+        requestAnimationFrame(frame);
+    </script>
+</body>
+</html>

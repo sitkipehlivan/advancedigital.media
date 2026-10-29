@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ad.size" content="width=320,height=100">
+    <title>Mobil Şerit 320x100</title>
+    <!-- NEEDS: ../_ortak/b1.jpg ../_ortak/b2.jpg ../_ortak/b3.jpg ../_ortak/b4.jpg ../_ortak/b5.jpg ../_ortak/b6.jpg ../_ortak/b7.jpg ../_ortak/b8.jpg ../_ortak/b9.jpg -->
+    <style>
+
+        /* ===== Marka ayarları: başka markaya uyarlarken sadece burayı değiştirin ===== */
+        :root {
+            --brand: #f15a22;      /* ana renk */
+            --brand2: #e5262b;     /* koyu ton */
+            --brand3: #ff8a1e;     /* açık ton */
+            --ink: #3b1d12;        /* metin */
+            --paper: #ffffff;      /* zemin */
+            --soft: #fff4ec;       /* yumuşak zemin */
+        }
+        @font-face {
+            font-family: 'BrandFont';
+            src: url('../_ortak/nunito-900.woff2') format('woff2');
+            font-weight: 900;
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'BrandFont';
+            src: url('../_ortak/nunito-900-ext.woff2') format('woff2');
+            font-weight: 900;
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { margin: 0; overflow: hidden; background: transparent; }
+        body {
+            font-family: 'BrandFont', 'Arial Rounded MT Bold', Arial, sans-serif;
+            font-weight: 900;
+            -webkit-font-smoothing: antialiased;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .btn {
+            background: linear-gradient(135deg, var(--brand3) 0%, var(--brand) 55%, var(--brand2) 100%);
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 999px;
+            font: inherit;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(180, 40, 0, 0.35);
+            transition: transform 0.2s ease;
+        }
+        .btn:hover { transform: scale(1.05); }
+
+        #ad { position: relative; width: 320px; height: 100px; overflow: hidden; cursor: pointer; background: var(--soft); }
+        .brand { position: absolute; left: 0; top: 0; width: 84px; height: 100px; padding: 0 8px; display: flex; flex-direction: column; justify-content: center; gap: 6px; color: #fff;
+            background: linear-gradient(160deg, var(--brand3) 0%, var(--brand) 50%, var(--brand2) 100%); }
+        .brand .h { font-size: 14px; line-height: 1.05; }
+        .brand .btn { font-size: 10px; padding: 5px 7px; background: #fff; color: var(--brand2); border-color: #fff; align-self: flex-start; }
+        .rail { position: absolute; left: 84px; top: 0; width: 236px; height: 100px; overflow-x: auto; overflow-y: hidden;
+            scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; }
+        .rail::-webkit-scrollbar { display: none; }
+        .track { display: flex; gap: 0; height: 100px; }
+        .item { flex: 0 0 118px; width: 118px; height: 100px; scroll-snap-align: start; padding: 4px 2px 4px 4px; }
+        .item img { width: 112px; height: 92px; display: block; border-radius: 6px; box-shadow: 0 2px 6px rgba(90,20,0,0.2); pointer-events: none; }
+        .swipe { position: absolute; right: 6px; top: 50%; width: 22px; height: 22px; margin-top: -11px; border-radius: 50%; background: rgba(229,38,43,0.9); color: #fff;
+            font: 900 14px/22px Arial, sans-serif; text-align: center; pointer-events: none; animation: nudge 1.4s ease-in-out infinite; }
+        @keyframes nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-4px); } }
+    </style>
+    <script type="text/javascript">
+
+        /* ===== ClickTag tanımları: her ürün kendi clickTag'ine gider ===== */
+        var clickTag  = "https://www.civilim.com";
+        var clickTag1 = "https://www.civilim.com";
+        var clickTag2 = "https://www.civilim.com";
+        var clickTag3 = "https://www.civilim.com";
+        var clickTag4 = "https://www.civilim.com";
+        var clickTag5 = "https://www.civilim.com";
+        var clickTag6 = "https://www.civilim.com";
+        var clickTag7 = "https://www.civilim.com";
+        var clickTag8 = "https://www.civilim.com";
+        var clickTag9 = "https://www.civilim.com";
+
+        /* ===== Ürün listesi: b = 300x250 banner, w = 970x250 banner ===== */
+        var PRODUCTS = [
+            { name: "Molfix Bebek Bezi",            short: "Bebek Bezi",  price: "250 TL",       b: "../_ortak/b1.jpg", w: "w1.jpg" },
+            { name: "Konuşan Bebek & Araba",        short: "Oyuncak",     price: "550 TL'den",   b: "../_ortak/b2.jpg", w: "w2.jpg" },
+            { name: "Panduf & Eşofman Takımı",      short: "Panduf",      price: "150 TL'den",   b: "../_ortak/b3.jpg", w: "w3.jpg" },
+            { name: "Philips Avent Emzik & Biberon",short: "Emzik",       price: "400 TL'den",   b: "../_ortak/b4.jpg", w: "w4.jpg" },
+            { name: "Eşofman & Spor Ayakkabı",      short: "Eşofman",     price: "650 TL'den",   b: "../_ortak/b5.jpg", w: "w5.jpg" },
+            { name: "Oyun Parkı & Bebek Arabası",   short: "Oyun Parkı",  price: "4.900 TL'den", b: "../_ortak/b6.jpg", w: "w6.jpg" },
+            { name: "Oto Koltuğu & Bebek Arabası",  short: "Oto Koltuğu", price: "9.990 TL'den", b: "../_ortak/b7.jpg", w: "w7.jpg" },
+            { name: "Pijama & Panduf",              short: "Pijama",      price: "390 TL",       b: "../_ortak/b8.jpg", w: "w8.jpg" },
+            { name: "Zıbın Seti & Bakım Çantası",   short: "Zıbın Seti",  price: "790 TL",       b: "../_ortak/b9.jpg", w: "w9.jpg" }
+        ];
+
+        function exitClick(e) {
+            if (e) e.stopPropagation();
+            window.open(clickTag, '_blank');
+        }
+        function productClick(i, e) {
+            if (e) e.stopPropagation();
+            window.open(window['clickTag' + (i + 1)] || clickTag, '_blank');
+        }
+
+    </script>
+</head>
+<body>
+    <div id="ad" onclick="exitClick(event)">
+        <div class="brand"><div class="h">30. Yıl<br>Fırsatları</div><button class="btn" onclick="exitClick(event)">Keşfet ›</button></div>
+        <div class="rail" id="rail"><div class="track" id="track"></div></div>
+        <div class="swipe">›</div>
+    </div>
+    <script type="text/javascript">
+        var AUTO_MS = 2200;
+        var rail = document.getElementById('rail'), track = document.getElementById('track');
+        PRODUCTS.forEach(function (p, i) {
+            var d = document.createElement('div'); d.className = 'item';
+            d.innerHTML = '<img src="' + p.b + '" alt="' + p.name + '">';
+            d.addEventListener('click', function (e) { productClick(i, e); });
+            track.appendChild(d);
+        });
+        // Parmakla kaydırılabilir; dokunulmazsa kendi ilerler
+        var timer, touched = false;
+        function next() {
+            var max = rail.scrollWidth - rail.clientWidth;
+            rail.scrollLeft = rail.scrollLeft >= max - 4 ? 0 : rail.scrollLeft + 118;
+        }
+        function start() { clearInterval(timer); timer = setInterval(next, AUTO_MS); }
+        rail.addEventListener('pointerdown', function () { clearInterval(timer); touched = true; });
+        rail.addEventListener('pointerup', function () { setTimeout(start, 4000); });
+        rail.addEventListener('mouseenter', function () { clearInterval(timer); });
+        rail.addEventListener('mouseleave', start);
+        start();
+    </script>
+</body>
+</html>

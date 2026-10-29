@@ -1,0 +1,101 @@
+---
+layout: layouts/base.njk
+title: "Rich Media Stüdyosu"
+metaTitle: "Rich Media Stüdyosu: Canlı Reklam Formatları ve Materyal Spec'leri"
+metaDescription: "Markanızın hazır 300x250, 970x250 ve video materyallerinden üretilen rich media formatlarını canlı deneyin: akordeon, kazı kazan, çarkıfelek, shoppable video, pushdown, 3D küp ve 2.5D CGI masthead. Her formatın altında gerekli materyal listesi."
+keywords: "rich media, interactive masthead, 3D CGI masthead, shoppable video, pushdown, kazı kazan banner, çarkıfelek banner, 300x600, 728x90, 160x600, 320x100"
+permalink: /richmedia/
+bodyClass: "page-rm"
+ctaTitle: "Bannerınız hazırsa, rich media'sı bizden."
+ctaText: "Materyallerinizi gönderin; seçtiğiniz formatta 1–2 iş gününde yayına hazır, ürün bazında click ölçümlü rich media'yla dönelim."
+ctaProduct: "interactive-masthead"
+---
+{%- from "partials/icons.njk" import arrow -%}
+
+<section class="page-hero dark">
+  <div class="glow glow--tl"></div>
+  <div class="hero-arcs" aria-hidden="true">{% include "partials/mark.njk" %}</div>
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Anasayfa</a></li><li><a href="/cozumler/">Çözümler</a></li><li>Rich Media Stüdyosu</li></ol>
+    <span class="eyebrow eyebrow--pink">Rich media stüdyosu</span>
+    <h1 class="display-xl">Bannerınız hazır.<br><span class="pink">Rich media'sı bizden.</span></h1>
+    <p class="lead">Markanın zaten ürettiği 300×250, 970×250 ve video materyallerinden üretilen etkileşimli formatlar. Aşağıdaki her örnek canlı çalışır: üzerinde gezinin, tıklayın, deneyin. Her formatın altında hangi materyali göndermeniz gerektiği yazar.</p>
+    <div class="rm-hero-stats">
+      <div><strong>{{ richMedia.formats | length }}</strong><span>canlı format</span></div>
+      <div><strong>1–2<em>gün</em></strong><span>hazırlık süresi</span></div>
+      <div><strong>%100</strong><span>ürün bazında click ölçümü</span></div>
+      <div><strong>0</strong><span>ek prodüksiyon</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight deck">
+  <div class="wrap">
+    <div class="steps" style="--n:3">
+      <div class="step"><span class="n">01</span><h3>Materyali gönderin</h3><p>Kampanyanın 300×250 ve 970×250 bannerları, varsa videosu ve ürün linkleri yeterli.</p></div>
+      <div class="step"><span class="n">02</span><h3>Formatı seçin</h3><p>Görseller, fiyatlar, renkler ve linkler seçtiğiniz şablona yerleşir. Önizlemeyi onaylarsınız.</p></div>
+      <div class="step"><span class="n">03</span><h3>Yayına çıkın</h3><p>Her ürünün click'i ayrı ölçülür; kampanya sonunda ürün bazında ilgi raporu alırsınız.</p></div>
+    </div>
+  </div>
+</section>
+
+<nav class="cat-nav rm-filter" aria-label="Boyuta göre filtrele">
+  <div class="wrap" role="group" data-rm-filter>
+    <button type="button" class="tab" aria-pressed="true" data-size="all">Tümü <span class="n">{{ richMedia.formats | length }}</span></button>
+    {% for s in richMedia.sizes %}
+    {%- set count = richMedia.formats | where("size", s.key) | length -%}
+    {% if count %}<button type="button" class="tab" aria-pressed="false" data-size="{{ s.key }}">{{ s.label }} <span class="n">{{ count }}</span></button>{% endif %}
+    {% endfor %}
+  </div>
+</nav>
+
+<section class="section deck rm-catalog">
+  <div class="wrap">
+    {% for g in richMedia.groups %}
+    <div class="cat-block rm-group" id="{{ g.key }}" data-rm-group>
+      <div class="cat-head">
+        <h2>{{ g.label }}</h2>
+        <p>{{ g.intro }}</p>
+      </div>
+      <div class="rm-list">
+        {% for f in richMedia.formats %}{% if f.group == g.key %}
+        <article class="rm-item {% if f.w >= 700 %}rm-item--wide{% endif %}" id="{{ f.slug }}" data-size="{{ f.size }}">
+          <div class="rm-stage{% if f.demo.type == 'video' %} rm-stage--site{% endif %}">
+            <span class="rm-size">{{ f.sizeLabel }}</span>
+            <div class="rm-frame" data-w="{{ f.w }}" data-h="{{ f.h }}"{% if f.expand %} data-expand="{{ f.expand }}"{% endif %}>
+              {% if f.demo.type == "video" %}
+              <video data-src="/assets/rich-media/{{ f.demo.src }}" muted loop playsinline preload="none" aria-label="{{ f.name }} örneği"></video>
+              {% else %}
+              <iframe data-src="/assets/rich-media/{{ f.demo.src }}/index.html" title="{{ f.name }} canlı örnek" scrolling="no"></iframe>
+              {% endif %}
+            </div>
+          </div>
+          <div class="rm-info">
+            <div class="rm-text">
+              <div class="rm-title"><h3>{{ f.name }}</h3>{% if f.new %}<span class="chip chip--pink">Yeni</span>{% endif %}</div>
+              <p>{{ f.desc }}</p>
+              <p class="rm-try"><b>Deneyin:</b> {{ f.try }}</p>
+              <div class="rm-actions">
+                <a class="link-arrow" href="/iletisim/?urun=interactive-masthead&amp;format={{ f.slug }}">Bu formatla teklif iste {{ arrow() | safe }}</a>
+                {% if f.link %}<a class="link-arrow rm-more" href="{{ f.link }}">Ürün sayfası {{ arrow() | safe }}</a>{% endif %}
+              </div>
+            </div>
+            <dl class="rm-spec">
+              <div><dt>Ölçü</dt><dd>{{ f.sizeLabel }}</dd></div>
+              <div><dt>Markadan istenenler</dt><dd>{{ f.specs.materyal }}</dd></div>
+              <div><dt>Ek bilgiler</dt><dd>{{ f.specs.ek }}</dd></div>
+              <div><dt>Teknik</dt><dd>{{ f.specs.teknik }}</dd></div>
+              <div><dt>Hazırlık</dt><dd>{{ f.specs.hazirlik }}</dd></div>
+            </dl>
+          </div>
+        </article>
+        {% endif %}{% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+    <p class="rm-note">Örneklerde Civil 30. Yıl kampanya materyalleri kullanılmıştır. Tüm formatlar kampanyanızın görselleri, renkleri ve linkleriyle yeniden üretilir.</p>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}
+<script src="/assets/js/rich-media.js?v={{ build.v }}" defer></script>

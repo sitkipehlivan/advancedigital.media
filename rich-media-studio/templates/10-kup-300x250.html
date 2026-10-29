@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ad.size" content="width=300,height=250">
+    <title>3D Küp 300x250</title>
+    <!-- NEEDS: b1.jpg b2.jpg b3.jpg b4.jpg b5.jpg b6.jpg b7.jpg b8.jpg b9.jpg -->
+    <style>
+/*HEAD*/
+        #ad { position: relative; width: 300px; height: 250px; overflow: hidden; background: var(--paper); cursor: grab; perspective: 760px; }
+        #ad.drag { cursor: grabbing; }
+        .prism {
+            position: absolute; left: 0; top: 0; width: 300px; height: 250px;
+            transform-style: preserve-3d;
+            transition: transform 0.9s cubic-bezier(0.5, 0, 0.2, 1);
+        }
+        .prism.nodrag { transition: none; }
+        .face {
+            position: absolute; left: 0; top: 0; width: 300px; height: 250px;
+            backface-visibility: hidden; -webkit-backface-visibility: hidden;
+            background: #fff;
+        }
+        .face img { width: 300px; height: 250px; display: block; pointer-events: none; }
+        .face::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.18), rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.18)); opacity: var(--shade, 0); transition: opacity 0.9s; pointer-events: none; }
+        .hint {
+            position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%);
+            background: rgba(229, 38, 43, 0.92); color: #fff;
+            font-size: 11px; padding: 5px 10px; border-radius: 999px; white-space: nowrap;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.25); pointer-events: none;
+            transition: opacity 0.4s; z-index: 5;
+        }
+        .hint.gone { opacity: 0; }
+    </style>
+    <script type="text/javascript">
+/*CONFIG*/
+    </script>
+</head>
+<body>
+    <div id="ad" onclick="exitClick(event)">
+        <div class="prism" id="prism"></div>
+        <div class="hint" id="hint">‹ Sürükle, çevir ›</div>
+    </div>
+
+    <script type="text/javascript">
+        var AUTO_MS = 2400;     // Otomatik dönüş aralığı
+        var DEPTH = 150;        // Prizma derinliği (genişliğin yarısı)
+        var prism = document.getElementById('prism');
+        var faces = [];
+        for (var i = 0; i < 4; i++) {
+            var f = document.createElement('div');
+            f.className = 'face';
+            f.style.transform = 'rotateY(' + (i * 90) + 'deg) translateZ(' + DEPTH + 'px)';
+            f.innerHTML = '<img alt="">';
+            prism.appendChild(f);
+            faces.push(f);
+        }
+        var step = 0;              // kaçıncı dönüşteyiz (sınırsız artar)
+        var slot = [0, 1, 2, 3];   // her yüzde hangi ürün var
+
+        function setFace(faceIdx, productIdx) {
+            slot[faceIdx] = productIdx;
+            var im = faces[faceIdx].querySelector('img');
+            im.src = PRODUCTS[productIdx].b; im.alt = PRODUCTS[productIdx].name;
+        }
+        function mod(n, m) { return ((n % m) + m) % m; }
+        function frontFace() { return mod(-step, 4); }
+        // Görünen yüzün iki yanındaki yüzlere sıradaki ve önceki ürünleri yerleştir
+        function prepareNeighbours() {
+            var f = frontFace(), cur = slot[f];
+            setFace(mod(f + 1, 4), mod(cur + 1, PRODUCTS.length));
+            setFace(mod(f - 1, 4), mod(cur - 1, PRODUCTS.length));
+        }
+        function render(extraDeg) {
+            prism.style.transform = 'translateZ(-' + DEPTH + 'px) rotateY(' + (step * 90 + (extraDeg || 0)) + 'deg)';
+        }
+        function turn(dir) {
+            step -= dir;               // dir=1: sonraki ürün sağdan gelir
+            render(0);
+            setTimeout(prepareNeighbours, 950);
+        }
+
+        var timer = null;
+        function start() { stop(); timer = setInterval(function () { turn(1); }, AUTO_MS); }
+        function stop() { clearInterval(timer); }
+
+        /* Sürükleyerek çevirme */
+        var ad = document.getElementById('ad');
+        var sx = null, dx = 0, moved = false;
+        ad.addEventListener('pointerdown', function (e) {
+            sx = e.clientX; dx = 0; moved = false; stop();
+            prism.classList.add('nodrag'); ad.classList.add('drag');
+            document.getElementById('hint').className = 'hint gone';
+        });
+        window.addEventListener('pointermove', function (e) {
+            if (sx === null) return;
+            dx = e.clientX - sx; if (Math.abs(dx) > 5) moved = true;
+            render(dx * 0.45);
+        });
+        window.addEventListener('pointerup', function () {
+            if (sx === null) return;
+            prism.classList.remove('nodrag'); ad.classList.remove('drag');
+            sx = null;
+            if (Math.abs(dx) > 40) turn(dx < 0 ? 1 : -1); else render(0);
+            setTimeout(start, 4000);
+        });
+        prism.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (!moved) productClick(slot[frontFace()], e);   // dokunma = öndeki ürüne git
+        });
+        ad.addEventListener('mouseenter', stop);
+        ad.addEventListener('mouseleave', function () { if (sx === null) start(); });
+
+        setFace(0, 0); prepareNeighbours(); setFace(2, 2);
+        render(0);
+        start();
+    </script>
+</body>
+</html>
