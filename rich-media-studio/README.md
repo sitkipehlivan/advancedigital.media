@@ -1,6 +1,6 @@
 # Rich Media Stüdyosu
 
-`/rich-media/` sayfasındaki canlı örneklerin kaynağı.
+`/richmedia/` sayfasındaki canlı örneklerin kaynağı.
 
 ```
 rich-media-studio/

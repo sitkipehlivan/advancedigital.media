@@ -1,5 +1,5 @@
 {
-  "_not": "Rich Media Stüdyosu sayfasının (/rich-media/) içeriği. Yeni format eklemek için 'formats' listesine kayıt ekleyin. demo.src: src/assets/rich-media/ altındaki klasör. size filtresi 'sizes' listesindeki anahtarlardan biri olmalı.",
+  "_not": "Rich Media Stüdyosu sayfasının (/richmedia/) içeriği. Yeni format eklemek için 'formats' listesine kayıt ekleyin. demo.src: src/assets/rich-media/ altındaki klasör. size filtresi 'sizes' listesindeki anahtarlardan biri olmalı.",
   "sizes": [
     { "key": "970x250", "label": "970×250" },
     { "key": "728x90", "label": "728×90" },
