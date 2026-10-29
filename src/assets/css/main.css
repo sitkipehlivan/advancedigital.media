@@ -727,3 +727,11 @@ strong,b{font-family:var(--display);font-weight:600;letter-spacing:-.005em}
 @media (max-width:720px){.rm-mockup{padding:0 18px 4px}.rm-mockup video{margin-top:20px}}
 .rm-mockup:first-child{padding-top:30px}
 .rm-mockup:first-child video{margin-top:0}
+/* Rich Media: sunumdaki modeller */
+.rm-item--deck{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+.rm-stage--media{display:block;padding:58px 34px 40px}
+.rm-stage--media .media-stage{width:100%}
+.rm-stage--media .tvgrid figcaption{color:#D5D5DA}
+.rm-kpis{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+@media (max-width:1080px){.rm-item--deck{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:720px){.rm-stage--media{padding:48px 14px 24px}}
