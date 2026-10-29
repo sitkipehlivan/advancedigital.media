@@ -60,6 +60,7 @@ ctaProduct: "interactive-masthead"
       <div class="rm-list">
         {% for f in richMedia.formats %}{% if f.group == g.key %}
         <article class="rm-item {% if f.w >= 700 %}rm-item--wide{% endif %}" id="{{ f.slug }}" data-size="{{ f.size }}">
+          {% if not f.mockupOnly %}
           <div class="rm-stage{% if f.demo.type == 'video' %} rm-stage--site{% endif %}">
             <span class="rm-size">{{ f.sizeLabel }}</span>
             <div class="rm-frame" data-w="{{ f.w }}" data-h="{{ f.h }}"{% if f.expand %} data-expand="{{ f.expand }}"{% endif %}>
@@ -70,6 +71,7 @@ ctaProduct: "interactive-masthead"
               {% endif %}
             </div>
           </div>
+          {% endif %}
           {% if f.mockup %}
           <figure class="rm-mockup">
             <video data-src="/assets/rich-media/{{ f.mockup.src }}" poster="/assets/rich-media/{{ f.mockup.poster }}" muted loop playsinline controls preload="none" aria-label="{{ f.mockup.caption }}"></video>

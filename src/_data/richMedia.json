@@ -167,6 +167,7 @@
       "desc": "Ürünler fotoğraflarından kesilip derinlik, ışık ve kamera hareketiyle canlandırılır. Sağdan sola sinematik bir akışla geçerken çerçevenin dışına taşar, fiyat etiketleri açılır. Arka planı şeffaf olduğu için taşan kısımlarda yayıncı sitesi görünür.",
       "try": "Koyu zemin yayıncı sitesinin yerine geçer. Taşan ürünlerin arkasında site görünür.",
       "link": "/cozumler/3d-cgi-masthead/",
+      "mockupOnly": true,
       "mockup": { "src": "cgi-civil/kanald-mockup.mp4", "poster": "cgi-civil/kanald-mockup.jpg", "caption": "Yayında nasıl görünür: Kanal D anasayfasında masthead alanı (mockup)" },
       "specs": { "materyal": "Arka planı temizlenmiş ürün PNG'leri (en az 1000 px), logo veya maskot PNG", "ek": "Fiyatlar, kampanya metni, link", "teknik": "Şeffaf WebM video · 4 MB'a kadar · 12 sn", "hazirlik": "3–4 iş günü" }
     }
