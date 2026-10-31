@@ -54,6 +54,25 @@
     });
   });
 
+  // Filtre çubuğu: aşağı kaydırırken gizle, yukarı kaydırınca göster
+  var fbar = document.querySelector(".rm-filter");
+  if (fbar) {
+    var lastY = window.scrollY, ticking = false;
+    window.addEventListener("scroll", function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var y = window.scrollY, dy = y - lastY;
+        if (Math.abs(dy) > 4) {
+          var stuck = fbar.getBoundingClientRect().top <= parseFloat(getComputedStyle(fbar).top) + 1;
+          fbar.classList.toggle("is-hidden", dy > 0 && stuck);
+          lastY = y;
+        }
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
   // Boyut filtresi
   var bar = document.querySelector("[data-rm-filter]");
   if (bar) {
