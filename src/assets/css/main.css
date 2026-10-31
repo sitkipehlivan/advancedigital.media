@@ -735,3 +735,13 @@ strong,b{font-family:var(--display);font-weight:600;letter-spacing:-.005em}
 .rm-kpis{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 @media (max-width:1080px){.rm-item--deck{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:720px){.rm-stage--media{padding:48px 14px 24px}}
+/* Rich Media: TV'de 3D CGI alt banner */
+.rm-stage--tv{display:block;padding:60px 40px 44px}
+.rm-tvgrid{display:grid;grid-template-columns:1fr 1fr;gap:34px 40px}
+.rm-tvgrid .zap-tv{margin:0}
+.rm-tvgrid figcaption{font:600 .85rem/1 var(--display);margin-top:12px;color:#D5D5DA;display:flex;align-items:center;justify-content:center;gap:8px}
+.rm-tvgrid figcaption::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--pink)}
+@media (max-width:720px){.rm-tvgrid{grid-template-columns:1fr;gap:26px}.rm-stage--tv{padding:48px 14px 24px}}
+.rm-stage.rm-stage--tv{display:block}
+.rm-tvgrid{width:100%;max-width:1100px;margin:0 auto}
+.rm-tvgrid .ch-label{font-size:.62rem;letter-spacing:.12em;white-space:nowrap}

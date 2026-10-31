@@ -485,5 +485,44 @@
       "materyal": "Native: başlık, açıklama, yatay görsel; Banner: standart IAB ölçüleri",
       "ek": "Link, dönüşüm hedefi"
     }
-  ]
+  ],
+  "tvAltBanner": {
+    "slug": "3d-cgi-alt-banner",
+    "name": "3D CGI Alt Banner",
+    "size": "tv",
+    "sizeLabel": "Addressable TV · Alt Banner",
+    "desc": "Yayın akışı kesilmeden, ekranın alt bandında açılan 3D CGI reklam. Ürünler ve karakterler banner alanından taşarak dizi sahnesinin içine girer, izleyici programı izlemeye devam ederken marka sahnede yer alır.",
+    "kpis": [
+      "Hane bazlı erişim",
+      "Yayın içi görünürlük",
+      "Ad recall"
+    ],
+    "items": [
+      {
+        "src": "cgi-altbanner-axe",
+        "brand": "AXE",
+        "label": "AXE Premium Collection"
+      },
+      {
+        "src": "cgi-altbanner-mavi",
+        "brand": "Mavi",
+        "label": "Mavi Rinse Jeans"
+      },
+      {
+        "src": "cgi-altbanner-dominos",
+        "brand": "Domino's",
+        "label": "Domino's × Minecraft"
+      },
+      {
+        "src": "cgi-altbanner-first",
+        "brand": "First",
+        "label": "First Sour Patch"
+      }
+    ],
+    "specs": {
+      "materyal": "Arka planı temizlenmiş ürün PNG'leri ya da 3D modeli, logo, varsa karakter veya oyuncu görselleri",
+      "ek": "Kampanya mesajı (alt bant metni), yayın dönemi",
+      "teknik": "Addressable TV alt bant · 10–20 sn"
+    }
+  }
 }

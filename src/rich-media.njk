@@ -12,7 +12,7 @@ ctaProduct: "interactive-masthead"
 ---
 {%- from "partials/icons.njk" import arrow -%}
 {%- from "partials/media.njk" import media -%}
-{%- set total = (richMedia.formats | length) + (richMedia.deckModels | length) -%}
+{%- set total = (richMedia.formats | length) + (richMedia.deckModels | length) + 1 -%}
 
 <section class="page-hero dark">
   <div class="glow glow--tl"></div>
@@ -45,7 +45,7 @@ ctaProduct: "interactive-masthead"
   <div class="wrap" role="group" data-rm-filter>
     <button type="button" class="tab" aria-pressed="true" data-size="all">Tümü <span class="n">{{ total }}</span></button>
     {% for s in richMedia.sizes %}
-    {%- set count = (richMedia.formats | where("size", s.key) | length) + (richMedia.deckModels | where("size", s.key) | length) -%}
+    {%- set count = (richMedia.formats | where("size", s.key) | length) + (richMedia.deckModels | where("size", s.key) | length) + (1 if s.key == richMedia.tvAltBanner.size else 0) -%}
     {% if count %}<button type="button" class="tab" aria-pressed="false" data-size="{{ s.key }}">{{ s.label }} <span class="n">{{ count }}</span></button>{% endif %}
     {% endfor %}
   </div>
@@ -103,6 +103,50 @@ ctaProduct: "interactive-masthead"
       </div>
     </div>
     {% endfor %}
+    {%- set tb = richMedia.tvAltBanner %}
+    <div class="cat-block rm-group" id="tv-cgi" data-rm-group>
+      <div class="cat-head">
+        <h2>TV'de 3D CGI</h2>
+        <p>Addressable TV yayınında, dizi akışını kesmeden ekranın alt bandında açılan 3D CGI reklamlar.</p>
+      </div>
+      <div class="rm-list">
+        <article class="rm-item rm-item--wide rm-item--tv" id="{{ tb.slug }}" data-size="{{ tb.size }}">
+          <div class="rm-stage rm-stage--tv dark">
+            <span class="rm-size">{{ tb.sizeLabel }}</span>
+            <div class="rm-tvgrid">
+              {% for it in tb.items %}
+              <figure class="tv zap-tv zap-real">
+                <div class="tv-screen">
+                  <video muted playsinline loop preload="none" poster="/assets/media/{{ it.src }}.webp" data-autoplay aria-label="{{ it.label }}: Addressable TV 3D CGI alt banner örneği"><source src="/assets/media/{{ it.src }}.mp4" type="video/mp4"></video>
+                  <span class="ch-label">{{ it.brand | upper }} · CANLI ÖRNEK</span>
+                </div>
+                <div class="tv-stand"></div><div class="tv-base"></div>
+                <figcaption>{{ it.label }}</figcaption>
+              </figure>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="rm-info">
+            <div class="rm-text">
+              <div class="rm-title"><h3>{{ tb.name }}</h3><span class="chip chip--pink">Yeni</span></div>
+              <p>{{ tb.desc }}</p>
+              <div class="rm-kpis">{% for k in tb.kpis %}<span class="chip">{{ k }}</span>{% endfor %}</div>
+              <div class="rm-actions">
+                <a class="link-arrow" href="/iletisim/?urun=addressable-tv&amp;format={{ tb.slug }}">Bu formatla teklif iste {{ arrow() | safe }}</a>
+                <a class="link-arrow rm-more" href="/cozumler/addressable-tv/">Addressable TV {{ arrow() | safe }}</a>
+              </div>
+            </div>
+            <dl class="rm-spec">
+              <div><dt>Alan</dt><dd>{{ tb.sizeLabel }}</dd></div>
+              <div><dt>Markadan istenenler</dt><dd>{{ tb.specs.materyal }}</dd></div>
+              <div><dt>Ek bilgiler</dt><dd>{{ tb.specs.ek }}</dd></div>
+              <div><dt>Teknik</dt><dd>{{ tb.specs.teknik }}</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </div>
+
     <div class="cat-block rm-group" id="modeller" data-rm-group>
       <div class="cat-head">
         <h2>Sunumdaki reklam modelleri</h2>
