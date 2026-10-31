@@ -520,9 +520,9 @@
       }
     ],
     "specs": {
-      "materyal": "Arka planı temizlenmiş ürün PNG'leri ya da 3D modeli, logo, varsa karakter veya oyuncu görselleri",
+      "materyal": "Tüm uygun boyutlu .psd materyaller (ürün, logo, varsa karakter görselleri). Tasarım tarafımızdan hazırlanır.",
       "ek": "Kampanya mesajı (alt bant metni), yayın dönemi",
-      "teknik": "Addressable TV alt bant · 10–20 sn"
+      "teknik": "750x200, 728x90, 970x90, 930x180, 980x120, 750x100 px · 10–15 sn (talebe göre artabilir)"
     }
   }
 }

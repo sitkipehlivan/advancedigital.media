@@ -348,8 +348,17 @@
             "750x200, 728x90, 970x90, 930x180, 980x120, 750x100 px",
             "Süre: 10–15 saniye (talebe göre artabilir)"
           ],
-          "demo": "3d-cgi-alt-banner",
           "model": "Display"
+        },
+        {
+          "type": "3D CGI Alt Banner",
+          "model": "Display",
+          "lines": [
+            "750x200, 728x90, 970x90, 930x180, 980x120, 750x100 px",
+            "Süre: 10–15 saniye (talebe göre artabilir)"
+          ],
+          "note": "Tüm uygun boyutlu .psd materyaller talep edilir. Tasarım tarafımızdan hazırlanır.",
+          "demo": "3d-cgi-alt-banner"
         },
         {
           "type": "All Video Formats",
