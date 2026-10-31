@@ -1,0 +1,375 @@
+{
+  "_not": "Advance 2026 Spec sayfasının (/spec/) içeriği. Kaynak: Advance_Spec_2026.xlsx. Her 'items' kaydı bir reklam tipidir; 'lines' satırları sayfada ve kopyalanan metinde aynen görünür. 'demo' = /richmedia/ sayfasındaki örneğin id'si (opsiyonel).",
+  "updated": "2026",
+  "groups": [
+    {
+      "id": "premium-display",
+      "network": "Advance Premium Display Network",
+      "model": "Display",
+      "device": "Mobile + Desktop",
+      "items": [
+        {
+          "type": "Masthead",
+          "lines": [
+            "970x250 px - 320x100 px",
+            "Max. 250 KB",
+            "JPEG, GIF veya HTML5 formatında"
+          ],
+          "demo": "akordeon"
+        },
+        {
+          "type": "Video Masthead",
+          "lines": [
+            "970x250 px",
+            "Max. 250 KB",
+            "JPEG veya HTML5 formatında"
+          ],
+          "demo": "video-endcard"
+        },
+        {
+          "type": "Form Masthead",
+          "lines": [
+            "970x250 px",
+            "Max. 250 KB",
+            "JPG, HTML5"
+          ]
+        },
+        {
+          "type": "3D CGI - Interactive Masthead",
+          "lines": [
+            "970x250 px",
+            "Max. 250 KB"
+          ],
+          "note": "Tüm uygun boyutlu .psd materyaller talep edilir. Tasarım tarafımızdan hazırlanır.",
+          "demo": "cgi-masthead"
+        },
+        {
+          "type": "3D CGI Skyscraper / Interactive Skyscraper",
+          "lines": [
+            "320x480 px - 300x600 px",
+            "Max. 250 KB"
+          ],
+          "note": "Tüm uygun boyutlu .psd materyaller talep edilir. Tasarım tarafımızdan hazırlanır.",
+          "demo": "model-3d-cgi-skyscraper"
+        },
+        {
+          "type": "Interstitial",
+          "lines": [
+            "320x480 px",
+            "800x600 px",
+            "420x380 px",
+            "Max. 150 KB",
+            "JPEG, GIF veya HTML5 formatında"
+          ]
+        },
+        {
+          "type": "Contextual Banner",
+          "lines": [
+            "300x250 px",
+            "728x90 px",
+            "160x600 px",
+            "320x100 px",
+            "320x50 px",
+            "300x600 px",
+            "Max. 150 KB",
+            "JPEG, GIF veya HTML5 formatında"
+          ]
+        },
+        {
+          "type": "Contextual Masthead",
+          "lines": [
+            "970x250 px",
+            "Max. 250 KB",
+            "JPG, HTML5"
+          ]
+        },
+        {
+          "type": "Standard Banners",
+          "lines": [
+            "300x250 px",
+            "728x90 px",
+            "160x600 px",
+            "320x100 px",
+            "320x50 px",
+            "300x600 px",
+            "Max. 150 KB",
+            "JPEG, GIF veya HTML5 formatında"
+          ]
+        },
+        {
+          "type": "Standard Banners (CPC)",
+          "lines": [
+            "300x250 px",
+            "728x90 px",
+            "160x600 px",
+            "320x100 px",
+            "320x50 px",
+            "300x600 px",
+            "Max. 150 KB",
+            "JPEG, GIF veya HTML5 formatında"
+          ]
+        },
+        {
+          "type": "Native Ads (CPC)",
+          "lines": [
+            "1200x674 px",
+            "492x328 px",
+            "320x160 px",
+            "Max. 150 KB",
+            "JPEG, GIF veya HTML5 formatında",
+            "Başlık: 25 karakter",
+            "Açıklama: 75 karakter",
+            "CTA: 15 karakter"
+          ],
+          "demo": "model-performans-cpc"
+        }
+      ]
+    },
+    {
+      "id": "video-all",
+      "network": "Advance Video All Network",
+      "model": "Video Preroll",
+      "device": "Mobile + Desktop",
+      "items": [
+        {
+          "type": "Preroll (All Network)",
+          "lines": [
+            "Yüksek çözünürlüklü video (TVC kopyası olabilir) ve 1x1 gerekli kodlar veya VAST / VPAID kodu",
+            "16:9 (1920×1080), 1:1 (1080×1080)",
+            "6–30 saniye (15 sn önerilir)"
+          ],
+          "note": "VAST veya VPAID kodu olarak gelen yayınlarda kodun içerisindeki video boyutu max. 10 MB olmalı.",
+          "demo": "model-standart-preroll"
+        },
+        {
+          "type": "Preroll CPCV",
+          "lines": [
+            "Yüksek çözünürlüklü video (TVC kopyası olabilir) ve 1x1 gerekli kodlar veya VAST / VPAID kodu",
+            "16:9 (1920×1080), 1:1 (1080×1080)",
+            "6–30 saniye (15 sn önerilir)"
+          ],
+          "note": "VAST veya VPAID kodu olarak gelen yayınlarda kodun içerisindeki video boyutu max. 10 MB olmalı.",
+          "demo": "model-video-preroll-cpcv"
+        },
+        {
+          "type": "Contextual Video (All Network)",
+          "lines": [
+            "Yüksek çözünürlüklü video (TVC kopyası olabilir) ve 1x1 gerekli kodlar veya VAST / VPAID kodu",
+            "16:9 (1920×1080), 1:1 (1080×1080)",
+            "6–30 saniye (15 sn önerilir)"
+          ],
+          "note": "VAST veya VPAID kodu olarak gelen yayınlarda kodun içerisindeki video boyutu max. 10 MB olmalı."
+        }
+      ]
+    },
+    {
+      "id": "proje",
+      "network": "Proje",
+      "model": "AdverGame",
+      "device": "Mobile + Desktop",
+      "items": [
+        {
+          "type": "AdverGame",
+          "lines": [],
+          "note": "Tüm uygun boyutlu materyaller talep edilir. Tasarım tarafımızdan hazırlanır.",
+          "demo": "model-advergame"
+        }
+      ]
+    },
+    {
+      "id": "premium-video",
+      "network": "Advance Premium Video Network",
+      "model": "Video Preroll",
+      "device": "Mobile + Desktop",
+      "items": [
+        {
+          "type": "Preroll+ (Premium Network)",
+          "lines": [
+            "Yüksek çözünürlüklü video (TVC kopyası olabilir) ve 1x1 gerekli kodlar veya VAST / VPAID kodu",
+            "16:9 (1920×1080), 1:1 (1080×1080)",
+            "6–30 saniye (15 sn önerilir)"
+          ],
+          "note": "VAST veya VPAID kodu olarak gelen yayınlarda kodun içerisindeki video boyutu max. 10 MB olmalı.",
+          "demo": "model-preroll-plus"
+        },
+        {
+          "type": "Preroll+ CPCV",
+          "lines": [
+            "Yüksek çözünürlüklü video (TVC kopyası olabilir) ve 1x1 gerekli kodlar veya VAST / VPAID kodu",
+            "16:9 (1920×1080), 1:1 (1080×1080)",
+            "6–30 saniye (15 sn önerilir)"
+          ],
+          "note": "VAST veya VPAID kodu olarak gelen yayınlarda kodun içerisindeki video boyutu max. 10 MB olmalı."
+        },
+        {
+          "type": "Firstroll",
+          "lines": [
+            "Yüksek çözünürlüklü video (TVC kopyası olabilir) ve 1x1 gerekli kodlar veya VAST / VPAID kodu",
+            "16:9 (1920×1080), 1:1 (1080×1080)",
+            "6–30 saniye (15 sn önerilir)"
+          ],
+          "note": "VAST veya VPAID kodu olarak gelen yayınlarda kodun içerisindeki video boyutu max. 10 MB olmalı.",
+          "demo": "model-firstroll"
+        }
+      ]
+    },
+    {
+      "id": "ctv",
+      "network": "Advance Premium Connected TV Network",
+      "model": "Video Preroll",
+      "device": "CTV",
+      "items": [
+        {
+          "type": "Connected TV",
+          "lines": [
+            "Format: .mp4",
+            "VAST veya 1x1 kod ile ilerlenebilir",
+            "Boyut: 1920x1080 px, tavsiye edilen dosya büyüklüğü 45 MB",
+            "Video süresi: önerilen 30 saniye, max. 60 saniyeye kadar"
+          ],
+          "demo": "model-connected-tv"
+        }
+      ]
+    },
+    {
+      "id": "gaming",
+      "network": "Advance Premium Gaming Network",
+      "model": "Display + Video",
+      "device": "Mobile",
+      "items": [
+        {
+          "type": "Rewarded Video",
+          "lines": [
+            "Yüksek çözünürlüklü dikey veya yatay video (TVC kopyası olabilir) ve 1x1 gerekli kodlar veya VAST / VPAID kodu",
+            "16:9 (1920×1080), 1:1 (1080×1080)",
+            "6–30 saniye (15 sn önerilir)"
+          ],
+          "note": "VAST veya VPAID kodu olarak gelen yayınlarda kodun içerisindeki video boyutu max. 10 MB olmalı.",
+          "demo": "model-rewarded-video"
+        },
+        {
+          "type": "Native In Game",
+          "lines": [],
+          "note": "Tüm uygun boyutlu materyaller talep edilir. Tasarım tarafımızdan hazırlanır."
+        },
+        {
+          "type": "In Game Audio + Companion Banner",
+          "lines": [
+            "Görsel ile: 300x250, 320x320, 480x320, 300x600 px JPG",
+            "Video ile: önerilen en boy oranları 3:2, 2:3, 16:9, 4:3",
+            "Desteklenen format: MP4",
+            "Önerilen video dosya boyutu: 15 MB'tan az (VAST kodu ile yayın yapılabilir)",
+            "Video süresi: 6–15 saniye"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "network": "Advance Mobile Network",
+      "model": "Display + Video",
+      "device": "Mobile",
+      "items": [
+        {
+          "type": "Affiliate",
+          "lines": [
+            "320x50, 300x250, 320x100, 300x100, 728x90, 160x600, 300x600, 970x250, 336x280",
+            "CTA net ve aksiyon odaklı olmalı. Örn: “Şimdi Yükle”, “Hemen Deneyin”, “İndir ve Oyna”",
+            "Google Play / App Store ikonları uygun biçimde yer almalı (gerekiyorsa yasal kullanım kurallarına uygun)",
+            "Tracking link",
+            "MMP entegrasyonu (Adjust, AppsFlyer, Branch vb.) gereklidir"
+          ]
+        },
+        {
+          "type": "App Download",
+          "lines": [
+            "320x50, 300x250, 320x100, 300x100, 728x90, 160x600, 300x600, 970x250, 336x280",
+            "CTA net ve aksiyon odaklı olmalı. Örn: “Şimdi Yükle”, “Hemen Deneyin”, “İndir ve Oyna”",
+            "Google Play / App Store ikonları uygun biçimde yer almalı (gerekiyorsa yasal kullanım kurallarına uygun)",
+            "Tracking link",
+            "MMP entegrasyonu (Adjust, AppsFlyer, Branch vb.) gereklidir"
+          ]
+        },
+        {
+          "type": "AR Product",
+          "lines": [],
+          "note": "Tüm uygun boyutlu materyaller talep edilir. Tasarım tarafımızdan hazırlanır.",
+          "demo": "model-ar-product-placement"
+        },
+        {
+          "type": "Push Notification",
+          "lines": [
+            "Başlık (Title): max. 30 karakter",
+            "Açıklama (Message): max. 45 karakter",
+            "Logo boyutu: 192x192 px",
+            "Banner boyutu: 492x328 px",
+            "Hedef URL (Click URL)",
+            "CTA düğmesi (Button): genellikle 2 adede kadar, her biri max. 15 karakter",
+            "Tüm kreatif bileşenler dahil max. 200–300 KB"
+          ],
+          "demo": "model-push-notification"
+        }
+      ]
+    },
+    {
+      "id": "admongrel",
+      "network": "Admongrel Addressable TV",
+      "model": "Display + Video",
+      "device": "Smart TV",
+      "items": [
+        {
+          "type": "Standard Banners",
+          "lines": [
+            "980x120 px (Best Seller)",
+            "Süre: 10–15 saniye (talebe göre artabilir)"
+          ],
+          "model": "Display"
+        },
+        {
+          "type": "L Banner",
+          "lines": [
+            "1280x720 px",
+            "Süre: 10–15 saniye (talebe göre artabilir)"
+          ],
+          "demo": "model-addressable-tv",
+          "model": "Display"
+        },
+        {
+          "type": "Sidebant (Dikey Bant)",
+          "lines": [
+            "1280x720 px",
+            "Süre: 10–15 saniye (talebe göre artabilir)"
+          ],
+          "model": "Display"
+        },
+        {
+          "type": "Alt Banner",
+          "lines": [
+            "750x200, 728x90, 970x90, 930x180, 980x120, 750x100 px",
+            "Süre: 10–15 saniye (talebe göre artabilir)"
+          ],
+          "demo": "3d-cgi-alt-banner",
+          "model": "Display"
+        },
+        {
+          "type": "All Video Formats",
+          "lines": [
+            "1280x720",
+            "Süre: 0–30 saniye"
+          ],
+          "model": "Video"
+        },
+        {
+          "type": "Zaproll",
+          "lines": [
+            "Yüksek çözünürlüklü 16:9 video + 1x1 tracking kod",
+            "veya VAST kodu",
+            "Süre: 0–30 saniye"
+          ],
+          "demo": "model-zaproll",
+          "model": "Video"
+        }
+      ]
+    }
+  ]
+}

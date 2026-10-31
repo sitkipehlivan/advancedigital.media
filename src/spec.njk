@@ -1,0 +1,79 @@
+---
+layout: layouts/base.njk
+title: "Spec Rehberi"
+metaTitle: "Advance Digital 2026 Spec Rehberi: Reklam Formatı Materyal Ölçüleri"
+metaDescription: "Advance Digital 2026 materyal spec'leri: Display, Video Preroll, Connected TV, Gaming, Mobile ve Admongrel Addressable TV formatlarının ölçüleri, dosya boyutları ve süreleri."
+permalink: /spec/
+bodyClass: "page-spec"
+ctaTitle: "Materyalleriniz hazırsa yayına başlayalım."
+ctaText: "Spec'e uygun materyallerinizi gönderin; trafik ve kreatif kontrolünü ekibimiz yapsın."
+---
+{%- from "partials/icons.njk" import arrow -%}
+{%- set total = 0 -%}{%- for g in spec.groups %}{% set total = total + (g.items | length) %}{% endfor -%}
+
+<section class="page-hero dark spec-hero">
+  <div class="glow glow--tl"></div>
+  <div class="hero-arcs" aria-hidden="true">{% include "partials/mark.njk" %}</div>
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Anasayfa</a></li><li>Spec Rehberi</li></ol>
+    <span class="eyebrow eyebrow--pink">Spec rehberi · {{ spec.updated }}</span>
+    <h1 class="display-l">Materyal spec'leri</h1>
+    <p class="lead">Advance ağlarındaki tüm reklam tiplerinin ölçüleri, dosya boyutları ve süreleri. Her satırın yanındaki <b>Kopyala</b> butonuyla spec'i tek tıkla alıp brief'inize ya da e-postanıza yapıştırabilirsiniz.</p>
+    <div class="spec-tools">
+      <label class="spec-search" for="specSearch">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="specSearch" type="search" placeholder="Format ya da ölçü ara: 970x250, preroll, push…" autocomplete="off">
+      </label>
+      <button type="button" class="btn btn--sm" data-copy-all>Tüm spec'i kopyala</button>
+    </div>
+  </div>
+</section>
+
+<nav class="cat-nav spec-nav rm-filter" aria-label="Ağlar">
+  <div class="wrap">
+    {% for g in spec.groups %}<a href="#{{ g.id }}">{{ g.network | replace("Advance ", "") }}</a>{% endfor %}
+  </div>
+</nav>
+
+<section class="section--tight deck spec-body">
+  <div class="wrap">
+    <p class="spec-empty" hidden data-spec-empty>Aramanızla eşleşen format bulunamadı.</p>
+    {% for g in spec.groups %}
+    <div class="spec-group" id="{{ g.id }}" data-spec-group>
+      <div class="spec-ghead">
+        <div>
+          <h2>{{ g.network }}</h2>
+          <div class="spec-meta">
+            {% if g.model %}<span class="chip">{{ g.model }}</span>{% endif %}
+            {% if g.device %}<span class="chip">{{ g.device }}</span>{% endif %}
+          </div>
+        </div>
+        <button type="button" class="spec-copy spec-copy--group" data-copy-group>Bu ağı kopyala</button>
+      </div>
+      <div class="spec-table" role="table" aria-label="{{ g.network }} spec">
+        <div class="spec-row spec-row--head" role="row"><span role="columnheader">Reklam tipi</span><span role="columnheader">Spec</span><span role="columnheader" class="sr-only">İşlem</span></div>
+        {% for it in g.items %}
+        <div class="spec-row" role="row" data-spec-item data-network="{{ g.network }}" data-model="{{ it.model or g.model }}" data-device="{{ g.device }}">
+          <div class="spec-type" role="cell">
+            <h3>{{ it.type }}</h3>
+            {% if it.model %}<span class="spec-tag">{{ it.model }}</span>{% endif %}
+            {% if it.demo %}<a class="spec-demo" href="/richmedia/#{{ it.demo }}">Örneği gör {{ arrow() | safe }}</a>{% endif %}
+          </div>
+          <div class="spec-lines" role="cell">
+            {% if it.lines.length %}<ul>{% for l in it.lines %}<li>{{ l }}</li>{% endfor %}</ul>{% endif %}
+            {% if it.note %}<p class="spec-note">{{ it.note }}</p>{% endif %}
+          </div>
+          <div class="spec-act" role="cell"><button type="button" class="spec-copy" data-copy-item aria-label="{{ it.type }} spec'ini kopyala">Kopyala</button></div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+    <p class="rm-note">Tabloda olmayan bir ölçü ya da format için <a href="mailto:{{ site.email }}">{{ site.email }}</a> adresine yazabilirsiniz. Canlı örnekler için <a href="/richmedia/">Rich Media Stüdyosu</a>.</p>
+  </div>
+</section>
+
+<div class="spec-toast" role="status" aria-live="polite" data-spec-toast></div>
+
+{% include "partials/cta.njk" %}
+<script src="/assets/js/spec.js?v={{ build.v }}" defer></script>

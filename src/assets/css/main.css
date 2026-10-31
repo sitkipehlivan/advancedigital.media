@@ -748,3 +748,51 @@ strong,b{font-family:var(--display);font-weight:600;letter-spacing:-.005em}
 /* Rich Media filtre çubuğu: aşağı kaydırırken gizlenir, yukarı kaydırınca header ile birlikte geri gelir */
 .rm-filter{transition:transform .35s var(--ease),opacity .3s ease}
 .rm-filter.is-hidden{transform:translateY(calc(-100% - var(--header-h)));opacity:0;pointer-events:none}
+
+/* --- Spec Rehberi (/spec/) --------------------------------------------- */
+.spec-hero .lead b{color:#fff}
+.spec-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:34px;max-width:860px}
+.spec-search{flex:1 1 360px;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1.5px solid var(--line-d);border-radius:999px;padding:0 18px;transition:border-color .2s}
+.spec-search:focus-within{border-color:var(--pink)}
+.spec-search svg{width:18px;height:18px;color:var(--mute-d);flex:none}
+.spec-search input{flex:1;min-width:0;background:none;border:0;color:#fff;font:400 1rem/1 var(--body);padding:15px 0}
+.spec-search input::placeholder{color:#8E8E95}
+.spec-search input:focus{outline:none}
+.spec-nav .wrap{align-items:center}
+.spec-group{scroll-margin-top:calc(var(--header-h) + 72px)}
+.spec-group + .spec-group{margin-top:clamp(48px,6vw,80px)}
+.spec-group[hidden],.spec-row[hidden]{display:none}
+.spec-ghead{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1.5px solid var(--ink);margin-bottom:6px}
+.spec-ghead h2{font-size:clamp(1.6rem,3vw,2.3rem)}
+.spec-meta{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+.spec-table{display:grid}
+.spec-row{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr) auto;gap:16px 32px;padding:22px 4px;border-bottom:1px solid var(--line);align-items:start}
+.spec-row--head{padding:12px 4px;font:600 .7rem/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--pink)}
+.spec-type h3{font-size:1.2rem;line-height:1.15}
+.spec-tag{display:inline-block;margin-top:8px;font:600 .7rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);border:1px solid var(--line);border-radius:6px;padding:5px 7px 4px}
+.spec-demo{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font:600 .88rem/1 var(--display);color:var(--pink);text-decoration:none}
+.spec-demo svg{width:14px;height:14px;transition:transform .25s var(--ease)}
+.spec-demo:hover svg{transform:translateX(3px)}
+.spec-type{display:flex;flex-direction:column;align-items:flex-start}
+.spec-lines ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.spec-lines li{font-size:1rem;line-height:1.45;padding-left:16px;position:relative;font-variant-numeric:tabular-nums;user-select:text}
+.spec-lines li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--pink)}
+.spec-note{margin-top:10px;font-size:.94rem;color:var(--mute);background:var(--white);border-left:3px solid var(--pink);padding:10px 14px;border-radius:0 8px 8px 0}
+.spec-lines ul + .spec-note{margin-top:14px}
+.spec-copy{font:600 .88rem/1 var(--display);border:1.5px solid var(--ink);background:var(--white);color:var(--ink);border-radius:999px;padding:10px 16px 9px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.spec-copy:hover{background:var(--ink);color:#fff}
+.spec-copy.ok{background:var(--pink);border-color:var(--pink);color:#fff}
+.spec-copy--group{border-color:var(--line);background:transparent}
+.spec-empty{padding:40px 0;color:var(--mute);font-size:1.05rem}
+.spec-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:#fff;font:600 .95rem/1 var(--display);padding:14px 20px 13px;border-radius:999px;box-shadow:0 14px 40px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s var(--ease);z-index:60}
+.spec-toast.on{opacity:1;transform:translate(-50%,0)}
+@media (max-width:720px){
+  .spec-row{grid-template-columns:minmax(0,1fr);gap:12px;padding:20px 0}
+  .spec-row--head{display:none}
+  .spec-act{justify-self:start}
+}
+@media print{
+  .site-header,.site-footer,.cta-band,.spec-nav,.spec-tools,.spec-copy,.spec-demo,.glow,.hero-arcs{display:none!important}
+  .page-hero{padding:20px 0;background:#fff;color:#000}
+  .spec-row{break-inside:avoid}
+}
