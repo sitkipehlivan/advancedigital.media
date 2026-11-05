@@ -12,6 +12,10 @@ http://www.advancedigital.com.tr/*   https://advancedigital.media/:splat   301!
 /in-game-reklamlarda-2025-olcum-standardi-iab-frameworkten-nasil-faydalanirsiniz/*  /cozumler/advergame/       301
 /in-game-reklamlarda-2025-olcum-standardi-iab-frameworkten-nasil-faydalanirsiniz    /cozumler/advergame/       301
 
+# Advance Ad Server paneli (advance-reklam Netlify projesinden vekil olarak sunulur)
+/adserver     /adserver/    301
+/adserver/*   https://advance-reklam.netlify.app/panel/:splat   200!
+
 # Kısa adresler
 /zaproll          /cozumler/zaproll/          301
 /addressable-tv   /cozumler/addressable-tv/   301
