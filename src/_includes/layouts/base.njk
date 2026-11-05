@@ -56,10 +56,7 @@
     ]
   }
   </script>
-  {% if site.ga4 %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ site.ga4 }}');</script>
-  {% endif %}
+  {% include "partials/ga-onay.njk" %}
 </head>
 <body class="{{ bodyClass }}">
   <a class="skip" href="#main">İçeriğe geç</a>
@@ -170,7 +167,7 @@
       <div class="foot-word" aria-hidden="true">visible &amp; memorable</div>
       <div class="foot-bottom">
         <span>© {{ build.year }} Advance Digital. Tüm hakları saklıdır.</span>
-        <span><a href="/feed.xml">RSS</a> · <a href="/sitemap.xml">Site haritası</a></span>
+        <span><a href="/kvkk/">KVKK</a> · <a href="#" data-cerez-ac>Çerez tercihleri</a> · <a href="/feed.xml">RSS</a> · <a href="/sitemap.xml">Site haritası</a></span>
       </div>
     </div>
   </footer>
