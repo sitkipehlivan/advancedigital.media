@@ -23,38 +23,13 @@ permalink: /iletisim/
           <li><small>Sosyal</small><span style="display:flex;gap:18px;font-size:1.05rem">{% if site.linkedin %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}{% if site.instagram %}<a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}</span></li>
         </ul>
       </div>
-      <form class="form" name="teklif" method="POST" action="/tesekkurler/" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="teklif">
-        <p class="sr-only"><label>Bu alanı boş bırakın <input name="bot-field"></label></p>
-        <div class="field"><label for="f-ad">Ad soyad</label><input id="f-ad" name="ad" autocomplete="name" required></div>
-        <div class="field"><label for="f-sirket">Şirket / marka</label><input id="f-sirket" name="sirket" autocomplete="organization" required></div>
-        <div class="field"><label for="f-mail">E-posta</label><input id="f-mail" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="f-tel">Telefon <span class="opt">(opsiyonel)</span></label><input id="f-tel" name="telefon" type="tel" autocomplete="tel"></div>
-        <div class="field field--full"><label for="f-urun">İlgilendiğiniz çözüm</label>
-          <select id="f-urun" name="urun">
-            <option value="">Seçiniz / emin değilim</option>
-            {% for cat in categories %}
-            <optgroup label="{{ cat.name }}">
-              {% for s in solutions | byCategory(cat.slug) %}<option value="{{ s.slug }}">{{ s.name }}</option>{% endfor %}
-            </optgroup>
-            {% endfor %}
-          </select>
-        </div>
-        <div class="field"><label for="f-hedef">Kampanya hedefi</label>
-          <select id="f-hedef" name="hedef">
-            <option value="">Seçiniz</option>
-            <option>Bilinirlik / awareness</option>
-            <option>Etkileşim</option>
-            <option>Trafik / tıklama</option>
-            <option>Satış / lead / uygulama indirme</option>
-            <option>Lansman</option>
-          </select>
-        </div>
-        <div class="field"><label for="f-tarih">Planlanan dönem <span class="opt">(opsiyonel)</span></label><input id="f-tarih" name="donem" placeholder="Örn. Kasım 2026"></div>
-        <div class="field field--full"><label for="f-mesaj">Mesajınız</label><textarea id="f-mesaj" name="mesaj" placeholder="Hedef kitle, bütçe aralığı, KPI'lar…"></textarea></div>
-        <label class="check"><input type="checkbox" name="kvkk" required> <span><a href="/kvkk/" target="_blank">KVKK aydınlatma metnini</a> okudum; teklif talebim kapsamında benimle iletişime geçilmesini kabul ediyorum.</span></label>
-        <button class="btn" type="submit">Gönder {{ arrow() | safe }}</button>
-      </form>
+      {# KVKK veri azaltma: sitede form yok; brief doğrudan e-postayla gelir, sitede kişisel veri toplanmaz #}
+      <div class="form">
+        <h2 style="margin-top:0">Brief'inizi e-postayla gönderin</h2>
+        <p>Teklif hazırlayabilmemiz için şunları yazmanız yeterli: marka, kampanya hedefi, ilgilendiğiniz çözümler, yayın dönemi ve yaklaşık bütçe.</p>
+        <p><a class="btn" href="mailto:{{ site.email }}?subject={{ 'Teklif talebi' | urlencode }}&body={{ 'Marka:\nKampanya hedefi:\nİlgilendiğimiz çözümler:\nYayın dönemi:\nYaklaşık bütçe:\n' | urlencode }}">E-posta ile brief gönder</a></p>
+        <p style="font-size:14px;opacity:.75;margin-bottom:0">Ya da doğrudan <a href="mailto:{{ site.email }}">{{ site.email }}</a> adresine yazın. Bilgileriniz yalnızca teklif talebinize dönüş için kullanılır; ayrıntılar <a href="/kvkk/">KVKK</a> sayfasında.</p>
+      </div>
     </div>
   </div>
 </section>
