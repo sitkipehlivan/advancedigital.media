@@ -18,3 +18,8 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "SAMEORIGIN"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# CANLI YAYIN
+[context.production]
+  # Kredi tasarrufu: yalnızca commit mesajında [deploy] varsa canlıya derle (bkz. CLAUDE.md, .github/workflows/toplu-yayin.yml)
+  ignore = "git log -1 --format=%B | grep -qiE '\\[(deploy|yayinla)\\]' && exit 1 || exit 0"
