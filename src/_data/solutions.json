@@ -1067,6 +1067,123 @@
     "keywords": "push notification reklam, bildirim reklamı, web push, geofence"
   },
   {
+    "slug": "advance-adserver",
+    "name": "Advance Adserver",
+    "category": "performans",
+    "badge": "Yeni",
+    "featured": true,
+    "short": "Ajanslar için üçüncü taraf adserver: display tag, 1x1 izleme, VAST 2.0/3.0/4.2, endcard ve QR'lı alt bantlı VPAID; imp, click, VTR, VCR ve viewability raporu.",
+    "metaTitle": "Advance Adserver | Ajanslar İçin 3rd Party Adserver, VAST ve VPAID",
+    "metaDescription": "Advance Adserver ile display, video ve audio kampanyalarınızı tek panelden sunun ve ölçün: VAST 2.0/3.0/4.2, endcard ve QR'lı VPAID, imp, click, VTR, VCR, viewability; cihaz, ISP ve lokasyon kırılımı.",
+    "lead": "Ajansların direkt alımlarda ve DSP kampanyalarında kullandığı üçüncü taraf adserver ihtiyacını Advance altyapısıyla karşılıyoruz. Kreatifinizi yükleyin, display tag'inizi, 1x1 izleme kodlarınızı ve VAST tag'lerinizi alın; her gösterim, click ve izlenme Türkiye'deki CDN noktalarından sunulup ölçülür. Video kampanyalarında endcard ve tarandığında click olarak sayılan QR'lı alt bant tek tıkla eklenir.",
+    "features": [
+      "Display script tag: DV360 ve Google Ad Manager click makrolarıyla, click hem platformda hem bizde sayılır",
+      "1x1 izleme: başka bir adserver ya da DSP'nin sunduğu kreatifler için impression pikseli ve click izleyici",
+      "Video ve audio VAST: tek tag, 2.0, 3.0 ve 4.2 sürümleri; atlanabilir (skippable) video desteği",
+      "VPAID 2.0: video bitince endcard, 728x90 oranında ölçeklenen alt bant ve otomatik QR kod; QR taramaları ayrı raporlanır",
+      "Ölçüm: impression, click, CTR, view, çeyrek bazında izlenme (Q1–Q3, complete), VTR, VCR, viewability ve tahmini unique",
+      "Kırılımlar: cihaz (mobil, masaüstü, tablet, CTV), işletim sistemi, ISP/operatör, lokasyon ve saat; Excel'e aktarım",
+      "IAB/MRC viewability tanımı: display'de %50 piksel 1 sn, videoda %50 piksel oynarken 2 sn",
+      "Kişisel veri saklamadan ölçüm: IP adresleri anonimleştirilmiş, çerez kullanılmaz"
+    ],
+    "compare": {
+      "cols": [
+        "Klasik adserver lisansı",
+        "Advance Adserver"
+      ],
+      "rows": [
+        [
+          "Maliyet",
+          "Sabit aylık lisans ve CPM ücreti",
+          "Advance medya planlarıyla birlikte ücretsiz"
+        ],
+        [
+          "Video",
+          "VAST, VPAID ek ücretli",
+          "VAST 2.0/3.0/4.2 ve VPAID dahil"
+        ],
+        [
+          "Etkileşim",
+          "Ayrı rich media aracı",
+          "Endcard ve QR'lı alt bant panelde hazır"
+        ],
+        [
+          "Destek",
+          "Ticket ve e-posta",
+          "Advance ad operasyon ekibi"
+        ]
+      ]
+    },
+    "kpis": [
+      "Impression",
+      "Click",
+      "VTR / VCR",
+      "Viewability",
+      "Unique erişim"
+    ],
+    "sectors": [
+      "Medya ajansları",
+      "Markalar",
+      "Yayıncılar"
+    ],
+    "steps": [
+      {
+        "title": "Kreatifi yükleyin",
+        "text": "Banner, video ya da ses dosyasını ve landing adresini panele ekleyin; video süresi ve çözünürlüğü otomatik okunur."
+      },
+      {
+        "title": "Tag'i alın",
+        "text": "Display tag, 1x1 izleme kodları ve VAST/VPAID tag'leri tek tıkla kopyalanır."
+      },
+      {
+        "title": "Yayına çıkın",
+        "text": "Tag'leri DV360, Google Ad Manager ya da yayıncı adserver'ına ekleyin; sunum Türkiye'deki CDN noktalarından yapılır."
+      },
+      {
+        "title": "Raporu izleyin",
+        "text": "Imp, click, VTR, VCR ve viewability; cihaz, ISP ve lokasyon kırılımıyla panelde ve Excel'de."
+      }
+    ],
+    "media": {
+      "type": "mock",
+      "alt": "Advance Adserver rapor ekranı",
+      "layout": "browser",
+      "browser": "advance-adserver-rapor",
+      "url": "adserver.advancedigital.media",
+      "cards": [
+        "advance-adserver-qr"
+      ]
+    },
+    "faq": [
+      {
+        "q": "Hangi reklam formatlarını destekliyor?",
+        "a": "Display banner (script tag), 1x1 impression ve click izleme, video ve audio için VAST 2.0, 3.0 ve 4.2, endcard ve QR'lı alt bant içeren VPAID 2.0 video."
+      },
+      {
+        "q": "DV360 ve Google Ad Manager ile kullanılabilir mi?",
+        "a": "Evet. Display tag'i DV360 ve Google Ad Manager click makrolarını destekler, click hem platformda hem Advance Adserver'da sayılır. VAST tag'leri Google IMA oynatıcısında test edilmiştir."
+      },
+      {
+        "q": "Viewability ve unique nasıl ölçülüyor?",
+        "a": "Viewability IAB/MRC tanımına göre ölçülür: display'de reklamın en az %50'si 1 saniye, videoda en az %50'si oynarken 2 saniye ekranda kalırsa viewable sayılır. Unique erişim, anonimleştirilmiş IP ve tarayıcı bilgisinden istatistiksel olarak (±%2) hesaplanır; çerez kullanılmaz."
+      },
+      {
+        "q": "QR'lı alt bant nasıl çalışıyor?",
+        "a": "VPAID video tag'inde videonun altına 728x90 oranında, oynatıcı boyutuna göre ölçeklenen bir bant eklenir. Bandın içindeki QR kod otomatik üretilir; tarandığında click olarak sayılır ve raporda ayrıca gösterilir."
+      },
+      {
+        "q": "Ücretlendirme nasıl?",
+        "a": "Advance üzerinden medya planlayan ajanslar Advance Adserver'ı ücretsiz kullanır. Bağımsız kullanım için aylık gösterim hacminize göre teklif hazırlıyoruz."
+      }
+    ],
+    "related": [
+      "ai-brand-lift",
+      "preroll-plus",
+      "interactive-masthead"
+    ],
+    "keywords": "adserver, 3rd party adserver, üçüncü taraf adserver, VAST tag, VPAID, VAST 4.2, video adserver, DV360 3rd party tag, viewability ölçümü, VTR, VCR, QR kod reklam"
+  },
+  {
     "slug": "performans-cpc",
     "name": "Performans: Banner & Native CPC",
     "category": "performans",
