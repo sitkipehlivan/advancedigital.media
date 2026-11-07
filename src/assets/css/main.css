@@ -117,7 +117,7 @@ strong,b{font-family:var(--display);font-weight:600;letter-spacing:-.005em}
 .brand:hover .sig path:nth-child(1){animation-delay:.24s}
 
 .nav{display:flex;align-items:center;gap:6px}
-.nav a,.nav button{background:none;border:0;text-decoration:none;font:500 .98rem/1 var(--display);padding:12px 14px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;color:#fff;opacity:.9;transition:opacity .2s,background .2s}
+.nav a,.nav button{background:none;border:0;text-decoration:none;font:500 .98rem/1 var(--display);padding:12px 14px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;color:#fff;opacity:.9;transition:opacity .2s,background .2s}
 .nav a:hover,.nav button:hover,.nav [aria-current="page"]{opacity:1;background:rgba(255,255,255,.08)}
 .nav .new{font-size:.62rem;letter-spacing:.08em;background:var(--pink);color:#fff;padding:4px 6px 3px;border-radius:4px;text-transform:uppercase}
 .nav .caret{width:10px;height:10px;transition:transform .25s}
@@ -834,3 +834,5 @@ strong,b{font-family:var(--display);font-weight:600;letter-spacing:-.005em}
   .page-hero{padding:20px 0;background:#fff;color:#000}
   .spec-row{break-inside:avoid}
 }
+/* Menüye Advance Adserver eklendi: 1024–1240 px arasında öğeler tek satıra sığsın */
+@media (max-width:1240px){.nav{gap:2px}.nav a,.nav button{padding:12px 9px;font-size:.92rem}}

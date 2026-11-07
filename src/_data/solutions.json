@@ -1074,10 +1074,11 @@
     "featured": true,
     "short": "Ajanslar için üçüncü taraf adserver: display tag, 1x1 izleme, VAST 2.0/3.0/4.2, endcard ve QR'lı alt bantlı VPAID; imp, click, VTR, VCR ve viewability raporu.",
     "metaTitle": "Advance Adserver | Ajanslar İçin 3rd Party Adserver, VAST ve VPAID",
-    "metaDescription": "Advance Adserver ile display, video ve audio kampanyalarınızı tek panelden sunun ve ölçün: VAST 2.0/3.0/4.2, endcard ve QR'lı VPAID, imp, click, VTR, VCR, viewability; cihaz, ISP ve lokasyon kırılımı.",
-    "lead": "Ajansların direkt alımlarda ve DSP kampanyalarında kullandığı üçüncü taraf adserver ihtiyacını Advance altyapısıyla karşılıyoruz. Kreatifinizi yükleyin, display tag'inizi, 1x1 izleme kodlarınızı ve VAST tag'lerinizi alın; her gösterim, click ve izlenme Türkiye'deki CDN noktalarından sunulup ölçülür. Video kampanyalarında endcard ve tarandığında click olarak sayılan QR'lı alt bant tek tıkla eklenir.",
+    "metaDescription": "Advance Adserver ile display, video ve audio kampanyalarınızı tüm adserver ve DSP'lerde tek panelden sunun ve ölçün: IAB standardı VAST 2.0/3.0/4.2, endcard ve QR'lı VPAID, imp, click, VTR, VCR, viewability.",
+    "lead": "Ajansların direkt alımlarda ve DSP kampanyalarında kullandığı üçüncü taraf adserver ihtiyacını Advance altyapısıyla karşılıyoruz. Tag'lerimiz IAB standardında olduğu için DV360, Google Ad Manager ya da yayıncı adserverı fark etmeksizin aynı şekilde çalışır ve ölçülür. Kreatifinizi yükleyin, display tag'inizi, 1x1 izleme kodlarınızı ve VAST tag'lerinizi alın; her gösterim, click ve izlenme Türkiye'deki CDN noktalarından sunulup ölçülür. Video kampanyalarında endcard ve tarandığında click olarak sayılan QR'lı alt bant tek tıkla eklenir.",
     "features": [
-      "Display script tag: DV360 ve Google Ad Manager click makrolarıyla, click hem platformda hem bizde sayılır",
+      "Display script tag: IAB standardında; DV360, Google Ad Manager ve diğer adserverların click makrolarıyla click hem platformda hem bizde sayılır",
+      "Her adserverla uyumlu: IAB standardı VAST ve script tag kabul eden tüm adserver, DSP ve yayıncı adserverlarında aynı ölçüm (DV360, Google Ad Manager, Eskimi ve diğerleri)",
       "1x1 izleme: başka bir adserver ya da DSP'nin sunduğu kreatifler için impression pikseli ve click izleyici",
       "Video ve audio VAST: tek tag, 2.0, 3.0 ve 4.2 sürümleri; atlanabilir (skippable) video desteği",
       "VPAID 2.0: video bitince endcard, 728x90 oranında ölçeklenen alt bant ve otomatik QR kod; QR taramaları ayrı raporlanır",
@@ -1160,8 +1161,8 @@
         "a": "Display banner (script tag), 1x1 impression ve click izleme, video ve audio için VAST 2.0, 3.0 ve 4.2, endcard ve QR'lı alt bant içeren VPAID 2.0 video."
       },
       {
-        "q": "DV360 ve Google Ad Manager ile kullanılabilir mi?",
-        "a": "Evet. Display tag'i DV360 ve Google Ad Manager click makrolarını destekler, click hem platformda hem Advance Adserver'da sayılır. VAST tag'leri Google IMA oynatıcısında test edilmiştir."
+        "q": "Hangi adserver ve DSP'lerle çalışır?",
+        "a": "Tag'ler IAB standardındadır (VAST 2.0, 3.0, 4.2 ve script tag); bu standartları kabul eden tüm adserver, DSP ve yayıncı adserverlarında çalışır ve aynı şekilde ölçülür. Display tag DV360 ve Google Ad Manager click makrolarını destekler; click hem platformda hem Advance Adserver'da sayılır. VAST tag'leri Google IMA oynatıcısında masaüstü ve mobilde test edilmiştir. VPAID'li (endcard / QR'lı alt bant) videolar web oynatıcılarında çalışır; uygulama içi ve CTV'de standart VAST tag'i kullanılmalıdır."
       },
       {
         "q": "Viewability ve unique nasıl ölçülüyor?",
