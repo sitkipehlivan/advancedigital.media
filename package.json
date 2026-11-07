@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "eleventy",
+    "build": "eleventy && node scripts/cdn.mjs _site",
     "cms": "npx decap-server"
   },
   "devDependencies": {
