@@ -63,7 +63,7 @@ eleventyComputed:
         <p class="lead" style="margin-top:22px">{{ s.lead }}</p>
         <div class="chips">{% for k in s.kpis %}<span class="chip">{{ k }}</span>{% endfor %}</div>
         <div class="hero-ctas">
-          <a class="btn" href="/iletisim/?urun={{ s.slug }}">Teklif iste {{ arrow() | safe }}</a>
+          {% if s.slug == "advance-adserver" %}<a class="btn" href="#maliyet-hesapla">Maliyet hesapla ve teklif al {{ arrow() | safe }}</a>{% else %}<a class="btn" href="/iletisim/?urun={{ s.slug }}">Teklif iste {{ arrow() | safe }}</a>{% endif %}
           <a class="btn btn--ghost" href="#detaylar">Detaylar</a>
         </div>
       </div>
@@ -116,6 +116,8 @@ eleventyComputed:
   </div>
 </section>
 {% endif %}
+
+{% if s.slug == "advance-adserver" %}{% include "partials/adserver-hesap.njk" %}{% endif %}
 
 {% if s.slug == "zaproll" %}
 <section class="section dark">

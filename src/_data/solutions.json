@@ -1095,7 +1095,7 @@
         [
           "Maliyet",
           "Sabit aylık lisans ve CPM ücreti",
-          "Advance medya planlarıyla birlikte ücretsiz"
+          "Kullandığın kadar öde: format başına birim fiyat, aylık en az $100; Advance medya planlarıyla ücretsiz"
         ],
         [
           "Video",
@@ -1173,7 +1173,7 @@
       },
       {
         "q": "Ücretlendirme nasıl?",
-        "a": "Advance üzerinden medya planlayan ajanslar Advance Adserver'ı ücretsiz kullanır. Bağımsız kullanım için aylık gösterim hacminize göre teklif hazırlıyoruz."
+        "a": "Kullandığınız kadar ödersiniz: her format için sabit bir birim fiyat var (ör. video VAST 1 milyon izlenme $333,50, banner 1 milyon gösterim $6,67), lisans ya da kurulum ücreti yok. Aylık en az $100 faturalanır, KDV hariçtir. Sayfadaki hesaplama aracıyla tahmini aylık tutarı görebilirsiniz. Advance üzerinden medya planlayan ajanslar ücretsiz kullanır."
       }
     ],
     "related": [

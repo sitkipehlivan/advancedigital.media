@@ -1,0 +1,114 @@
+{#- Advance Adserver maliyet hesaplama ve teklif talebi. KVKK veri azaltma: form bilgileri sitede saklanmaz,
+    "Teklif iste" ziyaretçinin kendi e-posta uygulamasında sales@ adresine hazır bir e-posta açar. -#}
+{%- set F = adserverFiyat -%}
+<section class="section light" id="maliyet-hesapla">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Fiyatlandırma</span><h2 class="display-m">Maliyetinizi hesaplayın</h2></div>
+      <p class="lead" style="max-width:520px">Kullandığınız kadar ödersiniz: format başına sabit birim fiyat, lisans ya da kurulum ücreti yok. Beklediğiniz gösterim ya da izlenme sayısını girin, aylık tutar anında hesaplansın.</p>
+    </div>
+    <div class="ah">
+      <div class="ah-kartlar">
+        {% for f in F.formatlar %}
+        <div class="ah-kart">
+          <div><b>{{ f.ad }}</b><small>{{ f.aciklama }}</small></div>
+          <div class="ah-fiyat"><span data-ahf="{{ f.bin }}">${{ (f.bin * 1000) | round(2) }}</span><small>/ 1 milyon {{ f.birim }}</small></div>
+          <label>{{ f.birim | capitalize }} sayısı<input inputmode="numeric" autocomplete="off" data-ah="{{ f.tip }}" data-bin="{{ f.bin }}" data-ad="{{ f.ad }}" data-birim="{{ f.birim }}" placeholder="ör. 2.500.000"></label>
+          <div class="ah-tutar" data-aht="{{ f.tip }}"></div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="ah-ozet">
+        <div class="ah-toplam"><small>Tahmini aylık tutar</small><b id="ah-toplam">$0</b><span id="ah-not">Aylık en az ${{ F.aylikMin }} · KDV hariç · Gerçekleşen kullanım üzerinden faturalanır</span></div>
+        <ul class="ah-dahil">
+          <li>Display tag, 1x1 izleme, VAST 2.0/3.0/4.2 ve VPAID</li>
+          <li>Endcard ve QR'lı alt bant, video sıkıştırma (720p, ≤10 MB)</li>
+          <li>Imp, click, VTR, VCR, viewability, cihaz ve lokasyon raporu</li>
+          <li>Ajansa özel giriş, Excel'e tag ve rapor indirme</li>
+        </ul>
+        <p class="ah-advance">Advance üzerinden medya planlayan ajanslar için ücretsiz.</p>
+      </div>
+    </div>
+
+    <form class="ah-form" id="ah-form" novalidate>
+      <div>
+        <h3>Teklif alın</h3>
+        <p>Bilgilerinizi yazın; hesapladığınız kullanımla birlikte hazır bir e-posta açılır, siz gönderirsiniz. Ya da doğrudan <a href="mailto:{{ site.email }}?subject={{ 'Advance Adserver teklif talebi' | urlencode }}">{{ site.email }}</a> adresine yazın.</p>
+      </div>
+      <div class="ah-alanlar">
+        <label>Ad soyad<input name="ad" autocomplete="name" required></label>
+        <label>Ajans / şirket<input name="sirket" autocomplete="organization" required></label>
+        <label>E-posta<input name="eposta" type="email" autocomplete="email" required></label>
+        <label>Telefon (isteğe bağlı)<input name="tel" type="tel" autocomplete="tel"></label>
+        <label class="genis">Not (kullandığınız DSP'ler, kampanya dönemi vb.)<textarea name="not" rows="3"></textarea></label>
+      </div>
+      <div class="ah-gonder">
+        <button class="btn" type="submit">Teklif iste</button>
+        <small>Bilgileriniz sitede saklanmaz; yalnız gönderdiğiniz e-postayla bize ulaşır ve teklif dönüşü için kullanılır. Ayrıntılar <a href="/kvkk/">KVKK</a> sayfasında.</small>
+      </div>
+      <p class="ah-hata" id="ah-hata" role="alert"></p>
+    </form>
+  </div>
+</section>
+<style>
+.ah{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:22px;align-items:start}
+.ah-kartlar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ah-kart{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.ah-kart small{display:block;opacity:.65;font-size:.82rem;line-height:1.4}
+.ah-fiyat span{font:700 1.5rem/1 var(--display);letter-spacing:-.02em}.ah-fiyat small{display:inline;margin-left:6px}
+.ah-kart label,.ah-alanlar label{display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:600}
+.ah-kart input,.ah-alanlar input,.ah-alanlar textarea{font:inherit;font-size:1rem;font-weight:400;padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);width:100%;box-sizing:border-box}
+.ah-kart input:focus,.ah-alanlar input:focus,.ah-alanlar textarea:focus{outline:none;border-color:var(--pink)}
+.ah-tutar{font:700 1.05rem/1 var(--display);color:var(--pink);min-height:1.1em}
+.ah-ozet{position:sticky;top:calc(var(--header-h,72px) + 16px);background:var(--ink);color:#fff;border-radius:22px;padding:26px}
+.ah-toplam small{display:block;opacity:.7;font-size:.85rem}.ah-toplam b{display:block;font:700 clamp(2.2rem,4vw,3rem)/1.1 var(--display);letter-spacing:-.03em;margin:6px 0}
+.ah-toplam span{display:block;font-size:.82rem;opacity:.7}
+.ah-dahil{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:8px;font-size:.9rem}
+.ah-dahil li{padding-left:22px;position:relative}.ah-dahil li:before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--pink)}
+.ah-advance{margin:18px 0 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.15);font-size:.9rem}
+.ah-form{margin-top:28px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:22px}
+.ah-form h3{margin:0 0 8px;font:700 1.4rem/1.2 var(--display)}.ah-form p{margin:0;font-size:.95rem}
+.ah-alanlar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ah-alanlar .genis{grid-column:1/-1}
+.ah-gonder{grid-column:2;display:flex;gap:16px;align-items:center;flex-wrap:wrap}.ah-gonder small{flex:1;min-width:220px;font-size:.8rem;opacity:.7}
+.ah-hata{grid-column:2;margin:0;color:#c0143c;font-size:.9rem;min-height:1em}
+@media (max-width:900px){.ah,.ah-form{grid-template-columns:1fr}.ah-ozet{position:static}.ah-gonder,.ah-hata{grid-column:1}}
+@media (max-width:560px){.ah-kartlar,.ah-alanlar{grid-template-columns:1fr}}
+</style>
+<script>
+(function () {
+  var MIN = {{ F.aylikMin }}, EP = {{ site.email | dump | safe }};
+  var tr = function (n) { return Math.round(n).toLocaleString('tr-TR'); };
+  var usd = function (x) { return '$' + x.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+  var g = [].slice.call(document.querySelectorAll('[data-ah]')), son = { top: 0, satir: [] };
+  [].forEach.call(document.querySelectorAll('[data-ahf]'), function (e) { e.textContent = usd(Number(e.dataset.ahf) * 1000); });
+  function hesapla() {
+    var top = 0, satir = [];
+    g.forEach(function (i) {
+      var n = Number(i.value.replace(/[^\d]/g, '')) || 0, t = n / 1000 * Number(i.dataset.bin);
+      document.querySelector('[data-aht="' + i.dataset.ah + '"]').textContent = n ? usd(t) : '';
+      if (n) { top += t; satir.push(i.dataset.ad + ': ' + tr(n) + ' ' + i.dataset.birim + ' = ' + usd(t)); }
+    });
+    var f = top ? Math.max(top, MIN) : 0;
+    document.getElementById('ah-toplam').textContent = usd(f);
+    document.getElementById('ah-not').textContent = top && top < MIN ? 'Kullanım ' + usd(top) + '; aylık en az $' + MIN + ' uygulanır · KDV hariç' : 'Aylık en az $' + MIN + ' · KDV hariç · Gerçekleşen kullanım üzerinden faturalanır';
+    son = { top: f, satir: satir };
+  }
+  g.forEach(function (i) {
+    i.addEventListener('input', hesapla);
+    i.addEventListener('blur', function () { var n = Number(i.value.replace(/[^\d]/g, '')) || 0; i.value = n ? tr(n) : ''; });
+  });
+  document.getElementById('ah-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target, h = document.getElementById('ah-hata');
+    if (!f.ad.value.trim() || !f.sirket.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.eposta.value.trim())) { h.textContent = 'Ad soyad, ajans/şirket ve geçerli bir e-posta yazın.'; return; }
+    h.textContent = '';
+    var govde = 'Merhaba,\n\nAdvance Adserver için teklif almak istiyoruz.\n\n' +
+      'Ad soyad: ' + f.ad.value.trim() + '\nAjans / şirket: ' + f.sirket.value.trim() + '\nE-posta: ' + f.eposta.value.trim() + (f.tel.value.trim() ? '\nTelefon: ' + f.tel.value.trim() : '') +
+      '\n\nTahmini aylık kullanım:\n' + (son.satir.length ? son.satir.join('\n') + '\nTahmini aylık tutar: ' + usd(son.top) + ' (KDV hariç)' : '(hesaplama yapılmadı)') +
+      (f.not.value.trim() ? '\n\nNot: ' + f.not.value.trim() : '') + '\n';
+    var konu = 'Advance Adserver teklif talebi · ' + f.sirket.value.trim();
+    location.href = 'mailto:' + EP + '?subject=' + encodeURIComponent(konu) + '&body=' + encodeURIComponent(govde);
+    if (window.gtag) gtag('event', 'generate_lead', { form: 'advance-adserver-teklif' });
+  });
+})();
+</script>
