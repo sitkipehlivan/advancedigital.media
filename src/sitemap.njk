@@ -5,7 +5,7 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for p in collections.all %}
-{%- if p.url and p.url != "/404.html" and p.url != "/tesekkurler/" and not p.data.draft and ".xml" not in p.url and not (("/cozumler/" in p.url) and p.url != "/cozumler/") %}
+{%- if p.url and p.url != "/404.html" and p.url != "/tesekkurler/" and not p.data.draft and ".xml" not in p.url and "/assets/" not in p.url and not (("/cozumler/" in p.url) and p.url != "/cozumler/") %}
   <url>
     <loc>{{ p.url | absUrl(site.url) }}</loc>
     <lastmod>{{ p.date | isoDate }}</lastmod>
