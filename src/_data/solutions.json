@@ -1078,7 +1078,7 @@
     "lead": "Ajansların direkt alımlarda ve DSP kampanyalarında kullandığı üçüncü taraf adserver ihtiyacını Advance altyapısıyla karşılıyoruz. Tag'lerimiz IAB standardında olduğu için DV360, Google Ad Manager ya da yayıncı adserverı fark etmeksizin aynı şekilde çalışır ve ölçülür. Kreatifinizi yükleyin, display tag'inizi, 1x1 izleme kodlarınızı ve VAST tag'lerinizi alın; her gösterim, click ve izlenme Türkiye'deki CDN noktalarından sunulup ölçülür. Video kampanyalarında endcard ve tarandığında click olarak sayılan QR'lı alt bant tek tıkla eklenir.",
     "features": [
       "Display script tag: IAB standardında; DV360, Google Ad Manager ve diğer adserverların click makrolarıyla click hem platformda hem bizde sayılır",
-      "Her adserverla uyumlu: IAB standardı VAST ve script tag kabul eden tüm adserver, DSP ve yayıncı adserverlarında aynı ölçüm (DV360, Google Ad Manager, Eskimi ve diğerleri)",
+      "Platformdan bağımsız ölçüm: IAB standardı VAST ve display tag'leri her adserver ve DSP'de çalışır.",
       "1x1 izleme: başka bir adserver ya da DSP'nin sunduğu kreatifler için impression pikseli ve click izleyici",
       "Video ve audio VAST: tek tag, 2.0, 3.0 ve 4.2 sürümleri; atlanabilir (skippable) video desteği",
       "VPAID 2.0: video bitince endcard, 728x90 oranında ölçeklenen alt bant ve otomatik QR kod; QR taramaları ayrı raporlanır",
