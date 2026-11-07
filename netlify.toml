@@ -18,6 +18,14 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "SAMEORIGIN"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # HTTPS zorunlu (1 yıl, alt alan adları dahil). preload'a sonra geçilebilir.
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    # Hemen zorunlu kılınan, hiçbir şeyi kırmayan yapısal CSP korumaları:
+    # clickjacking (frame-ancestors), <base> enjeksiyonu (base-uri), plugin/obje (object-src), HTTP->HTTPS yükseltme
+    Content-Security-Policy = "base-uri 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
+    # Tam CSP önce RAPOR MODUNDA: hiçbir şeyi engellemez, sadece ihlalleri tarayıcı konsoluna yazar.
+    # Birkaç gün izleyip (özellikle /admin Decap CMS, GA ve reklam sunucusu) temizse enforce'a çevrilecek.
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://unpkg.com https://adserver.advancedigital.media https://advance-reklam.netlify.app; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://api.github.com https://adserver.advancedigital.media https://advance-reklam.netlify.app https://advancedigitalsite.b-cdn.net; media-src 'self' https:; frame-src 'self' https:; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
 
 # CANLI YAYIN
 [context.production]
