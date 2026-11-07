@@ -1174,7 +1174,7 @@
       },
       {
         "q": "Ücretlendirme nasıl?",
-        "a": "Kullandığınız kadar ödersiniz: her format için sabit bir birim fiyat var (ör. video VAST 1 milyon izlenme $333,50, banner 1 milyon gösterim $6,67), lisans ya da kurulum ücreti yok. Aylık en az $100 faturalanır, KDV hariçtir. Sayfadaki hesaplama aracıyla tahmini aylık tutarı görebilirsiniz."
+        "a": "Kullandığınız kadar ödersiniz: her format için sabit bir birim fiyat var (ör. video VAST 1 milyon izlenme $333,50, banner 1 milyon gösterim $30), lisans ya da kurulum ücreti yok. Aylık en az $100 faturalanır, KDV hariçtir. Sayfadaki hesaplama aracıyla tahmini aylık tutarı görebilirsiniz."
       }
     ],
     "related": [

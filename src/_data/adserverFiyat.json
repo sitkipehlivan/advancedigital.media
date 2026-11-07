@@ -2,10 +2,40 @@
   "_not": "Advance Adserver panelindeki birim fiyatlarla aynı olmalı (adserver.advancedigital.media → Faturalama → fiyat ayarları). 1.000 birim başına USD.",
   "aylikMin": 100,
   "formatlar": [
-    { "tip": "vast", "ad": "Video VAST", "birim": "izlenme", "aciklama": "Video en fazla 10 MB (720p), Advance CDN'den sunulur", "bin": 0.3335 },
-    { "tip": "vpaid", "ad": "Video VPAID", "birim": "izlenme", "aciklama": "Endcard kartları ve QR'lı alt bant dahil", "bin": 0.36685 },
-    { "tip": "audio", "ad": "Audio VAST", "birim": "dinlenme", "aciklama": "Ses dosyası en fazla 2 MB", "bin": 0.0667 },
-    { "tip": "banner", "ad": "Banner (hosted)", "birim": "gösterim", "aciklama": "Görsel en fazla 200 KB, Advance CDN'den sunulur", "bin": 0.00667 },
-    { "tip": "piksel", "ad": "1x1 izleme (imp + click)", "birim": "gösterim", "aciklama": "Başka adserverın sunduğu kreatifler için ölçüm", "bin": 0.00016675 }
+    {
+      "tip": "vast",
+      "ad": "Video VAST",
+      "birim": "izlenme",
+      "aciklama": "Video en fazla 10 MB (720p), Advance CDN'den sunulur",
+      "bin": 0.3335
+    },
+    {
+      "tip": "vpaid",
+      "ad": "Video VPAID",
+      "birim": "izlenme",
+      "aciklama": "Endcard kartları ve QR'lı alt bant dahil",
+      "bin": 0.36685
+    },
+    {
+      "tip": "audio",
+      "ad": "Audio VAST",
+      "birim": "dinlenme",
+      "aciklama": "Ses dosyası en fazla 2 MB",
+      "bin": 0.0667
+    },
+    {
+      "tip": "banner",
+      "ad": "Banner (hosted)",
+      "birim": "gösterim",
+      "aciklama": "Görsel en fazla 200 KB, Advance CDN'den sunulur",
+      "bin": 0.03
+    },
+    {
+      "tip": "piksel",
+      "ad": "1x1 izleme (imp + click)",
+      "birim": "gösterim",
+      "aciklama": "Başka adserverın sunduğu kreatifler için ölçüm",
+      "bin": 0.02
+    }
   ]
 }
