@@ -791,6 +791,44 @@ strong,b{font-family:var(--display);font-weight:600;letter-spacing:-.005em}
   .spec-row--head{display:none}
   .spec-act{justify-self:start}
 }
+/* --- Liquid glass (önerilen karışım) ------------------------------------
+   Ana CTA'lar dolu pembe kalır. Cam yalnızca: kaydırınca header, koyu
+   bölümlerdeki ikincil (ghost) butonlar ve video/görsel üzerindeki yuvarlak buton.
+   Chromium'da html.lg-refract ile arka plan hafifçe kırılır (SVG #lg filtresi). */
+.dark .btn--ghost,.dark-2 .btn--ghost{position:relative;isolation:isolate;border-color:transparent;color:#fff;
+  background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.06));
+  -webkit-backdrop-filter:blur(10px) saturate(190%) brightness(1.08);backdrop-filter:blur(10px) saturate(190%) brightness(1.08);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.6),inset 0 -1px 1px rgba(255,255,255,.16),inset 0 0 18px rgba(255,255,255,.07),0 10px 30px -8px rgba(0,0,0,.45);
+  transition:transform .25s var(--ease),box-shadow .25s,background .25s}
+.dark .btn--ghost::before,.dark-2 .btn--ghost::before,.reel-cap a::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.3px;z-index:-1;pointer-events:none;
+  background:linear-gradient(140deg,rgba(255,255,255,.95),rgba(255,255,255,.18) 32%,rgba(255,255,255,.04) 55%,rgba(255,255,255,.55) 88%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.dark .btn--ghost::after,.dark-2 .btn--ghost::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(120px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.42),rgba(255,255,255,0) 60%)}
+.dark .btn--ghost:hover,.dark-2 .btn--ghost:hover{background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,.1));color:#fff;border-color:transparent;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.8),inset 0 -1px 1px rgba(255,255,255,.24),inset 0 0 22px rgba(255,255,255,.13),0 16px 36px -10px rgba(0,0,0,.5)}
+.dark .btn--ghost:hover::after,.dark-2 .btn--ghost:hover::after{opacity:1}
+.reel-cap a{position:relative;isolation:isolate;color:#fff;background:linear-gradient(180deg,rgba(255,255,255,.24),rgba(255,255,255,.07));
+  -webkit-backdrop-filter:blur(10px) saturate(190%) brightness(1.08);backdrop-filter:blur(10px) saturate(190%) brightness(1.08);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.65),inset 0 -1px 1px rgba(255,255,255,.18),0 10px 30px -8px rgba(0,0,0,.5)}
+.lg-refract .dark .btn--ghost,.lg-refract .dark-2 .btn--ghost,.lg-refract .reel-cap a{backdrop-filter:url(#lg) blur(6px) saturate(190%) brightness(1.08)}
+
+/* Header: kaydırınca yüzen koyu cam bar; mega menü ya da mobil menü açıkken katı kalır */
+.site-header::before,.site-header::after{content:"";position:absolute;z-index:-1;top:9px;bottom:9px;left:max(8px,calc((100% - var(--wrap))/2 - 16px));right:max(8px,calc((100% - var(--wrap))/2 - 16px));border-radius:999px;pointer-events:none;opacity:0;transition:opacity .35s}
+.site-header::before{background:linear-gradient(180deg,rgba(32,32,36,.8),rgba(10,10,11,.88));
+  -webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.28),inset 0 -1px 1px rgba(255,255,255,.06),0 14px 34px -14px rgba(0,0,0,.6)}
+.site-header::after{padding:1px;background:linear-gradient(140deg,rgba(255,255,255,.6),rgba(255,255,255,.08) 40%,rgba(255,255,255,.03) 60%,rgba(255,255,255,.35));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.site-header.is-solid{background:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+.site-header.is-solid::before,.site-header.is-solid::after{opacity:1}
+.site-header.is-solid:has([data-open="true"]),.menu-open .site-header.is-solid{background:rgba(10,10,11,.96);box-shadow:0 1px 0 var(--line-d)}
+.site-header.is-solid:has([data-open="true"])::before,.site-header.is-solid:has([data-open="true"])::after,.menu-open .site-header::before,.menu-open .site-header::after{opacity:0}
+@media (prefers-reduced-transparency:reduce){
+  .site-header::before{background:rgba(10,10,11,.96)}
+  .dark .btn--ghost,.dark-2 .btn--ghost,.reel-cap a{background:var(--ink-3)}
+}
+
 @media print{
   .site-header,.site-footer,.cta-band,.spec-nav,.spec-tools,.spec-copy,.spec-demo,.glow,.hero-arcs{display:none!important}
   .page-hero{padding:20px 0;background:#fff;color:#000}

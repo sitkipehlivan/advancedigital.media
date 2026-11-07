@@ -60,7 +60,7 @@
 </head>
 <body class="{{ bodyClass }}">
   <a class="skip" href="#main">İçeriğe geç</a>
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="gradPV" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4006D"/><stop offset="1" stop-color="#6A3DE8"/></linearGradient></defs></svg>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="gradPV" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4006D"/><stop offset="1" stop-color="#6A3DE8"/></linearGradient><filter id="lg" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="n"/><feGaussianBlur in="n" stdDeviation="2" result="nb"/><feDisplacementMap in="SourceGraphic" in2="nb" scale="38" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
 
   <header class="site-header" data-header>
     <div class="wrap">

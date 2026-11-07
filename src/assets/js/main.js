@@ -21,6 +21,16 @@
     window.addEventListener("load", toTop, { once: true });
   }
 
+  /* Liquid glass: kırılma yalnızca Chromium'da; cam butonlarda ışık imleci takip eder */
+  if (navigator.userAgentData?.brands?.some((b) => /Chromium/.test(b.brand))) document.documentElement.classList.add("lg-refract");
+  document.addEventListener("pointermove", (e) => {
+    const b = e.target.closest?.(".dark .btn--ghost, .dark-2 .btn--ghost");
+    if (!b) return;
+    const r = b.getBoundingClientRect();
+    b.style.setProperty("--mx", `${e.clientX - r.left}px`);
+    b.style.setProperty("--my", `${e.clientY - r.top}px`);
+  }, { passive: true });
+
   /* Header: koyu zemin üzerinde şeffaf, kaydırınca katı; aşağı kaydırırken gizlen */
   const header = $("[data-header]");
   let lastY = 0;
