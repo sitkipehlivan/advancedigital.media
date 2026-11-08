@@ -18,6 +18,8 @@ http://www.advancedigital.com.tr/*   https://advancedigital.media/:splat   301!
 /adserver/*   https://advance-reklam.netlify.app/panel/:splat   200!
 
 # Kısa adresler
+# /sunum her zaman güncel sunuma gider. Yeni sunumda yalnızca hedefi değiştirin (302: tarayıcı önbelleğe almaz).
+/sunum            /advance-sunum-agustos-2026-pptx/   302
 /zaproll          /cozumler/zaproll/          301
 /addressable-tv   /cozumler/addressable-tv/   301
 /brand-lift       /cozumler/ai-brand-lift/    301
