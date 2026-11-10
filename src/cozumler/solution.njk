@@ -117,7 +117,7 @@ eleventyComputed:
 </section>
 {% endif %}
 
-{% if s.slug == "advance-adserver" %}{% include "partials/adserver-hesap.njk" %}{% endif %}
+{% if s.slug == "advance-adserver" and adserverFiyat.yayinda %}{% include "partials/adserver-hesap.njk" %}{% endif %}
 
 {% if s.slug == "zaproll" %}
 <section class="section dark">

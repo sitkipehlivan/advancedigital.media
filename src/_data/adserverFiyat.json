@@ -1,4 +1,6 @@
 {
+  "yayinda": false,
+  "_yayinda_not": "false iken Adserver sayfasındaki fiyat hesaplama bölümü gizlenir. Fiyatlar netleşince true yapın; SSS ve karşılaştırma tablosundaki fiyat metinleri için solutions.json'daki advance-adserver kaydını da güncelleyin (eski metinler git geçmişinde: commit 2ce5f71).",
   "_not": "Advance Adserver panelindeki birim fiyatlarla aynı olmalı (adserver.advancedigital.media → Faturalama → fiyat ayarları). 1.000 birim başına USD.",
   "aylikMin": 100,
   "formatlar": [

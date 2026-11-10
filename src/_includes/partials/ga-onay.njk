@@ -5,14 +5,14 @@
   function al(){try{return localStorage.getItem(K)}catch(e){return null}}
   function yukle(){if(window.__ga)return;window.__ga=1;window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',ID);var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s)}
   function bant(){
-    if(document.getElementById('cerez'))return document.getElementById('cerez').hidden=false;
+    var o=document.getElementById('cerez');if(o){o.style.display='flex';return}
     var d=document.createElement('div');d.id='cerez';d.setAttribute('role','dialog');d.setAttribute('aria-label','Çerez tercihi');
     d.innerHTML='<p>Sitenin nasıl kullanıldığını ölçmek için <b>Google Analytics</b> istatistik çerezlerini kullanmak istiyoruz. İzin vermezsen hiçbir istatistik çerezi kullanılmaz. <a href="/kvkk/">KVKK ve çerezler</a></p><div><button type="button" data-v="evet">Kabul et</button><button type="button" data-v="hayir">Reddet</button></div>';
     d.style.cssText='position:fixed;z-index:999;left:16px;right:16px;bottom:16px;max-width:560px;margin:0 auto;background:#0A0A0B;color:#F2F2F1;border-radius:14px;padding:14px 16px;box-shadow:0 14px 40px rgba(0,0,0,.3);font:14px/1.45 var(--body,system-ui);display:flex;flex-direction:column;gap:10px';
     d.querySelector('p').style.margin='0';d.querySelector('a').style.color='#ff5aa5';
     var b=d.querySelector('div');b.style.cssText='display:flex;gap:8px';
     d.querySelectorAll('button').forEach(function(x,i){x.style.cssText='flex:1;height:38px;border-radius:999px;font:600 14px var(--display,system-ui);cursor:pointer;border:1px solid #fff;background:#fff;color:#0A0A0B'; /* KVKK: kabul ve reddet eşit görünürlükte */
-      x.addEventListener('click',function(){var v=x.getAttribute('data-v');try{localStorage.setItem(K,v)}catch(e){}d.hidden=true;if(v==='evet')yukle()})});
+      x.addEventListener('click',function(){var v=x.getAttribute('data-v');try{localStorage.setItem(K,v)}catch(e){}d.style.display='none';if(v==='evet')yukle()})});
     document.body.appendChild(d)}
   var c=al(); if(c==='evet')yukle();
   document.addEventListener('DOMContentLoaded',function(){ if(!al())bant();
