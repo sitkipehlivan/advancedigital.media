@@ -442,6 +442,12 @@ strong,b{font-family:var(--display);font-weight:600;letter-spacing:-.005em}
 .feature:nth-child(even){padding-left:28px;border-left:1px solid var(--line)}
 .feature::before{content:counter(feat,decimal-leading-zero);font:700 .9rem/1.6 var(--display);color:var(--pink);letter-spacing:.06em}
 .feature p{font-size:1.06rem;line-height:1.5}
+.features--stack{grid-template-columns:1fr}
+.features--stack .feature,.features--stack .feature:nth-child(even){padding:24px 0;border-left:0}
+.feature-base{margin-top:28px;padding:22px 26px;border-radius:16px;background:var(--ink);color:#fff;display:grid;gap:10px}
+.feature-base .eyebrow{margin:0;justify-self:start}
+.feature-base p{font-size:1.06rem;line-height:1.5;color:rgba(255,255,255,.82)}
+.feature-base b{color:#fff}
 
 .steps{display:grid;grid-template-columns:repeat(var(--n,4),1fr);gap:14px}
 .step{background:var(--white);border-radius:var(--r);padding:28px 24px 30px;position:relative}
