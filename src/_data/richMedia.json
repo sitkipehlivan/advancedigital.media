@@ -336,6 +336,72 @@
       }
     },
     {
+      "slug": "kusagini-sec",
+      "name": "Dikey Video · Seçmeli Kartlar",
+      "group": "videolu",
+      "size": "mobil",
+      "sizeLabel": "320×480 · 300×600",
+      "w": 320,
+      "h": 480,
+      "new": true,
+      "demo": {
+        "type": "iframe",
+        "src": "20-cevahir-kusagini-sec"
+      },
+      "desc": "Dikey marka videosu alanın tamamını kaplar. Alttaki karakter avatarlarına dokunulunca video o sahneye atlar ve mesaj kartı değişir. Video kendi oynarken de kartlar ekrandaki kişiyle senkron döner. Örnek: İstanbul Cevahir \"C Kuşağı\".",
+      "try": "Alttaki kuşak avatarlarından birine dokunun; ses düğmesiyle sesi açın.",
+      "specs": {
+        "materyal": "Dikey MP4 video (9:16)",
+        "ek": "Sahne/karakter listesi, kart metinleri, link",
+        "teknik": "HTML5 + video · ~2,4 MB",
+        "hazirlik": "2–3 iş günü"
+      }
+    },
+    {
+      "slug": "hotspot-video",
+      "name": "Dikey Video · Hotspot + Endcard",
+      "group": "videolu",
+      "size": "mobil",
+      "sizeLabel": "320×480 · 300×600",
+      "w": 320,
+      "h": 480,
+      "new": true,
+      "demo": {
+        "type": "iframe",
+        "src": "21-cevahir-hotspot-video"
+      },
+      "desc": "Video oynarken karakterlerin ve ürünlerin üzerinde ＋ işaretleri belirir. Dokunulunca video durur, alttan detay kartı açılır. Video bitince kaydırılabilir galeri ve butonlu endcard gelir. Örnek: İstanbul Cevahir \"C Kuşağı\".",
+      "try": "＋ işaretlerinden birine dokunun; videonun sonunda galeriyi kaydırın.",
+      "specs": {
+        "materyal": "Dikey MP4 video (9:16)",
+        "ek": "Hotspot noktaları için kısa başlık ve metinler, link",
+        "teknik": "HTML5 + video · ~2,4 MB",
+        "hazirlik": "2–3 iş günü"
+      }
+    },
+    {
+      "slug": "asansor",
+      "name": "Dikey Video · Kapı Açılışı",
+      "group": "videolu",
+      "size": "mobil",
+      "sizeLabel": "320×480 · 300×600",
+      "w": 320,
+      "h": 480,
+      "new": true,
+      "demo": {
+        "type": "iframe",
+        "src": "22-cevahir-asansor"
+      },
+      "desc": "Reklam kapalı asansör kapılarıyla görünür. Sayfa kaydırıldıkça kapılar açılır ve video başlar; üstteki kat göstergesi videodaki sahneye göre değişir. Kapı yerine perde, kutu ya da vitrin gibi farklı açılışlar markanın konseptine göre uyarlanabilir. Örnek: İstanbul Cevahir \"C Kuşağı\".",
+      "try": "Sayfayı yavaşça kaydırın ya da kapıların ortasındaki düğmeye dokunun.",
+      "specs": {
+        "materyal": "Dikey MP4 video (9:16)",
+        "ek": "Logo, kapanış mesajı, link",
+        "teknik": "HTML5 + video · ~2,4 MB",
+        "hazirlik": "2–3 iş günü"
+      }
+    },
+    {
       "slug": "cgi-masthead",
       "name": "3D CGI Masthead",
       "group": "premium",

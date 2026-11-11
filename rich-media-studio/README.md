@@ -23,4 +23,4 @@ rich-media-studio/
 ## Sayfa metinleri
 Format açıklamaları, "Deneyin" notları ve materyal spec'leri `src/_data/richMedia.json` içindedir.
 
-Son güncelleme: 3D CGI Masthead adı ve Kanal D yayın mockup videosu eklendi.
+Son güncelleme: İstanbul Cevahir "C Kuşağı" dikey video formatları (20–22) eklendi. Bunlar şablon değil, hazır kreatif: kaynakları doğrudan `src/assets/rich-media/20-*, 21-*, 22-*` ve ortak dosyaları `cevahir/` altında.
