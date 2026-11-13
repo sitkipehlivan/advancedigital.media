@@ -23,3 +23,8 @@ http://www.advancedigital.com.tr/*   https://advancedigital.media/:splat   301!
 /zaproll          /cozumler/zaproll/          301
 /addressable-tv   /cozumler/addressable-tv/   301
 /brand-lift       /cozumler/ai-brand-lift/    301
+
+# Marka sunumları (link sayfaları): dosyalar Bunny'deki advance-sunumlar alanında durur,
+# sitede yer almaz. Yeni sunum eklemek için site yayını gerekmez. Sayfalar noindex'tir.
+/s/:slug    https://advancesunum.b-cdn.net/:slug/index.html   200
+/s/:slug/   https://advancesunum.b-cdn.net/:slug/index.html   200
