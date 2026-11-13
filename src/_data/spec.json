@@ -106,7 +106,7 @@
             "320x50 px",
             "300x600 px",
             "Max. 150 KB",
-            "JPEG, GIF veya HTML5 formatında"
+            "JPEG formatında"
           ]
         },
         {
@@ -116,7 +116,7 @@
             "492x328 px",
             "320x160 px",
             "Max. 150 KB",
-            "JPEG, GIF veya HTML5 formatında",
+            "JPEG formatında",
             "Başlık: 25 karakter",
             "Açıklama: 75 karakter",
             "CTA: 15 karakter"
